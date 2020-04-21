@@ -17,12 +17,9 @@ import {services} from '../services/services';
   services.updateUserTask("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk","5e9f6dee1e44675f04ac0fde",{title: 'New title'}).then(data=>console.log('currentUser', data));
 //////////////////////////////////////////////
 
-console.log("hello");
     return (
       <div>
         <h2> cool WORK</h2>
       </div>
     );
   }
-
-
