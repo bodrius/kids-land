@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
+import { AwardsPage } from "./awardsPage/AwardsPage";
 
- export const App = () => {
-    return (
-      <div>
-        <h2> cool WORK</h2>
-      </div>
-    );
-  }
-
-
+export const App = () => {
+  return (
+    <div>
+      <AwardsPage />
+    </div>
+  );
+};
