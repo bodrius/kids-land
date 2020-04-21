@@ -1,5 +1,12 @@
-import React from "react";
+import React, { Component } from 'react'
 
-export const App = () => {
-  return <h2>WORK!</h2>;
-};
+export class App extends Component {
+    state = {  }
+    render() {
+        return (
+            <h2>Work</h2>
+        );
+    }
+}
+
+
