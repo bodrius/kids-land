@@ -1,11 +1,10 @@
-import React from 'react'
-
- export const App = () => {
-    return (
-      <div>
-        <h2> cool WORK</h2>
-      </div>
-    );
-  }
+import React from "react";
 
 
+export const App = () => {
+  return (
+    <div>
+      <h2>WORK!</h2>
+    </div>
+  );
+};
