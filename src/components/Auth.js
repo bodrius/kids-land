@@ -34,10 +34,16 @@ const Auth = () => {
   };
 
   return (
-    <div>
+    <div className={styles.authContainer}>
       <form className={styles.form}>
-        <h2>AUTH</h2>
-        <h2>Email</h2>
+        <h2 className={styles.authHeader}>
+          Виконуй завдання, отримай класні призи!
+        </h2>
+        <h2 className={styles.authText}>
+          Ви можете авторизуватися за допомогою e-mail та паролю, попередньо
+          зареєструвавшись
+        </h2>
+        <h2 className={styles.authTextInput}>Email</h2>
         <input
           className={styles.input}
           type="text"
@@ -46,7 +52,7 @@ const Auth = () => {
           onChange={handleChange}
           value={email}
         />
-        <h2>Пароль</h2>
+        <h2 className={styles.authTextInput}>Пароль</h2>
         <input
           className={styles.input}
           type="text"
