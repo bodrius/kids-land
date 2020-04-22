@@ -30,6 +30,7 @@ const Auth = () => {
     e.target.name === "email"
       ? setEmail(e.target.value)
       : setPassword(e.target.value);
+    console.log("hello");
   };
 
   return (
