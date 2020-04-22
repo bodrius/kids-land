@@ -1,67 +1,41 @@
-import React, { useEffect, useRef }  from 'react';
-
-import styles from './App.module.css';
-
+import React from "react";
+import { services } from "../services/services";
+import { Header } from "./header/Header";
+import { AwardsPage } from "./awardsPage/AwardsPage";
+import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
+import Auth from "./auth/Auth";
 
 export const App = () => {
-  const backdropRef = useRef(null);
+  const routing = HeaderRouting();
 
-  const keyDownHandler = e => {
-    if (e.code !== 'Escape') {
-      return;
-    }
+  ////////test for services methods//////////
+  // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
 
-    // onClose();
-  };
+  // services.userSignIn({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signIn', data));
 
-  useEffect(() => {
-    window.addEventListener('keydown', keyDownHandler);
+  // services.getCurrentUser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk").then(data=>console.log('currentUser', data));
 
-    return () => {
-      window.removeEventListener('keydown', keyDownHandler);
-    };
-  }, []);
+  // services.updateUserPoints("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",'5e9f5f961e44675f04ac0fd4',100).then(data=>console.log('currentUser', data));
+
+  // services.createUserTask("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",{title: 'Task title', taskPoints: 10}).then(data=>console.log('currentUser', data));
+
+  services
+    .updateUserTask(
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
+      "5e9f6dee1e44675f04ac0fde",
+      { title: "New title" }
+    )
+    .then((data) => console.log("currentUser", data));
+  //////////////////////////////////////////////
 
   return (
-      <div ref={backdropRef} className={styles.backdrop}>
-      <div className={styles.content}>
-      <div className={styles.image}>
-        <button className={styles.buttonClose}> X </button>
-        </div>
-        <div className={styles.formContainer}>
-        <form className={styles.form} >
-          <label className={styles.inputLabel}>
-            <input
-              className={styles.input}
-              // onChange={this.handlerChangeInput}
-              type="text"
-              required
-              pattern="^[A-Za-zА-Яа-яЁё\s]+$"
-              name="name"
-              placeholder="Додати завдання"
-              // value={name}
-            ></input>
-          </label>
-          <label className={styles.inputLabel}>  </label>
-          <input
-            className={styles.input}
-            // onChange={this.handlerChangeInput}
-            type="text"
-            name="number"
-            s
-            placeholder="Додати бали"
-            required
-            pattern="[0-9]{3}-[0-9]{3}"
-            // value={number}
-          ></input>
-          <button className={styles.buttonSubmit} type="submit">
-            Ок
-          </button>
-        </form>
-        </div>
+    <>
+      <div>
+      <Header />
+        <Auth />
+        <AwardsPage />
       </div>
-      </div>
-    );
-  }
-
-
+      {routing}
+    </>
+  );
+};
