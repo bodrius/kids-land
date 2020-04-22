@@ -48,15 +48,6 @@
       border-radius: 10px;
   }
 
-  .image {
-      width: 282px;
-      /* min-height: 130px; */
-      background-color: #fff;
-      background-image: url(./img/1.jpg);
-      border: none;
-      background-repeat: no-repeat;
-  }
-
 
 
   .form {
@@ -67,6 +58,8 @@
 
   .formContainer {
       background-color: #ffbc33;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
 
   }
 
@@ -137,16 +130,17 @@
       font-weight: 400;
   }
 
-  @media (min-width: 768px) {
-      .hourly-weather-item {
-          margin-right: 33px;
+  @media (min-width: 768px) {}
+
+
+
+  @media (min-width: 1200px) {
+      .content {
+          background-image: url(./img/3.jpg);
       }
-  }
 
-
-
-  @media (min-width: 1280px) {
-      .hourly-weather-item {
-          margin-right: 10px;
+      .form {
+          margin-top: 206px;
       }
+
   }

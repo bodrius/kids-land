@@ -26,7 +26,6 @@ export const App = () => {
       <div ref={backdropRef} className={styles.backdrop}>
       <div className={styles.content}>
       <div className={styles.image}>
-      {/* <img src="./img/1.jpg" alt="robot"/> */}
         <button className={styles.buttonClose}> X </button>
         </div>
         <div className={styles.formContainer}>
