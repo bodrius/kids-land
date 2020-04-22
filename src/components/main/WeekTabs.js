@@ -1,0 +1,24 @@
+import React from "react";
+// import { BrowserRouter, Route, NavLink } from "react-router-dom";
+import { days } from "./days";
+import styles from "./WeekTabs.module.css";
+
+// const getDay = (day) => {
+//   console.log("day", day);
+// };
+
+export const WeekTabs = () => {
+  const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
+  console.log("days", days);
+
+  return (
+    <nav className={styles.weektabs}>
+      <h3>Дни недели</h3>
+      {days.map((day) => (
+        <div key={day.id} className={selectedDayStyle}>
+          <li key={day.id}>{day.label}</li>
+        </div>
+      ))}
+    </nav>
+  );
+};

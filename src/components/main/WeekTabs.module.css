@@ -1,0 +1,29 @@
+.weektabs {
+  width: 240px;
+  height: 790px;
+  background-color: #efbb43;
+}
+.item {
+  display: block;
+  width: 210px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f6da98;
+  margin: 0 0 6px 0;
+  list-style: none;
+  text-align: left;
+  text-indent: 34px;
+  transform: translate(30px);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  line-height: 42px;
+}
+.activeItem {
+  composes: item;
+  background-color: #fdf8ed;
+  background-color: "white";
+}
+.item:hover {
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.12), 4px 6px 8px rgba(0, 0, 0, 0.18);
+}
