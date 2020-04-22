@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 // import {LoaderUi} from "../ui/loader/Loader";
-import {MainPage} from '../mainPage/Mainpage'
+import {MainPage} from '../mainPage/MainPage'
 import {AwardsPage} from '../awardsPage/AwardsPage'
 
 // const MainPage = lazy(() =>
