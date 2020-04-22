@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 // import {LoaderUi} from "../ui/loader/Loader";
 import {MainPage} from '../mainPage/Mainpage'
-import {AwardsPage} from '../awards/Awards'
+import {AwardsPage} from '../awardsPage/AwardsPage'
 
 // const MainPage = lazy(() =>
 //   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
