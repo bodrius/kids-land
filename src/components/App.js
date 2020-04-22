@@ -13,7 +13,9 @@ export const App = () => {
   ////////test for services methods//////////
   // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
 
-  // services.userSignIn({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signIn', data));
+  // services
+  //   .userSignIn({ email: "test1234@gmail.com", password: "qwertys" })
+  //   .then((data) => console.log("signIn", data));
 
   // services.getCurrentUser("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk").then(data=>console.log('currentUser', data));
 
@@ -33,8 +35,9 @@ export const App = () => {
   return (
     <>
       <div>
-        <Auth />
         <Header />
+        <Auth />
+
         <AwardsPage />
       </div>
       {routing}
