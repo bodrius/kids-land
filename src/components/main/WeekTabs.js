@@ -1,15 +1,16 @@
 import React from "react";
 // import { BrowserRouter, Route, NavLink } from "react-router-dom";
-import { days } from "./days";
+// import { days } from "./days";
 import styles from "./WeekTabs.module.css";
 
 // const getDay = (day) => {
 //   console.log("day", day);
 // };
 
-export const WeekTabs = () => {
-  const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
+export const WeekTabs = ({ days, choosenDay }) => {
+  console.log("choosenDay, day", choosenDay);
   console.log("days", days);
+  const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
   return (
     <nav className={styles.weektabs}>
