@@ -1,8 +1,13 @@
 import React from "react";
 import css from "./awardsPage.module.css";
 import awardsLogo from "../../assets/image/icon/present box/gift-box.svg";
+// import openModal from '../'
 
 export const AwardsPage = () => {
+  const openModal = () => {
+    console.log("HALLO M8");
+  };
+
   return (
     <div className={css.awardsContainer}>
       <div className={css.awardsWrapper}>
@@ -12,8 +17,7 @@ export const AwardsPage = () => {
             <span className={css.awardsHeaderText}>Мої призи</span>
           </div>
           <div className={css.awardsHeaderBarContainer}>
-            <div className={css.awardsHeaderBar}>
-            </div>
+            <div className={css.awardsHeaderBar}></div>
           </div>
         </div>
         <ul className={css.awardsList}>
@@ -43,7 +47,9 @@ export const AwardsPage = () => {
           </li>
         </ul>
         <div className={css.awardsButtonWrapper}>
-          <button className={css.awardsButton}>Підтвердити</button>
+          <button className={css.awardsButton} onClick={openModal}>
+            Підтвердити
+          </button>
         </div>
       </div>
     </div>
