@@ -1,5 +1,6 @@
+// eslint-disable-next-line
 import React, { Suspense, lazy } from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 // import {LoaderUi} from "../ui/loader/Loader";
 import {MainPage} from '../mainPage/Mainpage'
 import {AwardsPage} from '../awardsPage/AwardsPage'

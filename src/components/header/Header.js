@@ -28,13 +28,11 @@ export const Header = () => {
           {!isAuth&&(
                    <div className={css.navLinkDiv}>
                    <NavLink to='contact-us'
-                   
+                   // eslint-disable-next-line
                    className={css.contactLink} to='#'>
                        Контакти
                    </NavLink>
                </div>
-
-
           )}
    
 
