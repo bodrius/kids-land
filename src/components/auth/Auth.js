@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./Auth.module.css";
+import { registerUser, loginUser } from "../../redux/auth/operations";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -18,11 +19,12 @@ const Auth = () => {
 
   const addContact = async (contact, value) => {
     console.log(contact, value);
+    if (value === "REGISTR_USER") {
+      dispatch(registerUser(contact));
+    } else if (value === "LOGIN_USER") {
+      dispatch(loginUser(contact));
+    }
 
-    await dispatch({
-      type: value,
-      payload: contact,
-    });
     await setEmail("");
     await setPassword("");
   };
@@ -31,13 +33,20 @@ const Auth = () => {
     e.target.name === "email"
       ? setEmail(e.target.value)
       : setPassword(e.target.value);
+    console.log("hello");
   };
 
   return (
-    <div>
+    <div className={styles.authContainer}>
       <form className={styles.form}>
-        <h2>AUTH</h2>
-        <h2>Email</h2>
+        <h2 className={styles.authHeader}>
+          Виконуй завдання, отримай класні призи!
+        </h2>
+        <h2 className={styles.authText}>
+          Ви можете авторизуватися за допомогою e-mail та паролю, попередньо
+          зареєструвавшись
+        </h2>
+        <h2 className={styles.authTextInput}>Email</h2>
         <input
           className={styles.input}
           type="text"
@@ -46,7 +55,7 @@ const Auth = () => {
           onChange={handleChange}
           value={email}
         />
-        <h2>Пароль</h2>
+        <h2 className={styles.authTextInput}>Пароль</h2>
         <input
           className={styles.input}
           type="text"
@@ -55,20 +64,22 @@ const Auth = () => {
           onChange={handleChange}
           value={password}
         />
-        <button
-          className={styles.btn}
-          value="LOGIN_USER"
-          onClick={handleSubmit}
-        >
-          Увійти
-        </button>
-        <button
-          className={styles.btn}
-          value="REGISTR_USER"
-          onClick={handleSubmit}
-        >
-          Зареєструватися
-        </button>
+        <div className={styles.divFlex}>
+          <button
+            className={styles.btn}
+            value="LOGIN_USER"
+            onClick={handleSubmit}
+          >
+            Увійти
+          </button>
+          <button
+            className={styles.btn}
+            value="REGISTR_USER"
+            onClick={handleSubmit}
+          >
+            Зареєструватися
+          </button>
+        </div>
       </form>
     </div>
   );
