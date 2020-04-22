@@ -19,9 +19,6 @@ export const App = () => {
 //////////////////////////////////////////////
 
     return (
-      <div>
          <Header/>
-        <h2> cool WORK</h2>
-      </div>
     );
   }

@@ -21,30 +21,13 @@
 // export const HeaderRouting = () => {
 //   return (
 //     <>
-//       <ul>
-//         <li>
-//           <Link to="/" exact>
-//             Головна стор!нка
-//           </Link>
-//         </li>
-//         <li>
-//           <Link to="/planning">Планування</Link>
-//         </li>
-//         <li>
-//           <Link to="/awards">Призи</Link>
-//         </li>
-//         <li>
-//           <Link to="/contacts">Команда</Link>
-//         </li>
-//       </ul>
-
 
 //       <Suspense fallback={<LoaderUi />}>
 //         <Switch>
-//           <Route path="/" exact component={MainPage} />
+//           <Route exact path="/" component={MainPage} />
 //           <Route path="/planning" component={PlanningPage} />
 //           <Route path="/awards" component={AwardsPage} />
-//           <Route path="/contacts" component={ContactsPage} />
+//           <Route path="/contact-us" component={ContactsPage} />
 //           <Route component={NotFound} />
 //         </Switch>
 //       </Suspense>
