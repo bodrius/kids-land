@@ -3,6 +3,8 @@ import { services } from "../services/services";
 import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
 import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
+import {MainPage} from './mainPage/Mainpage'
+
 // import { useEffect } from "react-redux";
 import Auth from "./auth/Auth";
 
@@ -35,7 +37,9 @@ export const App = () => {
       <div>
         <Auth />
         <Header />
+        
         <AwardsPage />
+        <MainPage/>        
       </div>
       {routing}
     </>
