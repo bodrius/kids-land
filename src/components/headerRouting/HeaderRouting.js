@@ -2,7 +2,7 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 // import {LoaderUi} from "../ui/loader/Loader";
-import { MainPage } from "../mainPage/Mainpage";
+import { MainPage } from "../mainPageTest/Mainpage";
 import { AwardsPage } from "../awardsPage/AwardsPage";
 
 

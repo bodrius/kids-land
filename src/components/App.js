@@ -3,13 +3,11 @@ import { services } from "../services/services";
 import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
 import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
-// import { useEffect } from "react-redux";
 import Auth from "./auth/Auth";
 
 export const App = () => {
   const routing = HeaderRouting();
 
-  
   ////////test for services methods//////////
   // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
 
