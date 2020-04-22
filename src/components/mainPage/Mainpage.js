@@ -27,6 +27,7 @@ const selectDay=(choosenDay)=>{
 
 
 export const MainPage = () => {
+<<<<<<< HEAD
     const day = setMainPath()
     const history = useHistory()
 
@@ -46,3 +47,12 @@ return (
 
 
     
+=======
+    return (
+      <>
+      {/* <h4>THIS IS SPARTAAAA</h4> */}
+      </>
+    );
+  };
+  
+>>>>>>> 09a636d87c18d221cf546fd5fa3ec752d4ed7ae8

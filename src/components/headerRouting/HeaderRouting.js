@@ -1,8 +1,10 @@
+// eslint-disable-next-line
 import React, { Suspense, lazy } from "react";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 // import {LoaderUi} from "../ui/loader/Loader";
-import {MainPage} from '../mainPage/MainPage'
-import {AwardsPage} from '../awardsPage/AwardsPage'
+import { MainPage } from "../mainPage/Mainpage";
+import { AwardsPage } from "../awardsPage/AwardsPage";
+
 
 // const MainPage = lazy(() =>
 //   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
@@ -20,20 +22,17 @@ import {AwardsPage} from '../awardsPage/AwardsPage'
 //   import("../pageNoteFound/NotFound" /* webpackChunkName: 'pageNoteFound'*/)
 // );
 
-
 export const HeaderRouting = () => {
   return (
     <>
-   
-
       {/* <Suspense fallback={<LoaderUi />}> */}
-      <Suspense fallback={<div>LOADING</div> }>
+      <Suspense fallback={<div>LOADING</div>}>
         <Switch>
-          <Route exact path="/"  component={MainPage} />
+          <Route exact path="/" component={MainPage} />
           {/* <Route path="/planning" component={PlanningPage} /> */}
           <Route path="/awards" component={AwardsPage} />
-          {/* <Route path="/contacts-us" component={ContactsPage} />
-          <Route component={NotFound} /> */}
+          {/* <Route path="/contacts-us" component={ContactsPage} /> */}
+          {/* <Route component={NotFound} /> */}
         </Switch>
       </Suspense>
     </>
