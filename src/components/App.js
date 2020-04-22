@@ -1,7 +1,10 @@
 
+
 import React from 'react';
 import {services} from '../services/services';
 import {Header} from './header/Header'
+import { AwardsPage } from "./awardsPage/AwardsPage";
+
 import {HeaderRouting} from '../components/headerRouting/HeaderRouting'
 export const App = () => {
   const routing=HeaderRouting()
@@ -25,10 +28,12 @@ export const App = () => {
       <>
       <div>
          <Header/>
-        <h2> cool WORK</h2>
+       <AwardsPage />
+        
       </div>
       {routing}
       </>
 
     );
   }
+
