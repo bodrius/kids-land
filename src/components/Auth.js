@@ -61,20 +61,22 @@ const Auth = () => {
           onChange={handleChange}
           value={password}
         />
-        <button
-          className={styles.btn}
-          value="LOGIN_USER"
-          onClick={handleSubmit}
-        >
-          Увійти
-        </button>
-        <button
-          className={styles.btn}
-          value="REGISTR_USER"
-          onClick={handleSubmit}
-        >
-          Зареєструватися
-        </button>
+        <div className={styles.divFlex}>
+          <button
+            className={styles.btn}
+            value="LOGIN_USER"
+            onClick={handleSubmit}
+          >
+            Увійти
+          </button>
+          <button
+            className={styles.btn}
+            value="REGISTR_USER"
+            onClick={handleSubmit}
+          >
+            Зареєструватися
+          </button>
+        </div>
       </form>
     </div>
   );
