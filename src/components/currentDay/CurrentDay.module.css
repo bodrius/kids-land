@@ -1,7 +1,7 @@
 .task {
     display: flex;
     justify-content: center;
-    font-family: Montserrat;
+    font-family: "Montserrat", "Arial", sans-serif;
     font-size: 11px;
     font-weight: 500;
     line-height: 24px;
@@ -10,7 +10,7 @@
   .day {
     display: flex;
     justify-content: center;
-    font-family: Montserrat;
+    font-family: "Montserrat", "Arial", sans-serif;
     font-size: 12px;
     font-weight: 700;
     line-height: 21px;
