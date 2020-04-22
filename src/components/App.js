@@ -2,7 +2,9 @@
 import React from 'react';
 import {services} from '../services/services';
 import {Header} from './header/Header'
+import {HeaderRouting} from '../components/headerRouting/HeaderRouting'
 export const App = () => {
+  const routing=HeaderRouting()
 
   ////////test for services methods//////////
   // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
@@ -19,9 +21,12 @@ export const App = () => {
 //////////////////////////////////////////////
 
     return (
+      <>
       <div>
          <Header/>
         <h2> cool WORK</h2>
       </div>
+      {routing}
+      </>
     );
   }
