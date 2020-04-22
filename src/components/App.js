@@ -1,4 +1,5 @@
 import React from "react";
+// import CardListUl from "./cardList/CardListUl";
 import { services } from "../services/services";
 import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
@@ -34,7 +35,8 @@ export const App = () => {
     <>
       <div>
         <Header />
-        <Auth />
+        {/* <Auth /> */}
+        {/* <CardListUl /> */}
 
         <AwardsPage />
       </div>
