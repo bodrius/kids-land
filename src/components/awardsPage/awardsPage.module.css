@@ -26,7 +26,7 @@
 }
 
 .awardsListItemContainer {
-  width: 100%;
+  width: 280px;
   height: 262px;
   border-radius: 10px;
   background-color: #d3d3d3;
@@ -34,10 +34,17 @@
 
 .awardsHeader {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   width: 114px;
   height: 72px;
+}
+
+.awardsHeaderLogo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .awardsHeaderText {
@@ -45,6 +52,8 @@
   font-size: 12px;
   line-height: 21px;
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
 }
 
 .awardsButtonWrapper {
@@ -69,4 +78,126 @@
   font-size: 16px;
   border: none;
   outline: none;
+}
+
+@media (min-width: 768px) {
+  .awardsContainer {
+    width: 768px;
+  }
+
+  .awardsWrapper {
+    width: 586px;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+  }
+
+  .awardsHeader {
+    height: 104px;
+  }
+
+  .awardsList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .awardsListItem:nth-child(odd) {
+    margin-right: 22px;
+  }
+
+  .awardsHeader {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .awardsHeaderLogo {
+    width: 130px;
+  }
+
+  .awardsHeaderBarContainer {
+    width: 340px;
+    height: 36px;
+    background-color: #d3d3d3;
+  }
+
+  .awardsHeaderText {
+    font-weight: 600;
+  }
+
+  .awardsListItem:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:last-child {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:nth-last-child(n + 2) {
+    margin-bottom: 20px;
+  }
+
+  .awardsListItem:last-child(2n) {
+    margin-bottom: 56px;
+  }
+
+  .awardsButtonWrapper {
+    margin-bottom: 66px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .awardsContainer {
+    width: 1200px;
+  }
+
+  .awardsWrapper {
+    width: 1188px;
+  }
+
+  .awardsHeader {
+    height: 122px;
+  }
+
+  .awardsHeaderBarContainer {
+    width: 456px;
+  }
+
+  .awardsButtonWrapper {
+    margin-bottom: 44px;
+  }
+
+  .awardsListItem:nth-last-child(n + 2) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:last-child(2n) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:nth-child(odd) {
+    margin-right: 0px;
+  }
+
+  .awardsListItem:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:nth-child(-n + 4) {
+    margin-bottom: 22px;
+  }
+
+  .awardsListItem:nth-child(-n + 4) {
+    margin-bottom: 22px;
+  }
+
+  .awardsListItem:nth-child(n + 1):nth-child(-n + 3) {
+    margin-right: 22px;
+  }
+
+  .awardsListItem:nth-child(n + 5):nth-child(-n + 7) {
+    margin-right: 22px;
+  }
+
+  .awardsList {
+    margin-bottom: 56px;
+  }
 }
