@@ -1,15 +1,30 @@
-import React from "react";
-import { WeekTabs } from "./main/WeekTabs";
-import CardListUl from "./cardList/CardListUl";
+import React, { useState, useEffect } from "react";
+// import { WeekTabs } from "./main/WeekTabs";
+// import CardListUl from "./cardList/CardListUl";
 import { services } from "../services/services";
 import { Header } from "./header/Header";
-import { AwardsPage } from "./awardsPage/AwardsPage";
+
+// import { AwardsPage } from "./awardsPage/AwardsPage";
 import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
 import { MainPage } from "./mainPage/Mainpage";
 import Auth from "./auth/Auth";
+import { useSelector } from "react-redux";
 
-export const App = () => {
+export const App = (props) => {
   const routing = HeaderRouting();
+
+  // const token = useSelector((state) => state.user.userToken);
+ 
+  
+  // useEffect(() => {
+  //   if(token){
+  //     props.history.replace("/")
+  //   }
+   
+  // }, []);
+
+// console.log(props.history.replace("/"))
+  
 
   // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
 
@@ -33,15 +48,15 @@ export const App = () => {
 
   return (
     <>
-      <div>
-        <Auth />
-        {/* <Header /> */}
+      {/* <Header /> */}
+       <Auth />
+       
+        
         {/* <WeekTabs /> */}
         {/* <CardListUl /> */}
         {/* <AwardsPage /> */}
-        {/* <MainPage /> */}
-      </div>
-      {routing}
+      {/* <MainPage/> */}
+      {/* {routing} */}
     </>
   );
 };
