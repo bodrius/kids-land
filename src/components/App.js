@@ -1,7 +1,8 @@
+
 import React from 'react';
 import {services} from '../services/services';
-
- export const App = () => {
+import {Header} from './header/Header'
+export const App = () => {
 
   ////////test for services methods//////////
   // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
@@ -19,6 +20,7 @@ import {services} from '../services/services';
 
     return (
       <div>
+         <Header/>
         <h2> cool WORK</h2>
       </div>
     );
