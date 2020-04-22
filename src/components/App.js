@@ -1,4 +1,5 @@
 import React from "react";
+import CardListUl from "./cardList/CardListUl";
 import { services } from "../services/services";
 import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
@@ -9,7 +10,6 @@ import Auth from "./auth/Auth";
 export const App = () => {
   const routing = HeaderRouting();
 
-  
   ////////test for services methods//////////
   // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
 
@@ -37,6 +37,7 @@ export const App = () => {
       <div>
         <Header />
         <Auth />
+        {/* <CardListUl /> */}
 
         <AwardsPage />
       </div>
