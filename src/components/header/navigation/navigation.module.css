@@ -1,0 +1,155 @@
+.burgerContainer {
+    width: 320px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+.overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: flex-end; */
+    background-color: rgb(239, 187, 67);
+    align-items: flex-end;
+    height: 100vh;
+    width: 50vw;
+
+}
+
+.pages {
+    margin-bottom: 10px;
+    width: 200px;
+
+}
+
+.pages:last-child {
+    margin-bottom: 0px;
+
+}
+
+.pages::before {
+    margin-bottom: 2px;
+    content: '';
+    height: 1px;
+    width: 200px;
+    display: block;
+    background-color: rgba(115, 115, 115, 0.5);
+}
+
+.pages:last-child::after {
+    margin-top: 10px;
+    content: '';
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color: rgba(115, 115, 115, 0.5);
+
+}
+
+.text {
+    display: block;
+    margin-left: 12px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.openModal {
+    background-color: white;
+    border: none;
+    margin-top: 15px;
+    /* width: 25x;
+    height: 25px; */
+}
+
+.buttonbar {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: rgba(115, 115, 115, 0.5);
+    margin-bottom: 10px;
+
+}
+
+/* .pages{
+    display: flex;
+  
+} */
+
+.openModal:hover .buttonbar:nth-of-type(1) {
+    width: 35px;
+    background-color: red;
+}
+
+.openModal:hover .buttonbar:nth-of-type(2) {
+    width: 30px;
+    background-color: green;
+}
+
+.openModal:hover .buttonbar:nth-of-type(3) {
+    width: 25px;
+    background-color: blue;
+}
+
+.openModal:hover .buttonbar {
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.closeModal {
+    background-color: rgb(239, 187, 67);
+    width: 20px;
+    height: 20px;
+    border: none;
+
+}
+
+.closeModal::after {
+    left: 85%;
+    top: 8px;
+    position: absolute;
+    content: '';
+    background-image: url('../../../assets/image/icon/close/cross.svg');
+    height: 12px;
+    width: 12px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+    .overlay {
+        align-items: flex-start;
+        width: 30vw;
+    }
+    .text{
+        margin-left: 25px;
+    }
+
+    .closeModal::after {
+        left: 91%;
+        top: 10px;
+    }
+
+}
+
+.pageList {
+    display: flex;
+    width: 430px;
+    justify-content: space-between;
+  
+}
+
+.pageItem {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
