@@ -2,9 +2,8 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 // import {LoaderUi} from "../ui/loader/Loader";
-import { MainPage } from "../mainPageTest/Mainpage";
+import { MainPage } from "../mainPage/Mainpage";
 import { AwardsPage } from "../awardsPage/AwardsPage";
-
 
 // const MainPage = lazy(() =>
 //   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
@@ -12,7 +11,6 @@ import { AwardsPage } from "../awardsPage/AwardsPage";
 // const PlanningPage = lazy(() =>
 //   import("../PlanningPage" /* webpackChunkName: 'PlanningPage'*/)
 // );
-// const AwardsPage = lazy(() =>
 //   import("../awards/Awards" /* webpackChunkName: 'AwardsPage'*/)
 // );
 // const ContactsPage = lazy(() =>
