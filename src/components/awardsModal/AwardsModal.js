@@ -7,22 +7,19 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
   useOutsideAlerter(wrapperRef);
 
   useEffect(() => {
-    document.addEventListener("keydown", onKeydown);
+    const onKeyDown = (e) => {
+      console.log("e", e.key);
+      if (e.keyCode === 27) {
+        openModal(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
 
     return () => {
-      document.removeEventListener("keydown", onKeydown);
+      document.removeEventListener("keydown", onKeyDown);
     };
   }, []);
-
-  const onKeydown = (e) => {
-    console.log("e", e.key);
-    if (e.keyCode === 27) {
-      console.log("modal esc", modal);
-      openModal(false);
-    }
-  };
-
-  console.log("modal inside", modal);
 
   return (
     <>
@@ -41,13 +38,15 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
             <ul className={styles.modalPrizes}>
               {prizes.map((prize) => (
                 <li key={prize.title} className={styles.modalPrizesItem}>
-                  <img
-                    src={prize.imgName}
-                    alt="prize"
-                    width="100"
-                    height="100"
-                    className={styles.modalPrizesPhoto}
-                  />
+                  <div className={styles.modalPrizesItemImageWrapper}>
+                    <img
+                      src={prize.imgName}
+                      alt="prize"
+                      width="100"
+                      height="100"
+                      className={styles.modalPrizesPhoto}
+                    />
+                  </div>
                   <p className={styles.modalPrizesName}>{prize.title}</p>
                 </li>
               ))}
