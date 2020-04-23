@@ -8,14 +8,15 @@
     color: #c2c2cb;
     font-size: 12px;
 }
-.navLinkDiv{
+/* .navLinkDiv{
     margin-top: 20px;
-}
+} */
 .headerContainer {
     margin: 0 auto;
     width: 280px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
 }
 
@@ -23,6 +24,7 @@
     width: 120px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .userInfoContainer {

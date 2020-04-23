@@ -5,7 +5,7 @@ import { Header } from "./header/Header";
 
 export const App = () => {
   const token = useSelector((state) => state.user.userToken);
-  const routing = HeaderRouting(null);
+  const routing = HeaderRouting(token);
 
   return (
     <>
