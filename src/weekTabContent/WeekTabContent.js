@@ -17,9 +17,6 @@ const WeekTabContent = () => {
         <div>
             {(windowWidth<768||windowWidth>=1200)&&<CurrentWeekRange/>}
         </div>
-        <div>
-
-        </div>
     )
 }
 
