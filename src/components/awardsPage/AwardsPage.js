@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import css from "./awardsPage.module.css";
 import awardsLogo from "../../assets/image/icon/present box/gift-box.svg";
-<<<<<<< HEAD
-import { DayList } from "../dayList/DayList";
-=======
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
->>>>>>> dev
 
 export const AwardsPage = () => {
   const [points, setPoints] = useState("");
@@ -94,9 +90,6 @@ export const AwardsPage = () => {
         </div>
         <ul className={css.awardsList}>
           <li className={css.awardsListItem}>
-<<<<<<< HEAD
-            <div className={css.awardsListItemContainer}><DayList/></div>
-=======
             <div className={css.awardsListItemContainer}>
               <img
                 src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
@@ -105,7 +98,6 @@ export const AwardsPage = () => {
                 height="80%"
               />
             </div>
->>>>>>> dev
           </li>
           <li className={css.awardsListItem}>
             <div className={css.awardsListItemContainer}>
