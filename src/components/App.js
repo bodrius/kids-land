@@ -6,6 +6,8 @@ import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
 import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
 import { MainPage } from "./mainPage/Mainpage";
+import { ContactsPage } from "./contactsPage/ContactsPage";
+import ProgressBar from "./progressBar/ProgressBar";
 import Auth from "./auth/Auth";
 
 export const App = () => {
@@ -29,17 +31,18 @@ export const App = () => {
       "5e9f6dee1e44675f04ac0fde",
       { title: "New title" }
     )
-    .then((data) => console.log("currentUser", data));
+    .then(data => console.log("currentUser", data));
 
   return (
     <>
       <div>
-        <Auth />
+        {/* {<Auth />} */}
         {/* <Header /> */}
         {/* <WeekTabs /> */}
         {/* <CardListUl /> */}
         {/* <AwardsPage /> */}
-        {/* <MainPage /> */}
+        {<ContactsPage />}
+        {<ProgressBar />}
       </div>
       {routing}
     </>
