@@ -31,9 +31,8 @@ export const HeaderRouting = (token) => {
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/planning" component={PlanningPage} />
-          {/* <Route path="/planning" component={PlanningPage} />  */}
           <Route path="/awards" component={AwardsPage} />
-          <Route path="/contacts-us" component={ContactsPage} />
+          <Route path="/contact-us" component={ContactsPage} />
           <Redirect to="/" />
         </Switch>
       </Suspense>
