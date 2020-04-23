@@ -5,14 +5,12 @@ import { Route, Switch } from "react-router-dom";
 import { MainPage } from "../mainPage/Mainpage";
 import { AwardsPage } from "../awardsPage/AwardsPage";
 
-
 // const MainPage = lazy(() =>
 //   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
 // );
 // const PlanningPage = lazy(() =>
 //   import("../PlanningPage" /* webpackChunkName: 'PlanningPage'*/)
 // );
-// const AwardsPage = lazy(() =>
 //   import("../awards/Awards" /* webpackChunkName: 'AwardsPage'*/)
 // );
 // const ContactsPage = lazy(() =>
