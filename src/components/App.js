@@ -4,6 +4,7 @@ import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
 import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
 import Auth from "./auth/Auth";
+import { DayList } from "./dayList/DayList";
 
 export const App = () => {
   const routing = HeaderRouting();
@@ -34,6 +35,7 @@ export const App = () => {
         <Auth />
         <Header />
         <AwardsPage />
+        <DayList/>
       </div>
       {routing}
     </>

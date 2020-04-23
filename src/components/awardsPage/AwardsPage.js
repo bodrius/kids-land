@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./awardsPage.module.css";
 import awardsLogo from "../../assets/image/icon/present box/gift-box.svg";
+import { DayList } from "../dayList/DayList";
 
 export const AwardsPage = () => {
   return (
@@ -18,7 +19,7 @@ export const AwardsPage = () => {
         </div>
         <ul className={css.awardsList}>
           <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}></div>
+            <div className={css.awardsListItemContainer}><DayList/></div>
           </li>
           <li className={css.awardsListItem}>
             <div className={css.awardsListItemContainer}></div>
