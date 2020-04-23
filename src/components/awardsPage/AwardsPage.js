@@ -4,6 +4,7 @@ import awardsLogo from "../../assets/image/icon/present box/gift-box.svg";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
 import CardListUl from "./../cardList/CardListUl";
+import ProgressBar from "./../progressBar/ProgressBar";
 
 export const AwardsPage = () => {
   const [points, setPoints] = useState("");
@@ -20,9 +21,9 @@ export const AwardsPage = () => {
     );
 
     console.log("shit", shit);
-    const shitPoints = shit.data.user.points;
-    setPoints(shitPoints);
-    console.log("shitPoints", shitPoints);
+    const userPoints = shit.data.user.points;
+    setPoints(userPoints);
+    console.log("userPoints", userPoints);
   }, []);
 
   const openModal = () => {
@@ -137,7 +138,7 @@ export const AwardsPage = () => {
           </div>
           <div className={css.awardsHeaderBarContainer}>
             <div className={css.awardsHeaderBar}>
-              <span>{points}</span>
+              <ProgressBar userPoints={points} />
             </div>
           </div>
         </div>

@@ -1,0 +1,42 @@
+.wrapp {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 280px;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.info {
+  width: 100%;
+}
+.progressBarText {
+  font-family: "Montserrat";
+  font-size: 12px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.points {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.progress_container {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.secondPoints {
+  font-weight: bold;
+  margin-left: 31px;
+}
+
+@media (min-width: 1280px) {
+  .wrapper {
+    margin: 0;
+    width: 280px;
+  }
+}
