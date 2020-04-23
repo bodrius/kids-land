@@ -8,6 +8,10 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
+  // useEffect(() => {
+  //   return screenW();
+  // }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const contact = {
@@ -36,12 +40,58 @@ const Auth = () => {
     console.log("hello");
   };
 
+  const pLogo = () => {
+    const width = document.body.clientWidth;
+    if (width > 767) {
+      return (
+        <div className={styles.plogo}>
+          <p>KidsLike</p>
+          <img
+            className={styles.logoimg}
+            src={require("../../assets/image/authimages/logo.png")}
+            alt="logo"
+          />
+          <p>| Робимо життя батьків і дітей ізі : | 2019</p>
+        </div>
+      );
+    }
+  };
+
+  const screenW = () => {
+    const width = document.body.clientWidth;
+    if (width < 768) {
+      return (
+        <img
+          className={styles.mobimg}
+          src={require("../../assets/image/authimages/mobileImg.jpg")}
+          alt="mobileimg"
+        />
+      );
+    } else if (width < 1200) {
+      return (
+        <img
+          className={styles.mobimg}
+          src={require("../../assets/image/authimages/tabletimg.jpg")}
+          alt="tabletimg"
+        />
+      );
+    } else {
+      return (
+        <img
+          className={styles.mobimg}
+          src={require("../../assets/image/authimages/mainimg.jpg")}
+          alt="maintimg"
+        />
+      );
+    }
+  };
+
   return (
     <div className={styles.authContainer}>
+      <h2 className={styles.authHeader}>
+        Виконуй завдання, отримай класні призи!
+      </h2>
       <form className={styles.form}>
-        <h2 className={styles.authHeader}>
-          Виконуй завдання, отримай класні призи!
-        </h2>
         <h2 className={styles.authText}>
           Ви можете авторизуватися за допомогою e-mail та паролю, попередньо
           зареєструвавшись
@@ -65,22 +115,28 @@ const Auth = () => {
           value={password}
         />
         <div className={styles.divFlex}>
-          <button
-            className={styles.btn}
-            value="LOGIN_USER"
-            onClick={handleSubmit}
-          >
-            Увійти
-          </button>
-          <button
-            className={styles.btn}
-            value="REGISTR_USER"
-            onClick={handleSubmit}
-          >
-            Зареєструватися
-          </button>
+          <div className={styles.divbtn}>
+            <button
+              className={styles.btn}
+              value="LOGIN_USER"
+              onClick={handleSubmit}
+            >
+              Увійти
+            </button>
+          </div>
+          <div className={styles.divbtn}>
+            <button
+              className={styles.btn}
+              value="REGISTR_USER"
+              onClick={handleSubmit}
+            >
+              Зареєструватися
+            </button>
+          </div>
         </div>
       </form>
+      {pLogo()}
+      {screenW()}
     </div>
   );
 };
