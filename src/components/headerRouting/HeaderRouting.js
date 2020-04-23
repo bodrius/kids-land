@@ -24,15 +24,15 @@ import Auth from "../auth/Auth";
 // );import { NotFound } from '../pageNoteFound/NotFound';
 
 export const HeaderRouting = (token) => {
-  if (token) {
+  // if (token) {
+    if (true) {
     return (
       <Suspense fallback={<LoaderUi />}>
         <Switch>
           <Route exact path="/" component={MainPage} />
           <Route path="/planning" component={PlanningPage} />
-          {/* <Route path="/planning" component={PlanningPage} />  */}
           <Route path="/awards" component={AwardsPage} />
-          <Route path="/contacts-us" component={ContactsPage} />
+          <Route path="/contact-us" component={ContactsPage} />
           <Redirect to="/" />
         </Switch>
       </Suspense>
