@@ -6,7 +6,8 @@ import { Navigation } from "./navigation/Navigation";
 import { UserInfo } from "./userInfo/UserInfo";
 
 export const Header = (props) => {
-  const isAuth = props.token;
+  // const isAuth = props.token;
+  const isAuth = true;
   return (
     <>
       <div className={css.backdrop}>
@@ -28,10 +29,7 @@ export const Header = (props) => {
           )}
           {!isAuth && (
             <div className={css.navLinkDiv}>
-              <NavLink
-                to="contact-us"
-                className={css.contactLink}
-              >
+              <NavLink to="contact-us" className={css.contactLink}>
                 Контакти
               </NavLink>
             </div>
