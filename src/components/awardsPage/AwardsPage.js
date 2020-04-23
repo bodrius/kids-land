@@ -76,7 +76,56 @@ export const AwardsPage = () => {
     },
   ];
 
-  // предать массив в cardList
+  const cardList = [
+    {
+      title: "Солодощі",
+      imgName: 1,
+      source: "../../assets/image/prizesImg/1.jpg",
+      taskPoints: 40,
+    },
+    {
+      title: "Похід у кіно",
+      imgName: 2,
+      source: "../../assets/image/prizesImg/2.jpg",
+      taskPoints: 90,
+    },
+    {
+      title: "Подарунок",
+      imgName: 3,
+      source: "../../assets/image/prizesImg/3.jpg",
+      taskPoints: 100,
+    },
+    {
+      title: "Вечір піци",
+      imgName: 4,
+      source: "../../assets/image/prizesImg/4.jpg",
+      taskPoints: 80,
+    },
+    {
+      title: "Вечірка з друзями",
+      imgName: 5,
+      source: "../../assets/image/prizesImg/5.jpg",
+      taskPoints: 120,
+    },
+    {
+      title: "Похід у McDonalds",
+      imgName: 6,
+      source: "../../assets/image/prizesImg/6.jpg",
+      taskPoints: 80,
+    },
+    {
+      title: "Бажання",
+      imgName: 7,
+      source: "../../assets/image/prizesImg/7.jpg",
+      taskPoints: 200,
+    },
+    {
+      title: "Похід на ковзанку",
+      imgName: 8,
+      source: "../../assets/image/prizesImg/8.jpg",
+      taskPoints: 100,
+    },
+  ];
 
   return (
     <div className={css.awardsContainer}>
@@ -92,89 +141,7 @@ export const AwardsPage = () => {
             </div>
           </div>
         </div>
-        <CardListUl  cardList={[]}/>
-        {/* <ul className={css.awardsList}>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-        </ul> */}
+        <CardListUl cardList={cardList} />
         <div className={css.awardsButtonWrapper}>
           {modal ? (
             <AwardsModal
