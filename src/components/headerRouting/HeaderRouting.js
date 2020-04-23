@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { LoaderUi } from "../ui/loader/Loader";
 import { MainPage } from "../mainPage/Mainpage";
+import { PlanningPage } from "../planningPage/PlanningPage";
 import { AwardsPage } from "../awardsPage/AwardsPage";
 import { ContactsPage } from "../contactsPage/ContactsPage";
 import Auth from "../auth/Auth";
@@ -29,6 +30,7 @@ export const HeaderRouting = (token) => {
       <Suspense fallback={<LoaderUi />}>
         <Switch>
           <Route exact path="/" component={MainPage} />
+          <Route path="/planning" component={PlanningPage} />
           {/* <Route path="/planning" component={PlanningPage} />  */}
           <Route path="/awards" component={AwardsPage} />
           <Route path="/contacts-us" component={ContactsPage} />

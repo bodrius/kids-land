@@ -1,0 +1,100 @@
+* {
+  outline: none;
+}
+.Card__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.Card__listFooter {
+  display: flex;
+  background-color: #efbb43;
+  width: 280px;
+  height: 68px;
+  justify-content: space-between;
+  align-items: center;
+}
+.Card__listImg {
+  width: 280px;
+  height: 196px;
+}
+.Card__listTitle {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+.Card__listPoint {
+  border-radius: 4px;
+  background-color: #5579d7;
+  width: 65px;
+  height: 18px;
+  color: #ffffff;
+  font-size: 11px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Card__listText {
+  margin-left: 18px;
+}
+.Card__listBtn {
+  margin-right: 18px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Montserrat";
+  color: #8ec63f;
+  text-transform: uppercase;
+  line-height: 0.808;
+}
+
+.Popup {
+  background-color: #5579d7;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 30px;
+  transform: translate(186px, -8px);
+  position: absolute;
+}
+
+.Popup__li {
+  margin: 6px;
+}
+
+.Card__plus {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .Card__list:nth-child(2n + 1) {
+    margin-right: 22px;
+  }
+  .Card__list:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .Card__list {
+    margin-right: 22px;
+  }
+  .Card__list:nth-child(4n) {
+    margin-right: 0;
+  }
+  .Card__list:nth-last-child(-n + 4) {
+    margin-bottom: 0;
+  }
+}
