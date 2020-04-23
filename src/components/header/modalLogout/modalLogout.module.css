@@ -5,6 +5,7 @@
     color: rgb(194, 194, 203);
     font-size: 12px;
     cursor: pointer;
+    margin: 0px 20px;
 }
 
 .modalBackdrop {

@@ -4,6 +4,7 @@ import css from "./header.module.css";
 import { Logo } from "./logo/Logo";
 import { Navigation } from "./navigation/Navigation";
 import { UserInfo } from "./userInfo/UserInfo";
+import { ModaLogout } from "./modalLogout/ModalLogout";
 
 export const Header = (props) => {
   const isAuth = props.token;
@@ -18,7 +19,7 @@ export const Header = (props) => {
             <>
               <div className={css.navigUserInfoContainer}>
                 <div className={css.userInfoContainer}>
-                  <UserInfo />
+                  <UserInfo /> <ModaLogout />
                 </div>
                 <div className={css.navContainer}>
                   <Navigation />
@@ -28,10 +29,7 @@ export const Header = (props) => {
           )}
           {!isAuth && (
             <div className={css.navLinkDiv}>
-              <NavLink
-                to="contact-us"
-                className={css.contactLink}
-              >
+              <NavLink to="contact-us" className={css.contactLink}>
                 Контакти
               </NavLink>
             </div>
