@@ -9,7 +9,14 @@
     font-size: 12px;
 }
 .navLinkDiv{
-    padding-top: 20px;
+    margin-top: 20px;
+}
+.headerContainer {
+    margin: 0 auto;
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
 }
 
 .navigUserInfoContainer {
