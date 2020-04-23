@@ -16,8 +16,7 @@
     width: 280px;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
-
+    padding: 20px 0;
 }
 
 .navigUserInfoContainer {
