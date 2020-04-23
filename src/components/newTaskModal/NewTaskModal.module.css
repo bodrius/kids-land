@@ -28,7 +28,7 @@ html {
     width: 282px;
     /* min-height: 262px; */
     background-color: #fff;
-    background-image: url(./img/1.jpg);
+    background-image: url(../../assets/image/modalAddTask/1.jpg);
     border: none;
     background-repeat: no-repeat;
     border-radius: 10px;
@@ -47,26 +47,32 @@ html {
 }
 
 .input {
-    display: block;
     font-weight: 300;
+    font-size: 14px;
     color: #fff;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #fff;
     text-align: left;
-    width: 90%;
+    width: 98%;
     font-style: italic;
     margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
     padding-left: 24px;
     outline-offset: 0px;
     text-align: center;
+    outline: none;
+    background-size: 10%;
+    background-image: url("../../assets/image/icon/icon-edit/edit-24px.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .input::placeholder {
     color: #fff;
     text-align: left;
+    padding-left: 5px;
 }
 
 .buttonClose {
@@ -96,6 +102,7 @@ html {
     margin: 0 auto;
     display: block;
     cursor: pointer;
+    outline: none;
 }
 
 @media (min-width: 768px) {
@@ -112,8 +119,8 @@ html {
 
 @media (min-width: 1200px) {
     .content {
-        background-image: url(./img/3.jpg);
-        width: 324px;
+        background-image: url(../../assets/image/modalAddTask/3.jpg);
+        width: 290px;
     }
 
     .form {

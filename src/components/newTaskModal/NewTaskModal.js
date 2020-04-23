@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-
 import styles from "./NewTaskModal.module.css";
 
 const initialState = {
@@ -57,12 +56,14 @@ export const NewTaskModal = ({ onClose, onData }) => {
             <label className={styles.inputLabel}></label>
             <input
               className={styles.input}
-              onChange={e => setState({ ...state, points: e.target.value })}
-              type="text"
+              onChange={e =>
+                setState({ ...state, points: Number(e.target.value) })
+              }
+              type="number"
+              min="1"
               name="points"
-              placeholder="Додати бали (від 1 до 9)"
+              placeholder="Додати бали"
               required
-              pattern="[0-9]"
               value={state.points}
             />
             <button className={styles.buttonSubmit} type="submit">
@@ -74,4 +75,3 @@ export const NewTaskModal = ({ onClose, onData }) => {
     </div>
   );
 };
-
