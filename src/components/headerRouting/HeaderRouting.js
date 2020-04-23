@@ -29,11 +29,8 @@ export const HeaderRouting = (token) => {
       <Suspense fallback={<LoaderUi />}>
         <Switch>
           <Route exact path="/" component={MainPage} />
-<<<<<<< HEAD
           <Route path="/planning" component={PlanningPage} />
-=======
           {/* <Route path="/planning" component={PlanningPage} />  */}
->>>>>>> dev
           <Route path="/awards" component={AwardsPage} />
           <Route path="/contacts-us" component={ContactsPage} />
           <Redirect to="/" />
