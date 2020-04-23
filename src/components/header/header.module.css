@@ -11,14 +11,6 @@
 .navLinkDiv{
     padding-top: 20px;
 }
-.headerContainer {
-    margin: 0 auto;
-    width: 280px;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-
-}
 
 .navigUserInfoContainer {
     width: 120px;
