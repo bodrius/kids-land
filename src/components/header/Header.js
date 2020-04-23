@@ -5,8 +5,8 @@ import { Logo } from "./logo/Logo";
 import { Navigation } from "./navigation/Navigation";
 import { UserInfo } from "./userInfo/UserInfo";
 
-export const Header = () => {
-  const isAuth = true;
+export const Header = (props) => {
+  const isAuth = props.token;
   return (
     <>
       <div className={css.backdrop}>
@@ -31,8 +31,6 @@ export const Header = () => {
               <NavLink
                 to="contact-us"
                 className={css.contactLink}
-                // eslint-disable-next-line
-                to="#"
               >
                 Контакти
               </NavLink>
