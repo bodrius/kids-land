@@ -31,8 +31,6 @@ export const Header = (props) => {
               <NavLink
                 to="contact-us"
                 className={css.contactLink}
-                // eslint-disable-next-line
-                to="#"
               >
                 Контакти
               </NavLink>
