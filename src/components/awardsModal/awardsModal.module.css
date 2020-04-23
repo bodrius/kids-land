@@ -10,7 +10,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
     box-shadow: 3px 8px 19px 0px rgba(0,0,0,0.4);
     width: 280px;
     min-height: 300px;
-    max-height: 486px; /* for 2 rows of prizes */
+    max-height: 672px; /* for 2 rows of prizes */
     /* 3 rows - 672px? probably */
     border-radius: 6px;
     background-color: #fff;
@@ -67,7 +67,8 @@
 
 @media (min-width: 768px) {
     .modalBox{
-        height: 392px;
+        min-height: 392px;
+        max-height: 564px;
         width: 613px;
     }
     .modalGreetings{
@@ -81,9 +82,12 @@
     }
     .modalPrizes{
         margin: 0 auto;
-        width: 90%;
-        flex-wrap: nowrap;
+        width: 80%;
+        flex-wrap: wrap;
         margin-top: 26px;
+    }
+    .modalPrizesItem:nth-child(-n+4){
+        margin-bottom: 10px;
     }
     .modalPrizesPhoto{
         margin-bottom: 9px;
