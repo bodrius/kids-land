@@ -1,0 +1,85 @@
+.btnLogout {
+    border: none;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(194, 194, 203);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.modalBackdrop {
+    background-color: rgba(100, 100, 100, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modalBox {
+    position: relative;
+    box-shadow: 3px 8px 19px 0px rgba(0, 0, 0, 0.4);
+    width: 280px;
+    height: 280px;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+}
+
+.btnForLogout {
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    cursor: pointer;
+    background-color: rgb(239, 187, 67);
+    font-size: 18px;
+    padding: 8px 5px;
+    border-radius: 6px;
+    width: 60px;
+}
+
+.logoutQuestion {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 112px;
+    margin-bottom: 20px;
+}
+
+.answerBox {
+    display: flex;
+    margin: 0 auto;
+    width: 150px;
+    justify-content: space-between;
+}
+
+.btnForLogout:hover {
+    background-color: rgb(177, 136, 42);
+    box-shadow: 0 8px 6px -6px black;
+}
+
+@media (min-width: 768px) {
+    .modalBox {
+        width: 600px;
+        height: 300px;
+    }
+
+    .logoutQuestion {
+        font-size: 28px;
+        margin-bottom: 25px;
+        padding-top: 98px;
+    }
+
+    .answerBox {
+        width: 260px;
+    }
+
+    .btnForLogout {
+        width: 100px;
+        font-size: 26px;
+    }
+
+}

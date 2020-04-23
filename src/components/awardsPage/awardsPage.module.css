@@ -1,5 +1,5 @@
 .awardsContainer {
-  width: 320px;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -36,7 +36,6 @@
 
 .awardsHeader {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   width: 114px;
   height: 72px;
@@ -84,13 +83,11 @@
 
 @media (min-width: 768px) {
   .awardsContainer {
-    width: 768px;
+    width: 100vw;
   }
 
   .awardsWrapper {
     width: 586px;
-    /* flex-direction: row; */
-    /* flex-wrap: wrap; */
   }
 
   .awardsHeader {
@@ -148,7 +145,7 @@
 
 @media (min-width: 1200px) {
   .awardsContainer {
-    width: 1200px;
+    width: 100vw;
   }
 
   .awardsWrapper {
