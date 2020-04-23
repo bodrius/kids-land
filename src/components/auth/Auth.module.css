@@ -1,8 +1,7 @@
-
 .authContainer {
   margin: 0 auto;
   width: 280px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
 }
 
@@ -27,7 +26,7 @@
 }
 .authTextInput {
   font-size: 10px;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   color: rgb(133, 133, 152);
   line-height: 1.7;
   text-align: left;
@@ -35,24 +34,6 @@
   margin-bottom: 18px;
   padding-left: 10px;
 }
-
-/* .contactCard {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  border: 2px solid grey;
-  padding: 10px;
-  height: 40px;
-}
-
-.contactCard span:nth-child(1) {
-  flex: 0 0 48%;
-}
-
-.contactCard span:nth-child(2) {
-  flex: 0 0 28%;
-} */
 
 .btn {
   flex: 0 0 20%;
@@ -64,19 +45,18 @@
   color: #fff;
 }
 
+.divbtn {
+  width: 118px;
+}
+
 .btn:focus,
 .btn:active {
   box-shadow: none;
   outline: none;
 }
 .form {
-  /* padding: 10px; */
-  /* display: flex; */
-  border-radius: 4px;
-  box-shadow: 0px 2px 3px 1px rgba(71, 71, 108, 0.3);
-  margin-bottom: 25px;
-  /* justify-content: center;
-  align-items: center; */
+  /* border-radius: 4px;
+  box-shadow: 0px 2px 3px 1px rgba(71, 71, 108, 0.3); */
 }
 
 .label {
@@ -90,8 +70,8 @@
 
 .input {
   border: 0;
-  font-size: 13px;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
+
   color: rgb(166, 171, 185);
   padding: 0 10px;
   display: block;
@@ -100,12 +80,17 @@
   border: 1px solid #c0c0c0;
   border-radius: 4px;
   font-size: 16px;
-  margin: auto;
+  margin: 16px auto;
   background-color: #f5f7fa;
+  text-align: center;
 }
 
 .divFlex {
   display: flex;
+  justify-content: space-between;
+  padding: 0px 12px;
+  margin-top: 22px;
+  /* margin-bottom: 56px; */
 }
 
 .input:focus {
@@ -115,8 +100,10 @@
 }
 
 .btn {
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
   border-radius: 6px;
-  font-size: 18px;
+
   font-weight: 700;
   color: #fff;
   background-color: rgb(239, 187, 67);
@@ -140,4 +127,145 @@
   width: 30px;
   height: 30px;
   background-color: brown;
+}
+
+.mobimg {
+  width: 100%;
+  height: 100%;
+  margin-top: 55px;
+}
+.plogo {
+  display: flex;
+  align-items: center;
+  margin-top: 34px;
+  justify-content: center;
+  font-size: 9px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(133, 133, 152);
+}
+.logoimg {
+  width: 13px;
+  height: 13px;
+  margin: 10px;
+}
+
+@media (min-width: 768px) {
+  .authContainer {
+    width: 710px;
+    margin-top: 76px;
+  }
+  .form {
+    width: 490px;
+    height: 400px;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid #e9e9e9;
+    box-shadow: 3px 10px 10px 1px rgba(71, 71, 108, 0.3);
+  }
+
+  .authHeader {
+    width: 428px;
+    margin: auto;
+    font-size: 29px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.222;
+    text-align: center;
+
+    margin-bottom: 35px;
+  }
+  .authText {
+    font-size: 12px;
+    color: rgb(133, 133, 152);
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .authTextInput {
+    font-size: 12px;
+    padding-left: 50px;
+  }
+  .input {
+    width: 360px;
+  }
+  .divFlex {
+    padding: 0px 54px;
+  }
+  .btn {
+    font-size: 12px;
+    width: 155px;
+  }
+  .divbtn {
+    width: 155px;
+  }
+  .mobimg {
+    margin-top: 34px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .authContainer {
+    width: 1200px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .form {
+    width: 411px;
+    /* margin: auto; */
+    border-radius: 4px;
+    box-shadow: 0px 10px 10px 1px rgba(71, 71, 108, 0.3);
+  }
+
+  .authHeader {
+    position: absolute;
+    top: 150px;
+    right: 105px;
+    font-size: 29px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    line-height: 1.222;
+    text-align: left;
+    width: 398px;
+  }
+  .authText {
+    font-size: 12px;
+    color: rgb(133, 133, 152);
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .authTextInput {
+    font-size: 12px;
+    padding-left: 35px;
+  }
+  .input {
+    width: 360px;
+  }
+  .divFlex {
+    padding: 0px 35px;
+  }
+  .btn {
+    font-size: 12px;
+    width: 155px;
+  }
+  .divbtn {
+    width: 155px;
+  }
+  .mobimg {
+    width: 612px;
+    height: 755px;
+  }
+  .plogo {
+    position: absolute;
+    right: 24px;
+    bottom: 10px;
+  }
+  .input {
+    width: 318px;
+  }
 }

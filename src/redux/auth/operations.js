@@ -28,3 +28,8 @@ export const loginUser = (param) => async (dispatch, getState) => {
 
   dispatch({ type: types.LOGIN_USER, payload: data.data });
 };
+export const logoutUser = (param) => async (dispatch, getState) => {
+  console.log("param LOGOUT", param);
+
+  dispatch({ type: types.USER_SIGNOUT, payload: {} });
+};
