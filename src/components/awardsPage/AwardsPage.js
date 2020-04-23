@@ -3,6 +3,7 @@ import css from "./awardsPage.module.css";
 import awardsLogo from "../../assets/image/icon/present box/gift-box.svg";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
+import CardListUl from "./../cardList/CardListUl";
 
 export const AwardsPage = () => {
   const [points, setPoints] = useState("");
@@ -17,6 +18,7 @@ export const AwardsPage = () => {
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
       "5e9f6dee1e44675f04ac0fde"
     );
+
     console.log("shit", shit);
     const shitPoints = shit.data.user.points;
     setPoints(shitPoints);
@@ -74,6 +76,8 @@ export const AwardsPage = () => {
     },
   ];
 
+  // предать массив в cardList
+
   return (
     <div className={css.awardsContainer}>
       <div className={css.awardsWrapper}>
@@ -88,7 +92,8 @@ export const AwardsPage = () => {
             </div>
           </div>
         </div>
-        <ul className={css.awardsList}>
+        <CardListUl  cardList={[]}/>
+        {/* <ul className={css.awardsList}>
           <li className={css.awardsListItem}>
             <div className={css.awardsListItemContainer}>
               <img
@@ -169,7 +174,7 @@ export const AwardsPage = () => {
               />
             </div>
           </li>
-        </ul>
+        </ul> */}
         <div className={css.awardsButtonWrapper}>
           {modal ? (
             <AwardsModal

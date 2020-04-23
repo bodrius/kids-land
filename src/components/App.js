@@ -34,11 +34,11 @@ export const App = () => {
   return (
     <>
       <div>
-        <Auth />
+        {/* <Auth /> */}
         {/* <Header /> */}
         {/* <WeekTabs /> */}
         {/* <CardListUl /> */}
-        {/* <AwardsPage /> */}
+        <AwardsPage />
         {/* <MainPage /> */}
       </div>
       {routing}
