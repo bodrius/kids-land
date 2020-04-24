@@ -34,12 +34,12 @@ export const App = () => {
   return (
     <>
       <div>
-        <Auth />
-        {/* <Header /> */}
+        {/* <Auth /> */}
+        <Header />
         {/* <WeekTabs /> */}
-        {/* <CardListUl /> */}
-        {/* <AwardsPage /> */}
-        {/* <MainPage /> */}
+        <CardListUl />
+        <AwardsPage />
+        <MainPage />
       </div>
       {routing}
     </>

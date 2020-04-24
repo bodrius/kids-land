@@ -9,9 +9,8 @@ import styles from "./WeekTabs.module.css";
 
 export const WeekTabs = ({ days, choosenDay }) => {
   console.log("choosenDay, day", choosenDay);
-  console.log("days", days);
+  console.log("days Vaiaiaiai", days);
   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
-
   return (
     <nav className={styles.weektabs}>
       <h3>Дни недели</h3>

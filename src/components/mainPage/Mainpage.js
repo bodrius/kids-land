@@ -26,9 +26,10 @@ const setMainPath = () => {
 const selectDay = (choosenDay) => {
   days.map((day) =>
     day.id === choosenDay ? (day.selected = true) : (day.selected = false)
-  );
+  );             
   return days;
 };
+console.log("days++++>", days)
 
 export const MainPage = () => {
   const day = setMainPath();
