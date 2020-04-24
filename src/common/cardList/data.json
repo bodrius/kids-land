@@ -1,0 +1,523 @@
+{
+  "status": "success",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY0OGU2MWU0NDY3NWYwNGFjMGY5NSIsImlhdCI6MTU4NzQ5NzE5MSwiZXhwIjoxNTg4MTAxOTkxfQ.NKp5dAtZ6bF3dH6hFP9ALwheQU3TdI9BGY2CPqtKxFk",
+  "user": {
+    "_id": "5e9f48e61e44675f04ac0f95",
+    "email": "test11111@gmail.com",
+    "points": 0,
+    "tasks": [
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cf7e90-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cf7e91-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cf7e92-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cf7e93-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cf7e94-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cf7e95-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cf7e96-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f8d",
+        "title": "Застелити ліжко",
+        "imgName": "bed",
+        "taskPoints": 3
+      },
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cf7e97-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cf7e98-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cf7e99-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cf7e9a-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cf7e9b-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cf7e9c-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cf7e9d-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f8e",
+        "title": "Пропилососити",
+        "imgName": "vacuum",
+        "taskPoints": 5
+      },
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cf7e9e-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cf7e9f-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cf7ea0-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cf7ea1-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cf7ea2-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cf7ea3-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cf7ea4-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f8f",
+        "title": "Полити квіти",
+        "imgName": "flowers",
+        "taskPoints": 2
+      },
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cf7ea5-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cf7ea6-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cf7ea7-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cf7ea8-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cf7ea9-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cf7eaa-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cf7eab-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f90",
+        "title": "Почитати книгу",
+        "imgName": "book",
+        "taskPoints": 4
+      },
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cf7eac-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cf7ead-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cf7eae-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cf7eaf-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cf7eb0-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cf7eb1-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cf7eb2-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f91",
+        "title": "Викинути сміття",
+        "imgName": "trash",
+        "taskPoints": 1
+      },
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cf7eb3-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cf7eb4-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cf7eb5-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cf7eb6-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cf7eb7-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cf7eb8-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cf7eb9-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f92",
+        "title": "Почистити зуби",
+        "imgName": "teeth",
+        "taskPoints": 1
+      },
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cf7eba-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cfa5a0-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cfa5a1-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cfa5a2-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cfa5a3-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cfa5a4-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cfa5a5-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f93",
+        "title": "Підмести",
+        "imgName": "sweep",
+        "taskPoints": 4
+      },
+      {
+        "days": [
+          {
+            "date": 1587410790649,
+            "isActive": false,
+            "name": "monday",
+            "title": "Пн",
+            "isDone": false,
+            "_id": "00cfa5a6-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587497190649,
+            "isActive": false,
+            "name": "tuesday",
+            "title": "Вт",
+            "isDone": false,
+            "_id": "00cfa5a7-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587583590649,
+            "isActive": false,
+            "name": "wednesday",
+            "title": "Ср",
+            "isDone": false,
+            "_id": "00cfa5a8-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587669990649,
+            "isActive": false,
+            "name": "thursday",
+            "title": "Чт",
+            "isDone": false,
+            "_id": "00cfa5a9-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587756390649,
+            "isActive": false,
+            "name": "friday",
+            "title": "Пт",
+            "isDone": false,
+            "_id": "00cfa5aa-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587842790649,
+            "isActive": false,
+            "name": "Saturday",
+            "title": "Сб",
+            "isDone": false,
+            "_id": "00cfa5ab-8406-11ea-a130-fb50e596d457"
+          },
+          {
+            "date": 1587929190649,
+            "isActive": false,
+            "name": "Sunday",
+            "title": "Нд",
+            "isDone": false,
+            "_id": "00cfa5ac-8406-11ea-a130-fb50e596d457"
+          }
+        ],
+        "_id": "5e9f48e61e44675f04ac0f94",
+        "title": "Скласти іграшки",
+        "imgName": "toys",
+        "taskPoints": 2
+      }
+    ]
+  }
+}

@@ -2,9 +2,12 @@
     border: none;
     background-color: transparent;
     font-family: 'Montserrat', sans-serif;
-    color: rgb(194, 194, 203);
+    color: rgb(163, 163, 177);
     font-size: 12px;
     cursor: pointer;
+    margin: 0px 20px;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .modalBackdrop {
@@ -17,6 +20,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 999;
 }
 
 .modalBox {

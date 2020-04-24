@@ -6,6 +6,9 @@
   border-radius: 5px;
   margin-bottom: 20px;
 }
+.Card__listDiv {
+  border-radius: 10px;
+}
 .Card__listFooter {
   display: flex;
   background-color: #efbb43;
@@ -42,22 +45,21 @@
 }
 .Card__listBt {
   margin-right: 18px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .Card__listBtton {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #ffffff;
   border: none;
   font-size: 26px;
   font-family: "Montserrat";
   color: #8ec63f;
   text-transform: uppercase;
   line-height: 0.808;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
