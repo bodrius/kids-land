@@ -15,8 +15,8 @@ const days = [
   { _id: 7, label: "Нд" },
 ];
 
-export const DayList = () => {
-  const [flag, setFlag] = useState(false);
+export const DayList = ({flag}) => {
+  // const [flag, setFlag] = useState(false);
   const { handleCheck, checkedItems } = useChecklist(days, {
     key: "label",
     keyType: "string",
@@ -26,9 +26,9 @@ export const DayList = () => {
   console.log([...checkedItems]); // []     - handling with Array
   return (
     <div className={css.dayListPosition}>
-      <button className={css.showModal} type="button" onClick={() => setFlag(!flag)}>
+      {/* <button className={css.showModal} type="button" onClick={() => setFlag(!flag)}>
         add
-      </button>
+      </button> */}
       <CSSTransition
         in={flag}
         timeout={500}

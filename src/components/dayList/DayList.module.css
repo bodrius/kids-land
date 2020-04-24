@@ -2,8 +2,8 @@
     display: block;
     top: -10px;
     right: -2%;
-    width: 30%;
-    height: 95%;
+    width: 40%;
+    height: 105%;
     background-color: transparent;
     position: absolute;
 }
@@ -22,15 +22,14 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-    font-size: 24px;
     color: #fff;
     font-weight: bold;
 }
 
 .checkPlace {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
     border: 2px solid #fff;
     border-radius: 4px;
 }
@@ -38,5 +37,5 @@
 .label {}
   
 .showModal{
-    margin-left: -100px;
+    margin-left: -40px;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Card.module.css";
 import { StaticRouter } from "react-router-dom";
+import {DayList} from '../../components/dayList/DayList';
 
 export const Card = ({
   data: { imgName, title, taskPoints, days },
@@ -12,19 +13,20 @@ export const Card = ({
   console.log("card");
   return (
     <li className={style.Card__list}>
-      <Popup
+      {/* <Popup
         visible={state.visible}
         onChange={onChange}
         days={days}
         point={taskPoints}
         plusPoint={plusPoint}
-      />
-      <div>
+      /> */}
+      <div style={{position:"relative"}}>
         <img
           src={require(`../../assets/image/planImg/${imgName}.jpg`)}
           alt="img"
           className={style.Card__listImg}
         />
+        <DayList flag={state.visible}/>
       </div>
       <div className={style.Card__listFooter}>
         <div className={style.Card__listText}>
