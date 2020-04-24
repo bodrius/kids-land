@@ -3,6 +3,8 @@ import css from "./awardsPage.module.css";
 import awardsLogo from "../../assets/image/icon/present box/gift-box.svg";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
+import CardListUl from "./../cardList/CardListUl";
+import ProgressBar from "./../progressBar/ProgressBar";
 
 export const AwardsPage = () => {
   const [points, setPoints] = useState("");
@@ -12,15 +14,18 @@ export const AwardsPage = () => {
     setModal(false);
   }, []);
 
-  useEffect(async () => {
-    const shit = await services.getCurrentUser(
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
-      "5e9f6dee1e44675f04ac0fde"
-    );
-    console.log("shit", shit);
-    const shitPoints = shit.data.user.points;
-    setPoints(shitPoints);
-    console.log("shitPoints", shitPoints);
+  useEffect(() => {
+    (async () => {
+      const shit = await services.getCurrentUser(
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
+        "5e9f6dee1e44675f04ac0fde"
+      );
+
+      console.log("shit", shit);
+      const userPoints = shit.data.user.points;
+      setPoints(userPoints);
+      console.log("userPoints", userPoints);
+    })();
   }, []);
 
   const openModal = () => {
@@ -74,6 +79,57 @@ export const AwardsPage = () => {
     },
   ];
 
+  const cardList = [
+    {
+      title: "Солодощі",
+      imgName: 1,
+      source: "../../assets/image/prizesImg/1.jpg",
+      taskPoints: 40,
+    },
+    {
+      title: "Похід у кіно",
+      imgName: 2,
+      source: "../../assets/image/prizesImg/2.jpg",
+      taskPoints: 90,
+    },
+    {
+      title: "Подарунок",
+      imgName: 3,
+      source: "../../assets/image/prizesImg/3.jpg",
+      taskPoints: 100,
+    },
+    {
+      title: "Вечір піци",
+      imgName: 4,
+      source: "../../assets/image/prizesImg/4.jpg",
+      taskPoints: 80,
+    },
+    {
+      title: "Вечірка з друзями",
+      imgName: 5,
+      source: "../../assets/image/prizesImg/5.jpg",
+      taskPoints: 120,
+    },
+    {
+      title: "Похід у McDonalds",
+      imgName: 6,
+      source: "../../assets/image/prizesImg/6.jpg",
+      taskPoints: 80,
+    },
+    {
+      title: "Бажання",
+      imgName: 7,
+      source: "../../assets/image/prizesImg/7.jpg",
+      taskPoints: 200,
+    },
+    {
+      title: "Похід на ковзанку",
+      imgName: 8,
+      source: "../../assets/image/prizesImg/8.jpg",
+      taskPoints: 100,
+    },
+  ];
+
   return (
     <div className={css.awardsContainer}>
       <div className={css.awardsWrapper}>
@@ -84,92 +140,11 @@ export const AwardsPage = () => {
           </div>
           <div className={css.awardsHeaderBarContainer}>
             <div className={css.awardsHeaderBar}>
-              <span>{points}</span>
+              <ProgressBar userPoints={points} />
             </div>
           </div>
         </div>
-        <ul className={css.awardsList}>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-          <li className={css.awardsListItem}>
-            <div className={css.awardsListItemContainer}>
-              <img
-                src="http://i.piccy.info/i9/61aac2980df13c903ff4d996c42273d5/1587558963/156318/1374341/sexyKozah.jpg"
-                alt="sexyKozah"
-                width="100%"
-                height="80%"
-              />
-            </div>
-          </li>
-        </ul>
+        <CardListUl cardList={cardList} />
         <div className={css.awardsButtonWrapper}>
           {modal ? (
             <AwardsModal

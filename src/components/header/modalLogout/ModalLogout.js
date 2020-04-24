@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./modalLogout.module.css";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../../redux/auth/operations";
 
-export const ModaLogout = ({ MethodForLogout }) => {
+export const ModaLogout = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const boxForRef = useRef(null);
+  const dispatch = useDispatch();
   useOutsideAlerter(boxForRef);
 
   useEffect(() => {
@@ -53,7 +56,7 @@ export const ModaLogout = ({ MethodForLogout }) => {
               <button
                 type="button"
                 className={styles.btnForLogout}
-                onClick={() => MethodForLogout()}
+                onClick={() => dispatch(logoutUser())}
               >
                 Так
               </button>
