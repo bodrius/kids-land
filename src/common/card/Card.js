@@ -3,6 +3,7 @@ import style from "./Card.module.css";
 import CardTransition from "././CardTransition.module.css";
 import { CSSTransition } from "react-transition-group";
 import { StaticRouter } from "react-router-dom";
+import { Button } from "../button/Button.js";
 
 export const Card = ({
   data: { imgName, title, taskPoints, days },
@@ -32,14 +33,13 @@ export const Card = ({
           <p className={style.Card__listPoint}>{taskPoints} БАЛIВ</p>
         </div>
         <div>
-          <button
-            className={style.Card__listBtn}
+          <Button
             onClick={() => {
               setState({ ...state, visible: !state.visible });
             }}
           >
             {state.visible ? "Ok" : <span className={style.Card__plus}>+</span>}
-          </button>
+          </Button>
         </div>
       </div>
     </li>
