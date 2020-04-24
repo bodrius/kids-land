@@ -3,6 +3,9 @@ import React from "react";
 // import CardListLi from "../cardList/cardListLi/CardListLi";
 import { CardList } from "../../common/cardList/CardList";
 import data from "../../common/cardList/data.json";
+import {PlanningPoints} from '../PlanningPoints/PlanningPoints'
+import {AddCustomTask} from '../AddCustomTask/AddCustomTask'
+import { Footer } from '../Footer/Footer'
 
 export const PlanningPage = () => {
   const [state, setState] = React.useState(data.user.tasks);
@@ -18,6 +21,9 @@ export const PlanningPage = () => {
   };
   console.log('allUserPoints', allUserPoints)
   return (
+    <>
+    <PlanningPoints />
+    <AddCustomTask />
     <CardList
       plusPoint={plusPoint}
       data={state}
@@ -26,5 +32,7 @@ export const PlanningPage = () => {
         // setState([...state, data])
       }}
     />
+    <Footer/>
+    </>
   );
 };
