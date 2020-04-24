@@ -8,15 +8,13 @@ import { registerUser, loginUser } from "../../redux/auth/operations";
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
+  let mainerror = null;
 
-  // useEffect(() => {
-  //   return screenW();
-  // }, []);
+  const dispatch = useDispatch();
 
   const validate = (value) => {
     const errors = {};
-    console.log("email, password", value);
+    // console.log("email, password", value);
     if (!email) {
       errors.email = "Required email";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
@@ -24,10 +22,14 @@ const Auth = () => {
     }
     if (!password) {
       errors.password = "Required password";
-    } else if (password.length > 8) {
-      errors.password = "Must be 8 characters or less";
+    } else if (password.length < 6) {
+      errors.password = "Must be 6 characters or more";
     }
-
+    if (errors.length) {
+      mainerror = errors;
+    } else {
+      mainerror = null;
+    }
     return errors;
   };
 
@@ -36,23 +38,26 @@ const Auth = () => {
       email: "",
       password: "",
     },
-
     validate,
-    onClick: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
+    // onClick: (e) => {
+    //   handleSubmit(e);
+    // },
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // console.log(e);
     const contact = {
       email: email,
       password: password,
     };
-    // console.log("hello");
-    // formik(contact);
-
-    // addContact(contact, e.target.value);
+    console.log("errors", mainerror);
+    if (mainerror === null) {
+      addContact(contact, e.target.value);
+    } else {
+      setEmail("");
+      setPassword("");
+    }
   };
 
   const addContact = async (contact, value) => {
@@ -121,8 +126,6 @@ const Auth = () => {
 
   return (
     <div className={styles.authContainer}>
-      {console.log("handleChange", email, password)}
-
       <div className={styles.formContainer}>
         <h2 className={styles.authHeader}>
           Виконуй завдання, отримай класні призи!
@@ -137,27 +140,35 @@ const Auth = () => {
             className={styles.input}
             type="text"
             name="email"
-            placeholder="Enter Email"
+            placeholder={
+              formik.errors.email ? formik.errors.email : "Enter Email"
+            }
             onChange={handleChange}
             value={email}
           />
-          {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+          {/* {formik.errors.email ? <div>{formik.errors.email}</div> : null} */}
           <h2 className={styles.authTextInput}>Пароль</h2>
           <input
             className={styles.input}
             type="password"
             name="password"
-            placeholder="Enter password"
+            placeholder={
+              formik.errors.password ? formik.errors.password : "Enter password"
+            }
             onChange={handleChange}
             value={password}
           />
-          {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+          {/* {formik.errors.password ? <div>{formik.errors.password}</div> : null} */}
           <div className={styles.divFlex}>
             <div className={styles.divbtn}>
               <button
                 className={styles.btn}
+                type="button"
                 value="LOGIN_USER"
-                onClick={formik.handleSubmit}
+                onClick={(e) => {
+                  formik.handleSubmit();
+                  handleSubmit(e);
+                }}
               >
                 Увійти
               </button>
@@ -165,8 +176,12 @@ const Auth = () => {
             <div className={styles.divbtn}>
               <button
                 className={styles.btn}
+                type="button"
                 value="REGISTR_USER"
-                onClick={handleSubmit}
+                onClick={(e) => {
+                  formik.handleSubmit();
+                  handleSubmit(e);
+                }}
               >
                 Зареєструватися
               </button>
