@@ -3,6 +3,7 @@ import React from "react";
 // import CardListLi from "../cardList/cardListLi/CardListLi";
 import { CardList } from "../../common/cardList/CardList";
 import data from "../../common/cardList/data.json";
+import CurrentWeekPlaning from '../CurrentDay/CurrentWeekPlaning'
 
 export const PlanningPage = () => {
   const [state, setState] = React.useState(data.user.tasks);
@@ -18,6 +19,8 @@ export const PlanningPage = () => {
   };
   console.log('allUserPoints', allUserPoints)
   return (
+    <>
+    <CurrentWeekPlaning/>
     <CardList
       plusPoint={plusPoint}
       data={state}
@@ -26,5 +29,6 @@ export const PlanningPage = () => {
         // setState([...state, data])
       }}
     />
+    </>
   );
 };
