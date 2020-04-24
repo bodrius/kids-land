@@ -1,10 +1,11 @@
 import React from "react";
 import style from "./Card.module.css";
+import CardTransition from "././CardTransition.module.css";
+import { CSSTransition } from "react-transition-group";
 import { StaticRouter } from "react-router-dom";
 
 export const Card = ({
   data: { imgName, title, taskPoints, days },
-  onChange,
   plusPoint,
 }) => {
   const [state, setState] = React.useState({ visible: false });
@@ -14,7 +15,6 @@ export const Card = ({
     <li className={style.Card__list}>
       <Popup
         visible={state.visible}
-        onChange={onChange}
         days={days}
         point={taskPoints}
         plusPoint={plusPoint}
@@ -46,42 +46,47 @@ export const Card = ({
   );
 };
 
-export const Popup = ({ visible, days, onChange, point, plusPoint }) => {
+export const Popup = ({ visible, days, point, plusPoint }) => {
   const styles = {};
   if (!visible) {
     styles.display = "none";
   }
 
   return (
-    <ul className={style.Popup} style={styles}>
-      {days.map((day, index) => {
-        return (
-          <CheckBox
-            point={point}
-            plusPoint={plusPoint}
-            key={index}
-            text={day.title}
-            checked={day.isActive}
-            onChange={onChange}
-          />
-        );
-      })}
-    </ul>
+    <CSSTransition
+      in={visible}
+      timeout={500}
+      classNames={CardTransition}
+      unmountOnExit
+    >
+      <ul className={style.Popup} style={styles}>
+        {days.map((day, index) => {
+          return (
+            <CheckBox
+              point={point}
+              plusPoint={plusPoint}
+              key={index}
+              text={day.title}
+              checked={day.isActive}
+            />
+          );
+        })}
+      </ul>
+    </CSSTransition>
   );
 };
 
-const CheckBox = ({ text, checked, onChange, point, plusPoint }) => {
-  // const [checked, setChecked] = React.useState(false);
-  console.log("checked", checked);
+const CheckBox = ({ text, checked, point, plusPoint }) => {
+  const [state, setState] = React.useState(checked);
   return (
     <li className={style.Popup__li}>
       <label>
         <input
           type="checkbox"
-          checked={checked}
+          checked={state}
           onChange={() => {
-            onChange(!checked);
-            plusPoint(point)
+            setState(!state);
+            plusPoint(!state ? point : -1 * point);
           }}
         />
         <span>{text}</span>

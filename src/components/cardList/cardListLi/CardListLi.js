@@ -1,9 +1,8 @@
 import React from "react";
 import style from "./CardListLi.module.css";
+import Toogle from "../toogle/Toogle";
 
 const CardListLi = (list) => {
-  console.log("list.source", list);
-  console.log(list);
   return (
     <li className={style.Card__list}>
       <div>
@@ -24,6 +23,7 @@ const CardListLi = (list) => {
         </div>
         <div className={style.Card__listBt}>
           <button className={style.Card__listBtton}>+</button>
+          <Toogle />
         </div>
       </div>
     </li>

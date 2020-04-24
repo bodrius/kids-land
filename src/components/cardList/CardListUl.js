@@ -4,7 +4,6 @@ import CardListLi from "./cardListLi/CardListLi";
 import style from "./CardListUl.module.css";
 
 const CardListUl = (cardList = cardList.user.tasks) => {
-  console.log("cardList", cardList);
   return (
     <ul className={style.card__listUL}>
       {cardList.length !== 0 &&
