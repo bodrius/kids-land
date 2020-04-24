@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ContactsPage.module.css";
 import { Contacts } from "./ContactsInformation";
 
-export const ContactsPage = () => {
+ const ContactsPage = () => {
   return (
     <div className={styles.contacts}>
       <p className={styles.contacts_main_tittle}>Наша команда</p>
@@ -15,9 +15,9 @@ export const ContactsPage = () => {
             <img
               className={styles.contacts_img}
               src={contact.foto}
-              alt=""
-              width="280"
-              height="245"
+              alt="img"
+              width="300"
+              height="360"
             />
             <p className={styles.contacts_name}>{contact.name}</p>
             <p className={styles.contacts_possition}>{contact.position}</p>
@@ -31,3 +31,6 @@ export const ContactsPage = () => {
     </div>
   );
 };
+
+
+export default ContactsPage;
