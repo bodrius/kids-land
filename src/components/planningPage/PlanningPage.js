@@ -38,14 +38,17 @@ import {services} from "../../services/services"
 
   }
 
-  async function anwerFromServer (token, customTask)  {
-    const answer = await services.createUserTask(token, customTask);
+  async function answerFromServer (token, customTask)  {
+    const answer = await services.createUserTask(token, customTask).then((data) => 
+      data.status === 200 && 
+    )
+    
     console.log('answer', answer)
   }
 
   React.useEffect(() => {
   // console.log('customTask', customTask)
-  anwerFromServer(token, customTask)
+  answerFromServer(token, customTask)
   }, [customTask])
 
 
