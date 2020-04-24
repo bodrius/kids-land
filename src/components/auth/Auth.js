@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useFormik } from "formik";
+
 import styles from "./Auth.module.css";
 import { registerUser, loginUser } from "../../redux/auth/operations";
 
@@ -12,13 +14,45 @@ const Auth = () => {
   //   return screenW();
   // }, []);
 
+  const validate = (value) => {
+    const errors = {};
+    console.log("email, password", value);
+    if (!email) {
+      errors.email = "Required email";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      errors.email = "Invalid email address";
+    }
+    if (!password) {
+      errors.password = "Required password";
+    } else if (password.length > 8) {
+      errors.password = "Must be 8 characters or less";
+    }
+
+    return errors;
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+
+    validate,
+    onClick: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const contact = {
       email: email,
       password: password,
     };
-    addContact(contact, e.target.value);
+    // console.log("hello");
+    // formik(contact);
+
+    // addContact(contact, e.target.value);
   };
 
   const addContact = async (contact, value) => {
@@ -33,11 +67,10 @@ const Auth = () => {
     await setPassword("");
   };
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     e.target.name === "email"
       ? setEmail(e.target.value)
       : setPassword(e.target.value);
-    console.log("hello");
   };
 
   const pLogo = () => {
@@ -88,54 +121,60 @@ const Auth = () => {
 
   return (
     <div className={styles.authContainer}>
-      <h2 className={styles.authHeader}>
-        Виконуй завдання, отримай класні призи!
-      </h2>
-      <form className={styles.form}>
-        <h2 className={styles.authText}>
-          Ви можете авторизуватися за допомогою e-mail та паролю, попередньо
-          зареєструвавшись
+      {console.log("handleChange", email, password)}
+
+      <div className={styles.formContainer}>
+        <h2 className={styles.authHeader}>
+          Виконуй завдання, отримай класні призи!
         </h2>
-        <h2 className={styles.authTextInput}>Email</h2>
-        <input
-          className={styles.input}
-          type="text"
-          name="email"
-          placeholder="Enter Email"
-          onChange={handleChange}
-          value={email}
-        />
-        <h2 className={styles.authTextInput}>Пароль</h2>
-        <input
-          className={styles.input}
-          type="text"
-          name="password"
-          placeholder="Enter password"
-          onChange={handleChange}
-          value={password}
-        />
-        <div className={styles.divFlex}>
-          <div className={styles.divbtn}>
-            <button
-              className={styles.btn}
-              value="LOGIN_USER"
-              onClick={handleSubmit}
-            >
-              Увійти
-            </button>
+        <form className={styles.form}>
+          <h2 className={styles.authText}>
+            Ви можете авторизуватися за допомогою e-mail та паролю, попередньо
+            зареєструвавшись
+          </h2>
+          <h2 className={styles.authTextInput}>Email</h2>
+          <input
+            className={styles.input}
+            type="text"
+            name="email"
+            placeholder="Enter Email"
+            onChange={handleChange}
+            value={email}
+          />
+          {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+          <h2 className={styles.authTextInput}>Пароль</h2>
+          <input
+            className={styles.input}
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            onChange={handleChange}
+            value={password}
+          />
+          {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+          <div className={styles.divFlex}>
+            <div className={styles.divbtn}>
+              <button
+                className={styles.btn}
+                value="LOGIN_USER"
+                onClick={formik.handleSubmit}
+              >
+                Увійти
+              </button>
+            </div>
+            <div className={styles.divbtn}>
+              <button
+                className={styles.btn}
+                value="REGISTR_USER"
+                onClick={handleSubmit}
+              >
+                Зареєструватися
+              </button>
+            </div>
           </div>
-          <div className={styles.divbtn}>
-            <button
-              className={styles.btn}
-              value="REGISTR_USER"
-              onClick={handleSubmit}
-            >
-              Зареєструватися
-            </button>
-          </div>
-        </div>
-      </form>
-      {pLogo()}
+        </form>
+        {pLogo()}
+      </div>
       {screenW()}
     </div>
   );
