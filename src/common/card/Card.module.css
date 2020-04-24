@@ -8,6 +8,7 @@
   border-radius: 5px;
   margin-bottom: 20px;
   position: relative;
+  margin: 0 auto;
 }
 .Card__listFooter {
   display: flex;
