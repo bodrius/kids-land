@@ -6,7 +6,7 @@ import AwardsModal from "./../awardsModal/AwardsModal";
 import CardListUl from "./../cardList/CardListUl";
 import ProgressBar from "./../progressBar/ProgressBar";
 
-export const AwardsPage = () => {
+ const AwardsPage = () => {
   const [points, setPoints] = useState("");
   const [modal, setModal] = useState(false);
 
@@ -163,3 +163,6 @@ export const AwardsPage = () => {
     </div>
   );
 };
+
+
+export default AwardsPage;

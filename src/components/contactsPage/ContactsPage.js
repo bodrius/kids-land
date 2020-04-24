@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ContactsPage.module.css";
 import { Contacts } from "./ContactsInformation";
 
-export const ContactsPage = () => {
+ const ContactsPage = () => {
   return (
     <div className={styles.contacts}>
       <p className={styles.contacts_main_tittle}>Наша команда</p>
@@ -31,3 +31,6 @@ export const ContactsPage = () => {
     </div>
   );
 };
+
+
+export default ContactsPage;

@@ -30,7 +30,7 @@ const selectDay = (choosenDay) => {
   return days;
 };
 
-export const MainPage = () => {
+ const MainPage = () => {
   const day = setMainPath();
   const history = useHistory();
 
@@ -50,3 +50,5 @@ export const MainPage = () => {
     </div>
   );
 };
+
+export default MainPage;
