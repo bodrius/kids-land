@@ -6,6 +6,11 @@ import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
 import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
 import { MainPage } from "./mainPage/Mainpage";
+import ButtonCurrentWeekRange from './CurrentWeekRange/ButtonCurrentWeekRange'
+import CurrentDay from './CurrentDay/CurrentDay'
+import CurrentWeekPlaning from './CurrentDay/CurrentWeekPlaning'
+import CurrentWeekRange from './CurrentDay/CurrentWeekRange'
+// import {WeekTabs} from './main/WeekTabs'
 import Auth from "./auth/Auth";
 
 export const App = () => {
@@ -35,11 +40,17 @@ export const App = () => {
     <>
       <div>
         <Auth />
-        {/* <Header /> */}
+        <Header />
+        <CurrentDay />
+        <MainPage />
+
+       <ButtonCurrentWeekRange/>
+       <CurrentWeekPlaning/>
+       <CurrentWeekRange/>
         {/* <WeekTabs /> */}
-        {/* <CardListUl /> */}
-        {/* <AwardsPage /> */}
-        {/* <MainPage /> */}
+        <CardListUl />
+        <AwardsPage />
+        
       </div>
       {routing}
     </>

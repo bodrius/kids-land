@@ -9,7 +9,7 @@ import styles from "./WeekTabs.module.css";
 
 export const WeekTabs = ({ days, choosenDay }) => {
   console.log("choosenDay, day", choosenDay);
-  console.log("days", days);
+  console.log("days Vasya", days);
   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
   return (
