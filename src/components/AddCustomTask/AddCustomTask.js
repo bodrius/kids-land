@@ -1,12 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import styles from "./styles.module.css";
 
 export const AddCustomTask = ({ handleOpenTaskModal }) => {
-  // const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  // function handleOpenTaskModal() {
-  //   setModalIsOpen(true);
-  // }
 
 
   let content = (
