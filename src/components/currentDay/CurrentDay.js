@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './CurrentDay.module.css';
 
 const CurrentDay = ({ days, date }) => {
-  console.log('days Homie', days)
   return(
   <div className={styles.wrapper}>
     <h2 className={styles.task}>Мoї завдання:</h2>
