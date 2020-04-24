@@ -14,16 +14,17 @@ export const AwardsPage = () => {
     setModal(false);
   }, []);
 
-  useEffect(async () => {
-    const shit = await services.getCurrentUser(
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
-      "5e9f6dee1e44675f04ac0fde"
-    );
-
-    console.log("shit", shit);
-    const userPoints = shit.data.user.points;
-    setPoints(userPoints);
-    console.log("userPoints", userPoints);
+  useEffect(() => {
+    (async () => {
+      const shit = await services.getCurrentUser(
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
+        "5e9f6dee1e44675f04ac0fde"
+      );
+      console.log("shit", shit);
+      const userPoints = shit.data.user.points;
+      setPoints(userPoints);
+      console.log("userPoints", userPoints);
+    })();
   }, []);
 
   const openModal = () => {
@@ -145,17 +146,21 @@ export const AwardsPage = () => {
         <CardListUl cardList={cardList} />
         <div className={css.awardsButtonWrapper}>
           {modal ? (
-            <AwardsModal
-              prizes={prizes}
-              openModaled={modal}
-              useOutsideAlerter={useOutsideAlerter}
-            />
+            <>
+              <AwardsModal
+                prizes={prizes}
+                openModaled={modal}
+                useOutsideAlerter={useOutsideAlerter}
+              />
+              <button className={css.awardsButton} onClick={openModal} disabled>
+                Підтвердити
+              </button>
+            </>
           ) : (
-            !modal
+            <button className={css.awardsButton} onClick={openModal}>
+              Підтвердити
+            </button>
           )}
-          <button className={css.awardsButton} onClick={openModal}>
-            Підтвердити
-          </button>
         </div>
       </div>
     </div>
