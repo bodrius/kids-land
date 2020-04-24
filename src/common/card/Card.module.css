@@ -1,6 +1,7 @@
 * {
   outline: none;
 }
+ 
 .Card__list {
   display: flex;
   flex-wrap: wrap;
@@ -42,23 +43,6 @@
 }
 .Card__listText {
   margin-left: 18px;
-}
-.Card__listBtn {
-  margin-right: 18px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: "Montserrat";
-  color: #8ec63f;
-  text-transform: uppercase;
-  line-height: 0.808;
 }
 
 .card__listUl {
