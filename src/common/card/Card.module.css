@@ -61,6 +61,15 @@
   line-height: 0.808;
 }
 
+.card__listUl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 .Popup {
   background-color: #5579d7;
   color: #fff;
