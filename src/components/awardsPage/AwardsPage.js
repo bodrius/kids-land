@@ -20,9 +20,18 @@ export const AwardsPage = () => {
     }
   };
 
+  const { userToken, userId, userPoint } = useSelector((state) =>  {
+    return state.user
+  });
+  
+
+  const collectAwards = (updatedPoints) => {
+    services.updateUserPoints(userToken, userId, updatedPoints);
+    setPoints(updatedPoints)
+  }
+
   // LOGO & ESC MODAL
 
-  const { userToken } = useSelector((state) => state.user);
 
   useEffect(() => {
     setModal(false);
@@ -31,16 +40,14 @@ export const AwardsPage = () => {
   useEffect(() => {
     (async () => {
       const shit = await services.getCurrentUser(userToken);
-      console.log("shit", shit);
       const userPoints = shit.data.user.points;
       setPoints(userPoints);
-      console.log("userPoints", userPoints);
+      // services.updateUserPoints(userToken, userId, 100);
     })();
   }, []);
 
   const openModal = () => {
     setModal(true);
-    console.log("toggle", toggle);
   };
 
   function useOutsideAlerter(ref) {
@@ -122,7 +129,7 @@ export const AwardsPage = () => {
             </div>
           </div>
         </div>
-        <CardListUl cardList={cardList} chooseAwards={chooseAwards} />
+        <CardListUl cardList={cardList} chooseAwards={chooseAwards} collectAwards={collectAwards}/>
         <div className={css.awardsButtonWrapper}>
           {modal ? (
             <>

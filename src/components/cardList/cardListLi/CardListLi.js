@@ -2,7 +2,7 @@ import React from "react";
 import style from "./CardListLi.module.css";
 import Toogle from "../toogle/Toogle";
 
-const CardListLi = ({ list, chooseAwards }) => {
+const CardListLi = ({ list, chooseAwards, collectAwards }) => {
   return (
     <li className={style.Card__list}>
       <div>
@@ -27,6 +27,7 @@ const CardListLi = ({ list, chooseAwards }) => {
               point={list.taskPoints}
               chooseAwards={chooseAwards}
               card={list}
+              collectAwards={collectAwards}
             />
           ) : (
             <button className={style.Card__listBtton}>+</button>
