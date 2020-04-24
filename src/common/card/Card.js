@@ -13,41 +13,46 @@ export const Card = ({
   const [point, setPoint] = React.useState(0);
   console.log("card");
   return (
-    <li className={style.Card__list}>
-      <Popup
-        visible={state.visible}
-        days={days}
-        point={taskPoints}
-        plusPoint={plusPoint}
-      />
-      <div>
-        <img
-          src={require(`../../assets/image/planImg/${imgName}.jpg`)}
-          alt="img"
-          className={style.Card__listImg}
+    <>
+      <li className={style.Card__list}>
+        <Popup
+          visible={state.visible}
+          days={days}
+          point={taskPoints}
+          plusPoint={plusPoint}
         />
-      </div>
-      <div className={style.Card__listFooter}>
-        <div className={style.Card__listText}>
-          <p className={style.Card__listTitle}>{title}</p>
-          <p className={style.Card__listPoint}>{taskPoints} БАЛIВ</p>
-        </div>
         <div>
-          <ButtonPlus
-            onClick={() => {
-              setState({ ...state, visible: !state.visible });
-            }}
-          >
-            {state.visible ? "Ok" : <span className={style.Card__plus}>+</span>}
-          </ButtonPlus>
+          <img
+            src={require(`../../assets/image/planImg/${imgName}.jpg`)}
+            alt="img"
+            className={style.Card__listImg}
+          />
         </div>
-      </div>
-    </li>
+        <div className={style.Card__listFooter}>
+          <div className={style.Card__listText}>
+            <p className={style.Card__listTitle}>{title}</p>
+            <p className={style.Card__listPoint}>{taskPoints} БАЛIВ</p>
+          </div>
+          <div>
+            <ButtonPlus
+              onClick={() => {
+                setState({ ...state, visible: !state.visible });
+              }}
+            >
+              {state.visible ? (
+                "Ok"
+              ) : (
+                <span className={style.Card__plus}>+</span>
+              )}
+            </ButtonPlus>
+          </div>
+        </div>
+      </li>
+    </>
   );
 };
 
 export const Popup = ({ visible, days, point, plusPoint }) => {
-  
   return (
     <CSSTransition
       in={visible}
