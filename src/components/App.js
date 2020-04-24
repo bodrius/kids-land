@@ -35,11 +35,10 @@ export const App = () => {
   return (
     <>
       <div>
-        <Header />
-        <Auth />
-        {/* <CardListUl /> */}
-
-        <AwardsPage />
+        {/* <Header /> */}
+        {/* <Auth /> */}
+        <CardListUl />
+        {/* <AwardsPage /> */}
       </div>
       {routing}
     </>
