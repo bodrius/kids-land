@@ -3,6 +3,7 @@ import style from "./Card.module.css";
 import CardTransition from "././CardTransition.module.css";
 import { CSSTransition } from "react-transition-group";
 import { StaticRouter } from "react-router-dom";
+import { ButtonPlus } from "../buttonPlus/ButtonPlus.js";
 
 export const Card = ({
   data: { imgName, title, taskPoints, days },
@@ -32,14 +33,13 @@ export const Card = ({
           <p className={style.Card__listPoint}>{taskPoints} БАЛIВ</p>
         </div>
         <div>
-          <button
-            className={style.Card__listBtn}
+          <ButtonPlus
             onClick={() => {
               setState({ ...state, visible: !state.visible });
             }}
           >
             {state.visible ? "Ok" : <span className={style.Card__plus}>+</span>}
-          </button>
+          </ButtonPlus>
         </div>
       </div>
     </li>
@@ -47,11 +47,7 @@ export const Card = ({
 };
 
 export const Popup = ({ visible, days, point, plusPoint }) => {
-  const styles = {};
-  if (!visible) {
-    styles.display = "none";
-  }
-
+  
   return (
     <CSSTransition
       in={visible}
@@ -59,7 +55,7 @@ export const Popup = ({ visible, days, point, plusPoint }) => {
       classNames={CardTransition}
       unmountOnExit
     >
-      <ul className={style.Popup} style={styles}>
+      <ul className={style.Popup}>
         {days.map((day, index) => {
           return (
             <CheckBox
