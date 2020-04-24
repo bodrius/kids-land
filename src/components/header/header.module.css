@@ -4,13 +4,22 @@
     box-shadow: 2px 3.464px 8px 0px rgba(29, 29, 27, 0.1);
 
 }
-.contactLink{
+
+.contactLink {
     color: #c2c2cb;
     font-size: 12px;
 }
+<<<<<<< HEAD
 /* .navLinkDiv{
     margin-top: 20px;
 } */
+=======
+
+.navLinkDiv {
+    margin-top: 20px;
+}
+
+>>>>>>> dev
 .headerContainer {
     margin: 0 auto;
     width: 280px;
@@ -29,6 +38,7 @@
 
 .userInfoContainer {
     order: 1;
+    display: flex;
 }
 
 .navContainer {
@@ -51,7 +61,7 @@
     }
 
     .navContainer {
-        
+
         order: 1;
     }
 
@@ -61,11 +71,13 @@
     .headerContainer {
         width: 1200px;
     }
+
     .navigUserInfoContainer {
         width: 640px;
     }
 }
-.navLinkDiv{
+
+.navLinkDiv {
     font-size: 12px;
     /* padding-top: 10px; */
     margin-right: 20px;

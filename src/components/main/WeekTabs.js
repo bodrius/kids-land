@@ -14,7 +14,7 @@ export const WeekTabs = ({ days, choosenDay }) => {
 
   return (
     <nav className={styles.weektabs}>
-      <h3>Дни недели</h3>
+      <h3>Дні тижня</h3>
       {days.map((day) => (
         <div key={day.id} className={selectedDayStyle}>
           <li key={day.id}>{day.label}</li>
