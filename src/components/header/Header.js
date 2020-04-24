@@ -4,9 +4,11 @@ import css from "./header.module.css";
 import { Logo } from "./logo/Logo";
 import { Navigation } from "./navigation/Navigation";
 import { UserInfo } from "./userInfo/UserInfo";
+import { ModaLogout } from "./modalLogout/ModalLogout";
 
-export const Header = () => {
-  const isAuth = true;
+export const Header = (props) => {
+  const isAuth = props.token;
+  // const isAuth = true;
   return (
     <>
       <div className={css.backdrop}>
@@ -18,7 +20,7 @@ export const Header = () => {
             <>
               <div className={css.navigUserInfoContainer}>
                 <div className={css.userInfoContainer}>
-                  <UserInfo />
+                  <UserInfo /> <ModaLogout />
                 </div>
                 <div className={css.navContainer}>
                   <Navigation />
@@ -28,12 +30,7 @@ export const Header = () => {
           )}
           {!isAuth && (
             <div className={css.navLinkDiv}>
-              <NavLink
-                to="contact-us"
-                className={css.contactLink}
-                // eslint-disable-next-line
-                to="#"
-              >
+              <NavLink to="contact-us" className={css.contactLink}>
                 Контакти
               </NavLink>
             </div>

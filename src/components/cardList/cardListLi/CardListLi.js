@@ -1,14 +1,18 @@
 import React from "react";
 import style from "./CardListLi.module.css";
+import Toogle from "../toogle/Toogle";
 
 const CardListLi = (list) => {
-  console.log(list);
   return (
     <li className={style.Card__list}>
       <div>
         <img
-          src={require(`../../../assets/image/planImg/${list.list.imgName}.jpg`)}
           alt="img"
+          src={
+            list.list.source
+              ? require(`../../../assets/image/prizesImg/${list.list.imgName}.jpg`)
+              : require(`../../../assets/image/planImg/${list.list.imgName}.jpg`)
+          }
           className={style.Card__listImg}
         />
       </div>
@@ -19,6 +23,7 @@ const CardListLi = (list) => {
         </div>
         <div className={style.Card__listBt}>
           <button className={style.Card__listBtton}>+</button>
+          <Toogle />
         </div>
       </div>
     </li>

@@ -13,8 +13,10 @@ const reducer = {
   [types.LOGIN_USER]: (state, { payload }) => {
     console.log("reducer --->LOGIN", payload);
     return {
-      userEmail: payload.email,
-      userPassword: payload.password,
+      userEmail: payload.user.email,
+      userToken: payload.token,
+      userTasks: payload.user.tasks,
+      userPoint: payload.user.points,
     };
   },
   [types.REGISTR_USER]: (state, { payload }) => {

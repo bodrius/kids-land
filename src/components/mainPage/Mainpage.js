@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
+import { services } from "../../services/services";
+import { WeekTabContent } from "../main/WeekTabContent";
 
 const days = [
   { id: 1, label: "Понеділок", selected: false },
@@ -31,12 +34,34 @@ const selectDay = (choosenDay) => {
 };
 
 export const MainPage = () => {
+  // console.log('tasks', user.tasks)
+  const userToken = useSelector((state) => state.user.userToken);
+  console.log("userToken ------->", userToken);
+
+  const [tasks, setTasks] = useState([]);
+  console.log("tasks --->!", tasks);
   const day = setMainPath();
   const history = useHistory();
 
   useEffect(() => {
     history.push(day);
   }, [day, history]);
+
+  useEffect(() => {
+    services
+      .getCurrentUser(userToken)
+      .then((data) => setTasks(data.data.user.tasks));
+  }, []);
+
+  // services
+  //   .userSignIn({
+  //     email: "test666@test",
+  //     password: "qwerty",
+  //   })
+  //   .then((data) => {
+  //     console.log("data", data);
+  //     return setTasks(data.data.user.tasks);
+  //   });
 
   return (
     <div>
@@ -49,7 +74,9 @@ export const MainPage = () => {
         )}
       </div>
 
-      <div>{/* <WeekTabContent /> */}</div>
+      <div>
+        <WeekTabContent tasks={tasks} />
+      </div>
     </div>
   );
 };
