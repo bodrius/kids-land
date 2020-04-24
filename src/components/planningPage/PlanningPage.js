@@ -39,9 +39,7 @@ import {services} from "../../services/services"
   }
 
   async function answerFromServer (token, customTask)  {
-    const answer = await services.createUserTask(token, customTask).then((data) => 
-      data.status === 200 && 
-    )
+    const answer = await services.createUserTask(token, customTask);
     
     console.log('answer', answer)
   }
