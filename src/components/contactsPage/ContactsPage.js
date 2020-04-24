@@ -16,8 +16,8 @@ export const ContactsPage = () => {
               className={styles.contacts_img}
               src={contact.foto}
               alt=""
-              width="280"
-              height="245"
+              width="300"
+              height="360"
             />
             <p className={styles.contacts_name}>{contact.name}</p>
             <p className={styles.contacts_possition}>{contact.position}</p>
