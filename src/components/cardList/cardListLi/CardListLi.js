@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./CardListLi.module.css";
 import Toogle from "../toogle/Toogle";
+import ButtonGood from "../../../common/bottonGod/ButtonGood";
+import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
 const CardListLi = (list) => {
   return (
@@ -24,6 +26,8 @@ const CardListLi = (list) => {
         <div className={style.Card__listBt}>
           <button className={style.Card__listBtton}>+</button>
           <Toogle />
+          <ButtonGood />
+          <ButtonBad />
         </div>
       </div>
     </li>
