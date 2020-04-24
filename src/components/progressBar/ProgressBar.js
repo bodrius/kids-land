@@ -46,8 +46,8 @@ const ProgressBar = ({ userPoints, weekPoints }) => {
 };
 
 const mapStateToProps = state => ({
-  userPoints: 300,
-  weekPoints: 800
+  // userPoints: 300,
+  countPoints: 800
 });
 
 export default connect(mapStateToProps, null)(ProgressBar);
