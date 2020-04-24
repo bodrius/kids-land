@@ -39,14 +39,17 @@ export const MainPage = () => {
   }, [day, history]);
 
   return (
-    <div className={s.mainDiv}>
-      {windowWidth < 768 && (
-        <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
-      )}
-      {windowWidth >= 769 && windowWidth < 1200 && (
-        <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
-      )}
-      {/* <WeekTabContent /> */}
+    <div>
+      <div className={s.mainDiv}>
+        {windowWidth < 768 && (
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+        )}
+        {windowWidth >= 769 && windowWidth < 1200 && (
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+        )}
+      </div>
+
+      <div>{/* <WeekTabContent /> */}</div>
     </div>
   );
 };

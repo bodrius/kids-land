@@ -5,10 +5,11 @@ import { services } from "../services/services";
 import { Header } from "./header/Header";
 import { AwardsPage } from "./awardsPage/AwardsPage";
 import { HeaderRouting } from "../components/headerRouting/HeaderRouting";
-import {MainPage} from './mainPage/Mainpage'
+import { MainPage } from "./mainPage/Mainpage";
 
 // import { useEffect } from "react-redux";
 import Auth from "./auth/Auth";
+import { WeekTabContent } from "./main/WeekTabContent";
 
 export const App = () => {
   // services.createUser({email: "test1234@gmail.com", password: "qwertys"}).then(data=>console.log('signUp', data));
@@ -36,6 +37,7 @@ export const App = () => {
     )
     .then((data) => console.log("currentUser", data));
 
+  // const data = services();
   return (
     <>
       <div>
@@ -46,7 +48,8 @@ export const App = () => {
         {/* <CardListUl /> */}
 
         <AwardsPage />
-        <MainPage/>        
+        <MainPage />
+        <WeekTabContent />
       </div>
       {routing}
     </>
