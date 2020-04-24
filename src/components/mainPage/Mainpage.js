@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
-
+import WeekTabContent from './../../weekTabContent/WeekTabContent';
 const days = [
   { id: 1, label: "Понеділок", selected: false },
   { id: 2, label: "Вівторок", selected: false },
@@ -41,13 +41,9 @@ export const MainPage = () => {
 
   return (
     <div className={s.mainDiv}>
-      {windowWidth < 768 && (
         <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
-      )}
-      {windowWidth >= 769 && windowWidth < 1200 && (
-        <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
-      )}
-      {/* <WeekTabContent /> */}
+        {/* <CurrentDay days={setMainPath()}/> */}
+      <WeekTabContent days={setMainPath()}/>
     </div>
   );
 };
