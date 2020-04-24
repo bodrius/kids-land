@@ -32,6 +32,7 @@
 .secondPoints {
   font-weight: bold;
   margin-left: 31px;
+  padding-right: 5px;
 }
 
 @media (min-width: 1280px) {
