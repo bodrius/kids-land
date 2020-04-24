@@ -42,7 +42,7 @@ export const Contacts = [
   },
   {
     foto: foto4,
-    name: "Bogdan Pechenik",
+    name: "Bogdan Pechenyk",
     position: "Front-End Developer",
     description: "Team Lead, React Routing",
     contacts: "bogdanpechenyk@gmail.com",
