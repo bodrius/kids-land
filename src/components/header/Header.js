@@ -7,8 +7,8 @@ import { UserInfo } from "./userInfo/UserInfo";
 import { ModaLogout } from "./modalLogout/ModalLogout";
 
 export const Header = (props) => {
-  // const isAuth = props.token;
-  const isAuth = true;
+  const isAuth = props.token;
+  // const isAuth = true;
   return (
     <>
       <div className={css.backdrop}>

@@ -6,7 +6,7 @@ export const Footer = () => {
     <>
       <div className={styles.footerLogoContainer}>
         <span className={styles.footerlogoLabel}>KidsLike</span>
-        <img className={styles.footerLogoIcon} src={require("./victoryLogo.svg")} />
+        <img alt="logo" className={styles.footerLogoIcon} src={require("./victoryLogo.svg")} />
       </div>
       <div className={styles.footerDevContainer}>
         <span className={styles.footerDevLabel}>
@@ -22,7 +22,7 @@ export const Footer = () => {
     content = (
       <>
         <span className={styles.footerLogoLabel}>KidsLike</span>
-        <img className={styles.footerLogoIcon} src={require("./victoryLogo.svg")} />
+        <img alt="maket" className={styles.footerLogoIcon} src={require("./victoryLogo.svg")} />
         <span className={styles.footerDevLabel}>
           |  Робимо життя батьків і дітей ізі {':)'}  |
         </span>
