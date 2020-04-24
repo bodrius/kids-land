@@ -3,11 +3,8 @@ import React from "react";
 // import { days } from "./days";
 import styles from "./WeekTabs.module.css";
 
-// const getDay = (day) => {
-//   console.log("day", day);
-// };
-
 export const WeekTabs = ({ days, choosenDay }) => {
+  // console.log("data--->", data);
   console.log("choosenDay, day", choosenDay);
   console.log("days", days);
   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
