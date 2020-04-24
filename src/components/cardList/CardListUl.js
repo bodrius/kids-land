@@ -1,5 +1,5 @@
 import React from "react";
-import cardList from "./CardList.json";
+// import cardList from "./CardList.json";
 import CardListLi from "./cardListLi/CardListLi";
 import style from "./CardListUl.module.css";
 

@@ -24,8 +24,8 @@ import Auth from "../auth/Auth";
 // );import { NotFound } from '../pageNoteFound/NotFound';
 
 export const HeaderRouting = (token) => {
-  // if (token) {
-    if (true) {
+  if (token) {
+    // if (true) {
     return (
       <Suspense fallback={<LoaderUi />}>
         <Switch>
