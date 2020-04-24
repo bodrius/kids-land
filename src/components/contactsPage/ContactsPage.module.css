@@ -45,7 +45,7 @@
 .contacts_card:hover {
   background-color: #efbb43;
   border-radius: 9px;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .contacts_img {
@@ -55,7 +55,6 @@
   background-position: center;
   height: 300px;
   width: 100%;
-  border-radius: 7px;
 }
 
 .contacts_name {
@@ -117,7 +116,7 @@
 
 @media (min-width: 1280px) {
   .contacts {
-    padding-top: 130px;
+    padding-top: 50px;
   }
 
   .contacts_all_card {
