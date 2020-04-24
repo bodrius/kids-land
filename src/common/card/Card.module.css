@@ -1,6 +1,7 @@
 * {
   outline: none;
 }
+ 
 .Card__list {
   display: flex;
   flex-wrap: wrap;
@@ -43,31 +44,16 @@
 .Card__listText {
   margin-left: 18px;
 }
-.Card__listBtn {
-  margin-right: 18px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: "Montserrat";
-  color: #8ec63f;
-  text-transform: uppercase;
-  line-height: 0.808;
-}
 
-.card__listUl {
+.Card__listUl {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
   width: 100%;
+  margin: 0 auto;
 }
 
 .Popup {
@@ -88,6 +74,14 @@
   font-weight: 500;
 }
 
+@media (min-width: 768px) {
+  .Card__listUl {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 582px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1199px) {
   .Card__list:nth-child(2n + 1) {
     margin-right: 22px;
@@ -95,6 +89,8 @@
   .Card__list:nth-last-child(-n + 2) {
     margin-bottom: 0;
   }
+
+  
 }
 @media (min-width: 1200px) {
   .Card__list {
@@ -105,5 +101,9 @@
   }
   .Card__list:nth-last-child(-n + 4) {
     margin-bottom: 0;
+  }
+
+  .Card__listUl {
+    max-width: 1186px;
   }
 }

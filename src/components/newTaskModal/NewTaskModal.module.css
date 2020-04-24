@@ -18,7 +18,11 @@ html {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
+<<<<<<< HEAD
     z-index: 880;
+=======
+    z-index: 888;
+>>>>>>> dev
 }
 
 .content {

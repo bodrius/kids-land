@@ -8,7 +8,7 @@ import { Footer } from '../Footer/Footer'
 import { NewTaskModal } from "../newTaskModal/NewTaskModal";
 import {services} from "../../services/services"
 
-export const PlanningPage = () => {
+ const PlanningPage = () => {
   const {user: {tasks}} = data;
   const [allUserPoints, setAllUserPoints] = React.useState(0);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
@@ -70,3 +70,6 @@ export const PlanningPage = () => {
     </>
   );
 };
+
+
+export default PlanningPage;

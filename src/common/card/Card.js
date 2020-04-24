@@ -3,7 +3,7 @@ import style from "./Card.module.css";
 import CardTransition from "././CardTransition.module.css";
 import { CSSTransition } from "react-transition-group";
 import { StaticRouter } from "react-router-dom";
-import { Button } from "../button/Button.js";
+import { ButtonPlus } from "../buttonPlus/ButtonPlus.js";
 
 export const Card = ({
   data: { imgName, title, taskPoints, days },
@@ -13,45 +13,46 @@ export const Card = ({
   const [point, setPoint] = React.useState(0);
   console.log("card");
   return (
-    <li className={style.Card__list}>
-      <Popup
-        visible={state.visible}
-        days={days}
-        point={taskPoints}
-        plusPoint={plusPoint}
-      />
-      <div>
-        <img
-          src={require(`../../assets/image/planImg/${imgName}.jpg`)}
-          alt="img"
-          className={style.Card__listImg}
+    <>
+      <li className={style.Card__list}>
+        <Popup
+          visible={state.visible}
+          days={days}
+          point={taskPoints}
+          plusPoint={plusPoint}
         />
-      </div>
-      <div className={style.Card__listFooter}>
-        <div className={style.Card__listText}>
-          <p className={style.Card__listTitle}>{title}</p>
-          <p className={style.Card__listPoint}>{taskPoints} БАЛIВ</p>
-        </div>
         <div>
-          <Button
-            onClick={() => {
-              setState({ ...state, visible: !state.visible });
-            }}
-          >
-            {state.visible ? "Ok" : <span className={style.Card__plus}>+</span>}
-          </Button>
+          <img
+            src={require(`../../assets/image/planImg/${imgName}.jpg`)}
+            alt="img"
+            className={style.Card__listImg}
+          />
         </div>
-      </div>
-    </li>
+        <div className={style.Card__listFooter}>
+          <div className={style.Card__listText}>
+            <p className={style.Card__listTitle}>{title}</p>
+            <p className={style.Card__listPoint}>{taskPoints} БАЛIВ</p>
+          </div>
+          <div>
+            <ButtonPlus
+              onClick={() => {
+                setState({ ...state, visible: !state.visible });
+              }}
+            >
+              {state.visible ? (
+                "Ok"
+              ) : (
+                <span className={style.Card__plus}>+</span>
+              )}
+            </ButtonPlus>
+          </div>
+        </div>
+      </li>
+    </>
   );
 };
 
 export const Popup = ({ visible, days, point, plusPoint }) => {
-  const styles = {};
-  if (!visible) {
-    styles.display = "none";
-  }
-
   return (
     <CSSTransition
       in={visible}
@@ -59,7 +60,7 @@ export const Popup = ({ visible, days, point, plusPoint }) => {
       classNames={CardTransition}
       unmountOnExit
     >
-      <ul className={style.Popup} style={styles}>
+      <ul className={style.Popup}>
         {days.map((day, index) => {
           return (
             <CheckBox
