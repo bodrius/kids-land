@@ -14,16 +14,18 @@ export const AwardsPage = () => {
     setModal(false);
   }, []);
 
-  useEffect(async () => {
-    const shit = await services.getCurrentUser(
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
-      "5e9f6dee1e44675f04ac0fde"
-    );
+  useEffect(() => {
+    (async () => {
+      const shit = await services.getCurrentUser(
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
+        "5e9f6dee1e44675f04ac0fde"
+      );
 
-    console.log("shit", shit);
-    const userPoints = shit.data.user.points;
-    setPoints(userPoints);
-    console.log("userPoints", userPoints);
+      console.log("shit", shit);
+      const userPoints = shit.data.user.points;
+      setPoints(userPoints);
+      console.log("userPoints", userPoints);
+    })();
   }, []);
 
   const openModal = () => {
