@@ -1,9 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
+<<<<<<< HEAD
 import WeekTabContent from './../../weekTabContent/WeekTabContent';
+=======
+import { services } from "../../services/services";
+import { WeekTabContent } from "../main/WeekTabContent";
+
+>>>>>>> dev
 const days = [
   { id: 1, label: "Понеділок", selected: false },
   { id: 2, label: "Вівторок", selected: false },
@@ -31,7 +38,13 @@ const selectDay = (choosenDay) => {
 };
 console.log("days++++>", days)
 
-export const MainPage = () => {
+ const MainPage = () => {
+  // console.log('tasks', user.tasks)
+  const userToken = useSelector((state) => state.user.userToken);
+  console.log("userToken ------->", userToken);
+
+  const [tasks, setTasks] = useState([]);
+  console.log("tasks --->!", tasks);
   const day = setMainPath();
   const history = useHistory();
 
@@ -39,11 +52,45 @@ export const MainPage = () => {
     history.push(day);
   }, [day, history]);
 
+  useEffect(() => {
+    services
+      .getCurrentUser(userToken)
+      .then((data) => setTasks(data.data.user.tasks));
+  }, []);
+
+  // services
+  //   .userSignIn({
+  //     email: "test666@test",
+  //     password: "qwerty",
+  //   })
+  //   .then((data) => {
+  //     console.log("data", data);
+  //     return setTasks(data.data.user.tasks);
+  //   });
+
   return (
+<<<<<<< HEAD
     <div className={s.mainDiv}>
         <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
         {/* <CurrentDay days={setMainPath()}/> */}
       <WeekTabContent days={setMainPath()}/>
+=======
+    <div>
+      <div className={s.mainDiv}>
+        {windowWidth < 768 && (
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+        )}
+        {windowWidth >= 769 && windowWidth < 1200 && (
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+        )}
+      </div>
+
+      <div>
+        <WeekTabContent tasks={tasks} />
+      </div>
+>>>>>>> dev
     </div>
   );
 };
+
+export default MainPage;
