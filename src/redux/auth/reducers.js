@@ -7,6 +7,7 @@ const initialState = {
   userToken: null,
   userTasks: null,
   userPoint: null,
+  userId: null,
 };
 
 const reducer = {
@@ -17,6 +18,7 @@ const reducer = {
       userToken: payload.token,
       userTasks: payload.user.tasks,
       userPoint: payload.user.points,
+      userId: payload.user._id,
     };
   },
   [types.REGISTR_USER]: (state, { payload }) => {
@@ -26,6 +28,7 @@ const reducer = {
       userToken: payload.token,
       userTasks: payload.user.tasks,
       userPoint: payload.user.points,
+      userId: payload.user._id,
     };
   },
   [types.USER_SIGNOUT]: () => initialState,
