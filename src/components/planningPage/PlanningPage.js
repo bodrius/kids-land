@@ -57,7 +57,6 @@ import {services} from "../../services/services"
     <CardList
       plusPoint={plusPoint}
       data={tasks}
-      
     />
     <Footer/>
     </>

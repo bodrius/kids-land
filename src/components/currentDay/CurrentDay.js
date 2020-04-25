@@ -15,10 +15,10 @@ const CurrentDay = ({ days, date }) => {
 
 export default CurrentDay;
 
-{/* <CurrentWeekRange/>
-<CurrentDay/>
-<ButtonCurrentWeekRange/>
-<CurrentWeekPlaning/> */}
+//  <CurrentWeekRange/>
+// <CurrentDay/>
+// <ButtonCurrentWeekRange/>
+// <CurrentWeekPlaning/> 
 
 // import CurrentWeekPlaning from '../currentDay/CurrentWeekPlaning'
 // import CurrentDay from '../currentDay/CurrentDay'
