@@ -1,14 +1,37 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import css from "./awardsPage.module.css";
-import awardsLogo from "../../assets/image/icon/present box/gift-box.svg";
+import awardsLogo from "../../assets/image/icon/presentBox/gift-box.svg";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
 import CardListUl from "./../cardList/CardListUl";
 import ProgressBar from "./../progressBar/ProgressBar";
 
-export const AwardsPage = () => {
+ const AwardsPage = () => {
   const [points, setPoints] = useState("");
   const [modal, setModal] = useState(false);
+  const [toggle, setToggle] = useState([]);
+
+  const chooseAwards = (title, imgName, isOn) => {
+    if (isOn) {
+      setToggle(toggle.filter((elem) => elem.imgName != imgName));
+    } else {
+      setToggle([...toggle, { title, imgName }]);
+    }
+  };
+
+  const { userToken, userId, userPoint } = useSelector((state) =>  {
+    return state.user
+  });
+  
+
+  const collectAwards = (updatedPoints) => {
+    services.updateUserPoints(userToken, userId, updatedPoints);
+    setPoints(updatedPoints)
+  }
+
+  // LOGO & ESC MODAL
+
 
   useEffect(() => {
     setModal(false);
@@ -16,15 +39,10 @@ export const AwardsPage = () => {
 
   useEffect(() => {
     (async () => {
-      const shit = await services.getCurrentUser(
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWY1Zjk2MWU0NDY3NWYwNGFjMGZkNCIsImlhdCI6MTU4NzUwMzQxMCwiZXhwIjoxNTg4MTA4MjEwfQ.YCQctkw76xPB6uv9RsoMae_MsTEVQb1huaXKrfkqHzk",
-        "5e9f6dee1e44675f04ac0fde"
-      );
-
-      console.log("shit", shit);
+      const shit = await services.getCurrentUser(userToken);
       const userPoints = shit.data.user.points;
       setPoints(userPoints);
-      console.log("userPoints", userPoints);
+      // services.updateUserPoints(userToken, userId, 100);
     })();
   }, []);
 
@@ -45,39 +63,6 @@ export const AwardsPage = () => {
       };
     }, [ref]);
   }
-
-  const prizes = [
-    {
-      title: "milk",
-      imgName:
-        "https://cdn.andyroid.net/website/wp-content/uploads/2015/12/mr-square-icon.png",
-      taskPoints: 100,
-    },
-    {
-      title: "i want milk",
-      imgName:
-        "https://cdn.andyroid.net/website/wp-content/uploads/2015/12/mr-square-icon.png",
-      taskPoints: 100,
-    },
-    {
-      title: "more milk",
-      imgName:
-        "https://cdn.andyroid.net/website/wp-content/uploads/2015/12/mr-square-icon.png",
-      taskPoints: 100,
-    },
-    {
-      title: "moreeeeeee milk",
-      imgName:
-        "https://cdn.andyroid.net/website/wp-content/uploads/2015/12/mr-square-icon.png",
-      taskPoints: 100,
-    },
-    {
-      title: "I SAID MOAR MILK",
-      imgName:
-        "https://cdn.andyroid.net/website/wp-content/uploads/2015/12/mr-square-icon.png",
-      taskPoints: 100,
-    },
-  ];
 
   const cardList = [
     {
@@ -144,22 +129,29 @@ export const AwardsPage = () => {
             </div>
           </div>
         </div>
-        <CardListUl cardList={cardList} />
+        <CardListUl cardList={cardList} chooseAwards={chooseAwards} collectAwards={collectAwards}/>
         <div className={css.awardsButtonWrapper}>
           {modal ? (
-            <AwardsModal
-              prizes={prizes}
-              openModaled={modal}
-              useOutsideAlerter={useOutsideAlerter}
-            />
+            <>
+              <AwardsModal
+                prizes={toggle}
+                openModaled={modal}
+                useOutsideAlerter={useOutsideAlerter}
+              />
+              <button className={css.awardsButton} onClick={openModal} disabled>
+                Підтвердити
+              </button>
+            </>
           ) : (
-            !modal
+            <button className={css.awardsButton} onClick={openModal}>
+              Підтвердити
+            </button>
           )}
-          <button className={css.awardsButton} onClick={openModal}>
-            Підтвердити
-          </button>
         </div>
       </div>
     </div>
   );
 };
+
+
+export default AwardsPage;
