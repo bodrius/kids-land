@@ -10,12 +10,6 @@ import {services} from "../../services/services"
 import styles from './styles.module.css'
 
 
-
-// import CurrentWeekPlaning from '../currentDay/CurrentWeekPlaning'
-// import CurrentDay from '../currentDay/CurrentDay'
-// import CurrentWeekRange from '../currentDay/CurrentWeekRange'
-// import ButtonCurrentWeekRange from '../CurrentWeekRange/ButtonCurrentWeekRange'
-
  const PlanningPage = () => {
   const {user: {tasks}} = data;
   const [allUserPoints, setAllUserPoints] = React.useState(0);
@@ -62,12 +56,7 @@ import styles from './styles.module.css'
     {modalIsOpen && <NewTaskModal onClose={handleCloseTaskModal} onHandleCollectCustomTask = {handleCollectCustomTask}/>}
     <div className={styles.topComponentsContainer}>
 
-
-
-      {/* <CurrentWeekRange/>
-<CurrentDay/>
-<ButtonCurrentWeekRange/>
-<CurrentWeekPlaning/> */}
+      
     {/* <Компонент Олега - CurrentDay/> */}
     <PlanningPoints />
     <AddCustomTask handleOpenTaskModal={handleOpenTaskModal}/>
