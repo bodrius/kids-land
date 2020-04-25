@@ -33,5 +33,12 @@ export const HeaderRouting = (token) => {
         </Switch>
     );
   }
-  return <Auth />;
+  return <> <Auth />;
+
+
+
+  {/* <Suspense fallback={<LoaderUi />}>
+  <Route path="/contact-us" component={ContactsPage} />
+  </Suspense> */}
+  </>
 };
