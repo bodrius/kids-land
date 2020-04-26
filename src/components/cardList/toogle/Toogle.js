@@ -12,9 +12,9 @@ function Toogle({ chooseAwards, card, collectAwards }) {
   //   .then((data) => console.log("user", data));
   const [on, setOnState] = React.useState(false);
 
-  React.useEffect(() => {
-    console.log("UsEfFeCtuserPoint", userPoint);
-  }, [on]);
+  // React.useEffect(() => {
+  //   console.log("UsEfFeCtuserPoint", userPoint);
+  // }, [on]);
 
   const toggle = () => {
     if (userPoint >= card.taskPoints) {
