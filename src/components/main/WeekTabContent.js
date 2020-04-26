@@ -13,7 +13,7 @@ import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
 
 export const WeekTabContent = ({ tasks }) => {
   // const [tasks, setTasks] = useState([]);
-
+console.log('tasks', tasks)
   //   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
   // services

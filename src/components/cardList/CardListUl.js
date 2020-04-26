@@ -5,6 +5,7 @@ import style from "./CardListUl.module.css";
 
 
 const CardListUl = ({cardList, chooseAwards, collectAwards}) => {
+  console.log('cardList-------', cardList)
   return (
     <ul className={style.card__listUL}>
       {cardList.length !== 0 &&
