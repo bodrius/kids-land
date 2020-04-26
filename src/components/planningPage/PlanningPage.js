@@ -6,7 +6,9 @@ import { PlanningPoints } from "../PlanningPoints/PlanningPoints";
 import { AddCustomTask } from "../AddCustomTask/AddCustomTask";
 import { Footer } from "../Footer/Footer";
 import { NewTaskModal } from "../newTaskModal/NewTaskModal";
-import { services } from "../../services/services";
+import {services} from "../../services/services"
+import styles from './styles.module.css'
+
 
 const PlanningPage = () => {
   const [tasks, setTasks] = React.useState(data.user.tasks);
@@ -56,16 +58,20 @@ const PlanningPage = () => {
 
   return (
     <>
-      {modalIsOpen && (
-        <NewTaskModal
-          onClose={handleCloseTaskModal}
-          onHandleCollectCustomTask={handleCollectCustomTask}
-        />
-      )}
-      <PlanningPoints />
-      <AddCustomTask handleOpenTaskModal={handleOpenTaskModal} />
-      <CardList plusPoint={plusPoint} data={tasks} />
-      <Footer />
+    {modalIsOpen && <NewTaskModal onClose={handleCloseTaskModal} onHandleCollectCustomTask = {handleCollectCustomTask}/>}
+    <div className={styles.topComponentsContainer}>
+
+      
+    {/* <Компонент Олега - CurrentDay/> */}
+    <PlanningPoints />
+    <AddCustomTask handleOpenTaskModal={handleOpenTaskModal}/>
+    </div>
+    <CardList
+      plusPoint={plusPoint}
+      data={tasks}
+      
+    />
+    <Footer/>
     </>
   );
 };
