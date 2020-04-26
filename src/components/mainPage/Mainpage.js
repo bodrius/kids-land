@@ -33,7 +33,7 @@ const selectDay = (choosenDay) => {
   return days;
 };
 
-export const MainPage = () => {
+ const MainPage = () => {
   // console.log('tasks', user.tasks)
   const userToken = useSelector((state) => state.user.userToken);
   console.log("userToken ------->", userToken);
@@ -80,3 +80,5 @@ export const MainPage = () => {
     </div>
   );
 };
+
+export default MainPage;
