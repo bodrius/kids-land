@@ -1,0 +1,9 @@
+.userName {
+    display: block;
+    width: 76px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: 600;
+    color: rgb(31, 31, 31);
+}

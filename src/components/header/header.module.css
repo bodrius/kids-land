@@ -16,9 +16,10 @@
 
 .headerContainer {
     margin: 0 auto;
-    width: 280px;
+    width: 230px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
 }
 
@@ -26,6 +27,7 @@
     width: 120px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .userInfoContainer {
