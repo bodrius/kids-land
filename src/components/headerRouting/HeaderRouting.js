@@ -20,7 +20,6 @@ const Auth = lazy(() =>
 );
 
 export const HeaderRouting = (token) => {
-
   if (token) {
     // if (true) {
     return (
@@ -37,15 +36,13 @@ export const HeaderRouting = (token) => {
   }
   return (
     <>
-    <Suspense fallback={<LoaderUi />}>
-      <Switch>
-    <Route path="/contact-us" component={ContactsPage} />
-      <Route axact path="/" component={Auth} />
-      <Redirect to="/" />
-      </Switch>
+      <Suspense fallback={<LoaderUi />}>
+        <Switch>
+          <Route path="/contact-us" component={ContactsPage} />
+          <Route axact path="/" component={Auth} />
+          <Redirect to="/" />
+        </Switch>
       </Suspense>
-
-     
     </>
   );
 };
