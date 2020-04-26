@@ -11,14 +11,14 @@ const CurrentWeekRange = () => {
       "сiчня",
       "лютого",
       "березеня",
-      "квiтня",
+      "квітня",
       "травня",
       "червня",
       "липня",
       "серпня",
       "вересеня",
       "жовтня",
-      "листопадя",
+      "листопада",
       "грудня",
     ];
 
@@ -29,7 +29,7 @@ const CurrentWeekRange = () => {
   return (
     <div className={styles.wrapper}>
       <p className={styles.week}>
-        Тиждень: {Number(startOfWeek)}-{Number(endOfWeek)} {month}
+        Тиждень: {Number(startOfWeek)} - {Number(endOfWeek)} {month}
       </p>
     </div>
   );

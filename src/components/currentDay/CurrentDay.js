@@ -1,7 +1,15 @@
 import React from "react";
 import styles from "./CurrentDay.module.css";
+import * as moment from "moment";
+import "moment/locale/uk";
+import { string } from "prop-types";
+
+//{ day=moment().format('dddd'), date=moment().format('L') }
+
+console.log(moment(1518116057189).isoWeekday())
 
 const CurrentDay = ({ days, date }) => {
+  
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.task}>Мoї завдання:</h2>
