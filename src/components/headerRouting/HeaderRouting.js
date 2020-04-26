@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { LoaderUi } from "../ui/loader/Loader";
 import Auth from "../auth/Auth";
 
-const {MainPage} = lazy(() =>
+const MainPage = lazy(() =>
   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
 );
 const PlanningPage = lazy(() =>
@@ -17,7 +17,6 @@ const ContactsPage = lazy(() =>
   import("../contactsPage/ContactsPage" /* webpackChunkName: 'ContactsPage'*/)
 );
 
-
 export const HeaderRouting = (token) => {
   if (token) {
     // if (true) {
@@ -29,16 +28,17 @@ export const HeaderRouting = (token) => {
           <Route path="/awards" component={AwardsPage} />
           <Route path="/contact-us" component={ContactsPage} />
           <Redirect to="/" />
-      </Suspense>
-        </Switch>
+        </Suspense>
+      </Switch>
     );
   }
-  return <> <Auth />;
-
-
-
-  {/* <Suspense fallback={<LoaderUi />}>
+  return (
+    <>
+      {" "}
+      <Auth />;
+      {/* <Suspense fallback={<LoaderUi />}>
   <Route path="/contact-us" component={ContactsPage} />
   </Suspense> */}
-  </>
+    </>
+  );
 };

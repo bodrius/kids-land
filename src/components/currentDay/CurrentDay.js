@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CurrentDay.module.css";
 
-const CurrentDay = ({ days, date }) => {
+const CurrentDay = ({ days, date, }) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.task}>Мoї завдання:</h2>
