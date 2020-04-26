@@ -1,19 +1,17 @@
 import React from "react";
 import styles from "./ButtonCurrentWeekRange.module.css";
+import {NavLink} from 'react-router-dom'
 
 const ButtonCurrentWeekRange = () => {
-  const andWhat = () => {
-    alert("а шо дальше?");
-  };
-
+  
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>На сьогодні завдань немає</h2>
-      {/* <SomeLink to="/some"> */}
-      <button onClick={andWhat} type="button" className={styles.button}>
+      <NavLink to="/contact-us">
+      <button type="button" className={styles.button}>
         Запланувати нові задачі
       </button>
-      {/* </SomeLink> */}
+      </NavLink>
     </div>
   );
 };

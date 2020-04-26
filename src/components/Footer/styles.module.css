@@ -1,0 +1,78 @@
+/* footer */
+.footer {
+  font-size: 9px;
+  font-family: "Montserrat";
+  line-height: 21px;
+  letter-spacing: 2px;
+  display: flex;
+}
+.footerLogoContainer {
+  width: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerLogoIcon {
+  height: 14px;
+}
+.footerDevLabelSmile {
+  font-size: 18px;
+}
+.footerDevLabel,
+.footerDevCredit,
+.footerDevYear {
+  color: rgb(133, 133, 152);
+}
+/* footer */
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .footerLogoLabel {
+    color: #000000;
+  }
+  .footerDevContainer {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footerLogoIcon {
+    margin-left: 4px;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    color: rgb(133, 133, 152);
+    justify-content: center;
+    align-items: center;
+  }
+  .footerDevCredit {
+    margin-left: 4px;
+  }
+  .footerLogoIcon {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .footer {
+    margin: 60px 0px 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    width: 1200px;
+    margin: 0 auto;
+    margin: 50px 0px 40px;
+    justify-content: flex-end;
+  }
+}

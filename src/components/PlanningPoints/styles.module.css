@@ -1,0 +1,46 @@
+/* PlanningPoints */
+.planningPointsScore {
+  border-radius: 50%;
+  background-color: rgb(142, 198, 63);
+  width: 32px;
+  height: 32px;
+  margin: 0px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  line-height: 23px;
+  letter-spacing: 1px;
+}
+.planningPointsScoreLabel {
+  font-size: 11px;
+  font-family: "Montserrat";
+  color: rgb(133, 133, 152);
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+/* PlanningPoints */
+
+
+@media (max-width: 768px) {
+  .planningPointsContainer {
+    height: 60px;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .planningPointsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
