@@ -1,6 +1,7 @@
 import React from "react";
 import * as moment from "moment";
 import styles from "./CurrentWeekRange.module.css";
+import "moment/locale/uk";
 
 const CurrentWeekRange = () => {
   const startOfWeek = moment().startOf("week").format("DD");
@@ -22,7 +23,9 @@ const CurrentWeekRange = () => {
       "грудня",
     ];
 
-    return monthes[moment().get("M")];
+    if (startOfWeek >= endOfWeek) {
+      return monthes[moment().get("M") + 1];
+    } else return monthes[moment().get("M")];
   }
   const month = getThisMonth(moment().get("M"));
 
@@ -36,5 +39,3 @@ const CurrentWeekRange = () => {
 };
 
 export default CurrentWeekRange;
-
-//show in main

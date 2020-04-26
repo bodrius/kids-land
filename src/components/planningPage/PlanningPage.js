@@ -2,52 +2,64 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { CardList } from "../../common/cardList/CardList";
 import data from "../../common/cardList/data.json";
-import {PlanningPoints} from '../PlanningPoints/PlanningPoints'
-import {AddCustomTask} from '../AddCustomTask/AddCustomTask'
-import { Footer } from '../Footer/Footer'
+import { PlanningPoints } from "../PlanningPoints/PlanningPoints";
+import { AddCustomTask } from "../AddCustomTask/AddCustomTask";
+import { Footer } from "../Footer/Footer";
 import { NewTaskModal } from "../newTaskModal/NewTaskModal";
 import {services} from "../../services/services"
 import styles from './styles.module.css'
 
 
- const PlanningPage = () => {
-  const {user: {tasks}} = data;
+const PlanningPage = () => {
+  const [tasks, setTasks] = React.useState(data.user.tasks);
   const [allUserPoints, setAllUserPoints] = React.useState(0);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const [customTask, setCustomTask] = React.useState({});
-  const token = useSelector((state) => state.user.userToken);
+  const userToken = useSelector((state) => state.user.userToken);
+  console.log('userToken', userToken)
   const total = tasks.reduce((prev, current) => {
     const days = current.days.filter((day) => day.isActive === true).length;
     return prev + current.taskPoints * days;
   }, 0);
-  console.log("total", total);
+  // console.log("total", total);
   const plusPoint = (p) => {
-    console.log("p", p);
+    // console.log("p", p);
     setAllUserPoints(allUserPoints + p);
   };
-  console.log('allUserPoints', allUserPoints)
+  // console.log('allUserPoints', allUserPoints)
 
   function handleOpenTaskModal() {
     setModalIsOpen(true);
   }
 
-  function handleCloseTaskModal () {
+  function handleCloseTaskModal() {
     setModalIsOpen(false);
   }
 
-  function handleCollectCustomTask (task) {
+  function handleCollectCustomTask(task) {
     setCustomTask(task);
-
   }
 
-  async function anwerFromServer (token, customTask)  {
-    const answer = await services.createUserTask(token, customTask);
+  async function answerFromServer (userToken, customTask)  {
+
+    const answer = await services.createUserTask(userToken, customTask)
+    // .then(({data: {tasks}, status}) => {
+    //   status === 200 && console.log('tasks', tasks.map((task) => {
+    //     return `${task.title}, ${task.imgName}`
+    //   }))
+    // });
+    
+    // .then((data) => data.status.ok && action для записи в стор)
     console.log('answer', answer)
   }
 
+  // иф статус ОК - добавить в стор
+  // обновить значение в сторе
+
+
   React.useEffect(() => {
-  // console.log('customTask', customTask)
-  anwerFromServer(token, customTask)
+    answerFromServer(userToken, customTask)
+    console.log('customTask', customTask)
   }, [customTask])
 
 
