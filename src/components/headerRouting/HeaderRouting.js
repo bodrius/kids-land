@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { LoaderUi } from "../ui/loader/Loader";
 
-const MainPage = lazy(() =>
+const { MainPage } = lazy(() =>
   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
 );
 const PlanningPage = lazy(() =>
