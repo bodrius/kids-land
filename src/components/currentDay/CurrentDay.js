@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./CurrentDay.module.css";
 import * as moment from "moment";
 import "moment/locale/uk";
-import { string } from "prop-types";
 
 //{ day=moment().format('dddd'), date=moment().format('L') }
 
-console.log(moment(1518116057189).isoWeekday())
+// console.log('Date.now', Date.now())
+// console.log(moment(1518116057189).format("dddd"))
 
 const CurrentDay = ({ days, date }) => {
   

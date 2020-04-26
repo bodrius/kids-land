@@ -14,11 +14,6 @@ const CurrentWeekPlaning = () => {
         <span className={styles.week}>
           {" "}
           {startOfWeek} - {endOfWeek}{" "}
-          {/* <img 
-          className={styles.arrowDown}
-            src={require("../../assets/image/icon/down/arrow_drop_down-24px.svg")}
-            alt="arrow down"
-          /> */}
         </span>
       </p>
     </>
@@ -26,5 +21,3 @@ const CurrentWeekPlaning = () => {
 };
 
 export default CurrentWeekPlaning;
-
-//need show in planing rout section

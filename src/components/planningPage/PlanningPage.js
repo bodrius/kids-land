@@ -7,6 +7,8 @@ import {AddCustomTask} from '../AddCustomTask/AddCustomTask'
 import { Footer } from '../Footer/Footer'
 import { NewTaskModal } from "../newTaskModal/NewTaskModal";
 import {services} from "../../services/services"
+import styles from './styles.module.css'
+
 
  const PlanningPage = () => {
   const {user: {tasks}} = data;
@@ -52,12 +54,17 @@ import {services} from "../../services/services"
   return (
     <>
     {modalIsOpen && <NewTaskModal onClose={handleCloseTaskModal} onHandleCollectCustomTask = {handleCollectCustomTask}/>}
+    <div className={styles.topComponentsContainer}>
+
+      
+    {/* <Компонент Олега - CurrentDay/> */}
     <PlanningPoints />
     <AddCustomTask handleOpenTaskModal={handleOpenTaskModal}/>
+    </div>
     <CardList
       plusPoint={plusPoint}
       data={tasks}
-
+      
     />
     <Footer/>
     </>
