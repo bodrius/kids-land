@@ -8,9 +8,13 @@ import CardListUl from "./../cardList/CardListUl";
 import ProgressBar from "./../progressBar/ProgressBar";
 
  const AwardsPage = () => {
-  const [points, setPoints] = useState("");
+   const { userToken, userId, userPoint } = useSelector((state) =>  {
+     return state.user
+   });
+  const [points, setPoints] = useState(userPoint);
   const [modal, setModal] = useState(false);
   const [toggle, setToggle] = useState([]);
+
 
   const chooseAwards = (title, imgName, isOn) => {
     if (isOn) {
@@ -19,15 +23,12 @@ import ProgressBar from "./../progressBar/ProgressBar";
       setToggle([...toggle, { title, imgName }]);
     }
   };
-
-  const { userToken, userId, userPoint } = useSelector((state) =>  {
-    return state.user
-  });
   
 
   const collectAwards = (updatedPoints) => {
     services.updateUserPoints(userToken, userId, updatedPoints);
     setPoints(updatedPoints)
+    console.log('points', points)
   }
 
   // LOGO & ESC MODAL
@@ -38,18 +39,34 @@ import ProgressBar from "./../progressBar/ProgressBar";
   }, []);
 
   useEffect(() => {
-    (async () => {
-      const shit = await services.getCurrentUser(userToken);
-      console.log('shit', shit)
-      const userPoints = shit.data.user.points;
-      setPoints(userPoints);
-      // services.updateUserPoints(userToken, userId, 100);
-    })();
+    const onKeyDown = (e) => {
+      console.log("e", e.key);
+      if (e.keyCode === 27) {
+        setModal(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    };
   }, []);
 
   const openModal = () => {
     setModal(true);
   };
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const shit = await services.getCurrentUser(userToken);
+  //     console.log('shit', shit)
+  //     const userPoints = shit.data.user.points;
+  //     setPoints(userPoints)
+  //     // services.updateUserPoints(userToken, userId, 100);
+  //   })();
+  // }, []);
+
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
