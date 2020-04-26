@@ -83,5 +83,4 @@ const PlanningPage = () => {
   );
 };
 
-
 export default PlanningPage;
