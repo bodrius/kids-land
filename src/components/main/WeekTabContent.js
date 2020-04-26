@@ -11,8 +11,7 @@ import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
 // import { ProgressBar } from "./ path / ProgressBar";
 // import { CardList } from "./ path / CardList";
 
-export const WeekTabContent = ({ tasks, today, date }) => {
-  // console.log("tasks --->", tasks);
+export const WeekTabContent = ({ tasks }) => {
   // const [tasks, setTasks] = useState([]);
 
   //   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
@@ -38,7 +37,7 @@ export const WeekTabContent = ({ tasks, today, date }) => {
       <div className={styles.mainHeader}>
         {/* ========= CurrentDay ========== */}
         <div>
-          <CurrentDay days={today} date={date} />
+          <CurrentDay />
         </div>
 
         {/* ========= ProgressBar ========== */}
