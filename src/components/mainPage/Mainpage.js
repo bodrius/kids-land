@@ -4,13 +4,9 @@ import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
-<<<<<<< HEAD
-import WeekTabContent from './../../weekTabContent/WeekTabContent';
-=======
 import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 
->>>>>>> dev
 const days = [
   { id: 1, label: "Понеділок", selected: false },
   { id: 2, label: "Вівторок", selected: false },
@@ -40,8 +36,8 @@ console.log("days++++>", days)
 
  const MainPage = () => {
   // console.log('tasks', user.tasks)
-  const userToken = useSelector((state) => state.user.userToken);
-  console.log("userToken ------->", userToken);
+  const {userToken, userPoints} = useSelector((state) => state.user);
+  console.log("userToken ------->", userPoints);
 
   const [tasks, setTasks] = useState([]);
   console.log("tasks --->!", tasks);
@@ -58,23 +54,7 @@ console.log("days++++>", days)
       .then((data) => setTasks(data.data.user.tasks));
   }, []);
 
-  // services
-  //   .userSignIn({
-  //     email: "test666@test",
-  //     password: "qwerty",
-  //   })
-  //   .then((data) => {
-  //     console.log("data", data);
-  //     return setTasks(data.data.user.tasks);
-  //   });
-
   return (
-<<<<<<< HEAD
-    <div className={s.mainDiv}>
-        <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
-        {/* <CurrentDay days={setMainPath()}/> */}
-      <WeekTabContent days={setMainPath()}/>
-=======
     <div>
       <div className={s.mainDiv}>
         {windowWidth < 768 && (
@@ -88,7 +68,6 @@ console.log("days++++>", days)
       <div>
         <WeekTabContent tasks={tasks} />
       </div>
->>>>>>> dev
     </div>
   );
 };
