@@ -19,6 +19,7 @@
     width: 280px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
 }
 
@@ -26,6 +27,7 @@
     width: 120px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .userInfoContainer {
