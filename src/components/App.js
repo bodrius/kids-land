@@ -6,8 +6,6 @@ import { Header } from "./header/Header";
 export const App = () => {
   const token = useSelector((state) => state.user.userToken);
   const routing = HeaderRouting(token);
-
-  // const data = services();
   return (
     <>
       <Header token={token} />

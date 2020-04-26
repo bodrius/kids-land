@@ -1,8 +1,6 @@
-// eslint-disable-next-line
 import React, { Suspense, lazy } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { LoaderUi } from "../ui/loader/Loader";
-import Auth from "../auth/Auth";
 
 const MainPage = lazy(() =>
   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
@@ -15,6 +13,10 @@ const AwardsPage = lazy(() =>
 );
 const ContactsPage = lazy(() =>
   import("../contactsPage/ContactsPage" /* webpackChunkName: 'ContactsPage'*/)
+);
+
+const Auth = lazy(() =>
+  import("../auth/Auth" /* webpackChunkName: 'AuthPage'*/)
 );
 
 export const HeaderRouting = (token) => {
@@ -34,11 +36,13 @@ export const HeaderRouting = (token) => {
   }
   return (
     <>
-      {" "}
-      <Auth />;
-      {/* <Suspense fallback={<LoaderUi />}>
-  <Route path="/contact-us" component={ContactsPage} />
-  </Suspense> */}
+      <Suspense fallback={<LoaderUi />}>
+        <Switch>
+          <Route path="/contact-us" component={ContactsPage} />
+          <Route axact path="/" component={Auth} />
+          <Redirect to="/" />
+        </Switch>
+      </Suspense>
     </>
   );
 };
