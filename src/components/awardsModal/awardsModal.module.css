@@ -59,14 +59,25 @@
   flex-direction: column;
 }
 .modalPrizesItemImageWrapper {
+  width: 100px;
+  height: 100px;
+  box-sizing: inherit;
   border-radius: 50%;
   border: 8px solid #ffbe2a;
   margin-bottom: 4px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.modalPrizesPhoto {
+
+/* .modalPrizesPhoto {
+  width: 100px;
+  height: 100px;
   box-sizing: inherit;
   border-radius: 50%;
-}
+  border: 8px solid #ffbe2a;
+  margin-bottom: 4px;
+} */
 .modalPrizesName {
   font-weight: 600;
   text-align: center;
