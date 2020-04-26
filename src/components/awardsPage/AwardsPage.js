@@ -40,6 +40,7 @@ export const AwardsPage = () => {
   useEffect(() => {
     (async () => {
       const shit = await services.getCurrentUser(userToken);
+      console.log('shit', shit)
       const userPoints = shit.data.user.points;
       setPoints(userPoints);
       // services.updateUserPoints(userToken, userId, 100);

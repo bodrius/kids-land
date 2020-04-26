@@ -6,7 +6,7 @@ import { services } from "./../../../services/services";
 function Toogle({ chooseAwards, card, collectAwards }) {
   const { userPoint, userToken, userId } = useSelector((state) => state.user);
   // const [updatedPoints, setUpdatedPoints] = React.useState(userPoint);
-  // const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   // const shit = services
   //   .getCurrentUser(userToken)
   //   .then((data) => console.log("user", data));
@@ -14,24 +14,25 @@ function Toogle({ chooseAwards, card, collectAwards }) {
 
   React.useEffect(() => {
     console.log("UsEfFeCtuserPoint", userPoint);
+    console.log('user', user)
   }, [on]);
 
   const toggle = () => {
     if (userPoint >= card.taskPoints) {
       chooseAwards(card.title, card.imgName, on);
       setOnState((o) => !o);
-      if (on) {
-        console.log("userPoint", userPoint);
-        const calculatingPoints = Number(userPoint) - Number(card.taskPoints);
+      if (!on) {
+        // console.log("userPoint", userPoint);
+        const updatedPoints = Number(userPoint) - Number(card.taskPoints);
         // setUpdatedPoints(calculatingPoints);
-        collectAwards(calculatingPoints);
-        console.log("updatedPoints -- MINUS", calculatingPoints);
+        // collectAwards(updatedPoints);
+        console.log("updatedPoints -- MINUS", updatedPoints);
       } else {
-        console.log("userPoint", userPoint);
-        const calculatingPoints = Number(userPoint) + Number(card.taskPoints);
+        // console.log("userPoint", userPoint);
+        const updatedPoints = Number(userPoint) + Number(card.taskPoints);
         // setUpdatedPoints(calculatingPoints);
-        collectAwards(calculatingPoints);
-        console.log("updatedPoints -- PLUS", calculatingPoints);
+        // collectAwards(updatedPoints);
+        console.log("updatedPoints -- PLUS", updatedPoints);
       }
     } else {
       alert("ИДИ ПОЛЫ ДРАИТЬ, ПАДЛА МЕЛКАЯ");
