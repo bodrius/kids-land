@@ -56,12 +56,22 @@ const MainPage = () => {
     history.push(day);
   }, [day, history]);
 
-  useEffect(() => {
-    // services
-    //   .getCurrentUser(userToken)
-    //   .then((data) => setTasks(data.data.user.tasks));
-    setTasks(userTasks);
-  }, [userTasks]);
+  // useEffect(() => {
+  //   // services
+  //   //   .getCurrentUser(userToken)
+  //   //   .then((data) => setTasks(data.data.user.tasks));
+  //   const data = await setTasks(userTasks);
+  //   return data;
+  // }, [userTasks]);
+
+  // useEffect(() => {
+  //   async function fetchMyAPI() {
+  //     const data = await setTasks(userTasks);
+  //     console.log(data);
+  //   }
+
+  //   fetchMyAPI();
+  // }, [userTasks]);
 
   // services
   //   .userSignIn({
@@ -115,6 +125,7 @@ const MainPage = () => {
         )}
       </div>
       <div>
+        {console.log("tasks.days[0]", tasks[0])}
         <WeekTabContent tasks={tasks} today={today} date={date} />
       </div>
     </div>
