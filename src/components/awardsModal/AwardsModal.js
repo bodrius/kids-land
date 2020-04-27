@@ -14,11 +14,10 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
-  const imgStyle = (imgName) => {
-    return {
-      backgroundImage: `url(../../assets/image/prizesImg/${imgName}.jpg)`,
-    };
-  };
+  // const smth = document.getElementsByClassName('modalPrizesItemImageWrapper')
+  // const changeSmth = () => {
+  //   smth.style.backgroundImage = url(`../../assets/image/prizesImg/${imgName}.jpg`)
+  // }
 
   return (
     <>
@@ -39,10 +38,8 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
             <ul className={styles.modalPrizes}>
               {prizes.map((prize) => (
                 <li key={prize.title} className={styles.modalPrizesItem}>
-                  <div
-                    className={styles.modalPrizesItemImageWrapper}
-                    style={imgStyle(prize.imgName)}
-                  >
+                  <div className={styles.modalPrizesItemImageWrapper}>
+                    {/* {changeSmth()} */}
                     {console.log("prize", prize)}
                   </div>
                   <p className={styles.modalPrizesName}>{prize.title}</p>

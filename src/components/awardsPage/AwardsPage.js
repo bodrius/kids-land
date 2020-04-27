@@ -31,8 +31,6 @@ import ProgressBar from "./../progressBar/ProgressBar";
     console.log('points', points)
   }
 
-  // LOGO & ESC MODAL
-
 
   useEffect(() => {
     setModal(false);
