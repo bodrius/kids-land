@@ -1,6 +1,6 @@
 import foto1 from "../../assets/image/TeamFoto/foto1.jpg";
 import foto2 from "../../assets/image/TeamFoto/foto2.jpg";
-import foto3 from "../../assets/image/TeamFoto/foto3.jpg";
+import foto3 from "../../assets/image/TeamFoto/foto3swag.jpg";
 import foto4 from "../../assets/image/TeamFoto/foto4.jpg";
 import foto5 from "../../assets/image/TeamFoto/foto.jpg";
 import foto6 from "../../assets/image/TeamFoto/foto6.jpg";

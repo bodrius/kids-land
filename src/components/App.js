@@ -15,6 +15,7 @@ export const App = () => {
 // // // services.getCurrentUser(token).then(data=>console.log('Current user', data));
 
   // const data = services();
+  const routing = HeaderRouting(token);
   return (
     <>
       <Header token={token} />

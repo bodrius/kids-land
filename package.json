@@ -12,7 +12,11 @@
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
+<<<<<<< HEAD
     "react-checklist": "^1.0.9",
+=======
+    "react-contenteditable": "^3.3.4",
+>>>>>>> dev
     "react-dom": "^16.13.1",
     "react-loader-spinner": "^3.1.14",
     "react-redux": "^7.2.0",

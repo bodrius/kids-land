@@ -25,13 +25,12 @@
 }
 /* footer */
 
-
-
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
   }
   .footerLogoLabel {
     color: #000000;
@@ -60,5 +59,20 @@
   .footerLogoIcon {
     margin-left: 4px;
     margin-right: 4px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .footer {
+    margin: 60px 0px 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer {
+    width: 1200px;
+    margin: 0 auto;
+    margin: 20px 0px 40px;
+    justify-content: flex-end;
   }
 }

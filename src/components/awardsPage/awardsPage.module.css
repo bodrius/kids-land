@@ -171,8 +171,8 @@
   }
 
   .awardsButtonWrapper {
-    margin-bottom: 44px;
-    margin-top: 56px;
+    margin-bottom: 10px;
+    margin-top: 26px;
   }
 
   .awardsListItem:nth-last-child(n + 2) {

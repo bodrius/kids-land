@@ -1,12 +1,45 @@
-import React from 'react'
+import React, { useRef } from "react";
+import ContentEditable from "react-contenteditable";
+import styles from "./userInfo.module.css";
 
+export const UserInfo = () => {
+  const name =
+    localStorage.getItem("userName") !== null &&
+    JSON.parse(localStorage.getItem("userName")).length > 0
+      ? JSON.parse(localStorage.getItem("userName"))
+      : "User";
 
+  const text = useRef(`${name}`);
 
+<<<<<<< HEAD
 export const UserInfo = () => {
     return (
       <div>
       <h4>Vania</h4>
       </div>
     );
+=======
+  const handleChange = (evt) => {
+    text.current = evt.target.value;
+    if (text.current.length > 9) text.current = text.current.substr(0, 9);
+    localStorage.setItem("userName", JSON.stringify(text.current));
+>>>>>>> dev
   };
-  
+
+  const handleKeyPress = (evt) => {
+    if (evt.keyCode === 13) {
+      evt.preventDefault();
+      localStorage.setItem("userName", JSON.stringify(text.current));
+    }
+  };
+
+  return (
+    <ContentEditable
+      html={text.current}
+      onChange={handleChange}
+      onKeyDown={handleKeyPress}
+      className={styles.userName}
+      title="Введіть своє ім'я"
+    />
+  );
+};
