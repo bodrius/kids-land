@@ -4,15 +4,18 @@ import Toogle from "../toogle/Toogle";
 import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
-  // switch (path) {
-  //   case "/awards":
-  //     return <Toogle />;
-  //   case "/":
-  //     return <Toogle />;
+// switch (path) {
+//   case "/awards":
+//     return <Toogle />;
+//   case "/":
+//     return <Toogle />;
 
-  //   default:
-  //     break;
-  // }
+//   default:
+//     break;
+// }
+const drawing = () => {
+  return <button className={style.Card__listBtton}>+</button>;
+};
 
 const CardListLi = ({ list, chooseAwards, collectAwards }) => {
   return (
@@ -42,7 +45,7 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
               collectAwards={collectAwards}
             />
           ) : (
-            <button className={style.Card__listBtton}>+</button>
+            drawing
           )}
         </div>
       </div>
