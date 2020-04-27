@@ -51,6 +51,7 @@ const selectDay = (choosenDay) => {
   //   services
   //     .getCurrentUser(userToken)
   //     .then((data) => setTasks(data.data.user.tasks));
+  //   setTasks(userTasks);
   // }, []);
 
   // services
