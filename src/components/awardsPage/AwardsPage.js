@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import css from "./awardsPage.module.css";
 import awardsLogo from "../../assets/image/icon/presentBox/gift-box.svg";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
 import CardListUl from "./../cardList/CardListUl";
 import ProgressBar from "./../progressBar/ProgressBar";
+import { pointUser } from "../../redux/auth/operations";
 
- const AwardsPage = () => {
-   const { userToken, userId, userPoint } = useSelector((state) =>  {
-     return state.user
-   });
+const AwardsPage = () => {
+  const { userToken, userId, userPoint } = useSelector((state) => {
+    return state.user;
+  });
   const [points, setPoints] = useState(userPoint);
   const [modal, setModal] = useState(false);
   const [toggle, setToggle] = useState([]);
-
+  const dispatch = useDispatch();
 
   const chooseAwards = (title, imgName, isOn) => {
     if (isOn) {
@@ -23,14 +24,13 @@ import ProgressBar from "./../progressBar/ProgressBar";
       setToggle([...toggle, { title, imgName }]);
     }
   };
-  
 
-  const collectAwards = (updatedPoints) => {
-    services.updateUserPoints(userToken, userId, updatedPoints);
-    setPoints(updatedPoints)
-    console.log('points', points)
-  }
-
+  const collectAwards = async (updatedPoints) => {
+    await services.updateUserPoints(userToken, userId, 700);
+    await setPoints(updatedPoints);
+    await dispatch(pointUser(updatedPoints));
+    // console.log("points", points);
+  };
 
   useEffect(() => {
     setModal(false);
@@ -64,7 +64,6 @@ import ProgressBar from "./../progressBar/ProgressBar";
   //     // services.updateUserPoints(userToken, userId, 100);
   //   })();
   // }, []);
-
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
@@ -145,7 +144,11 @@ import ProgressBar from "./../progressBar/ProgressBar";
             </div>
           </div>
         </div>
-        <CardListUl cardList={cardList} chooseAwards={chooseAwards} collectAwards={collectAwards}/>
+        <CardListUl
+          cardList={cardList}
+          chooseAwards={chooseAwards}
+          collectAwards={collectAwards}
+        />
         <div className={css.awardsButtonWrapper}>
           {modal ? (
             <>
@@ -168,6 +171,5 @@ import ProgressBar from "./../progressBar/ProgressBar";
     </div>
   );
 };
-
 
 export default AwardsPage;
