@@ -13,7 +13,7 @@ export const UserInfo = () => {
 
   const handleChange = (evt) => {
     text.current = evt.target.value;
-    if (text.current.length > 10) text.current = text.current.substr(0, 10);
+    if (text.current.length > 9) text.current = text.current.substr(0, 9);
     localStorage.setItem("userName", JSON.stringify(text.current));
   };
 
@@ -30,6 +30,7 @@ export const UserInfo = () => {
       onChange={handleChange}
       onKeyDown={handleKeyPress}
       className={styles.userName}
+      title="Введіть своє ім'я"
     />
   );
 };
