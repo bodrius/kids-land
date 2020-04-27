@@ -6,7 +6,7 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
   return (
     <li className={style.Card__list}>
       <div>
-        {/* <img
+        <img
           alt="img"
           src={
             list.source
@@ -14,7 +14,7 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
               : require(`../../../assets/image/planImg/${list.imgName}.jpg`)
           }
           className={style.Card__listImg}
-        /> */}
+        />
       </div>
       <div className={style.Card__listFooter}>
         <div className={style.Card__listText}>
