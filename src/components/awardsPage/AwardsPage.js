@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import css from "./awardsPage.module.css";
-import awardsLogo from "../../assets/image/icon/presentBox/gift-box.svg";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
 import CardListUl from "./../cardList/CardListUl";
@@ -120,7 +119,12 @@ import ProgressBar from "./../progressBar/ProgressBar";
       <div className={css.awardsWrapper}>
         <div className={css.awardsHeader}>
           <div className={css.awardsHeaderLogo}>
-            <img src={awardsLogo} alt="gift-box" width={26} height={26} />
+          <img
+              src={require(`../../assets/image/icon/presentBox/gift-box.png`)}
+              alt="gift-box"
+              width={26}
+              height={26}
+            />
             <span className={css.awardsHeaderText}>Мої призи</span>
           </div>
           <div className={css.awardsHeaderBarContainer}>
