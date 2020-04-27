@@ -10,15 +10,14 @@
     font-size: 12px;
 }
 
-.navLinkDiv {
-    margin-top: 20px;
-}
-
 .headerContainer {
     margin: 0 auto;
-    width: 280px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 210px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
 }
 
@@ -26,6 +25,7 @@
     width: 120px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .userInfoContainer {
@@ -40,7 +40,9 @@
 
 @media (min-width: 768px) {
     .headerContainer {
-        width: 710px;
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .navigUserInfoContainer {
@@ -71,7 +73,6 @@
 
 .navLinkDiv {
     font-size: 12px;
-    margin-top: 10px;
     margin-right: 20px;
     font-family: 'Montserrat', sans-serif;
     color: #c2c2cb;
