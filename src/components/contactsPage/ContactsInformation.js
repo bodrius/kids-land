@@ -1,14 +1,14 @@
-import foto1 from "../../assets/image/TeamFoto/foto.jpg";
-import foto2 from "../../assets/image/TeamFoto/foto.jpg";
-import foto3 from "../../assets/image/TeamFoto/foto.jpg";
-import foto4 from "../../assets/image/TeamFoto/foto.jpg";
+import foto1 from "../../assets/image/TeamFoto/foto1.jpg";
+import foto2 from "../../assets/image/TeamFoto/foto2.jpg";
+import foto3 from "../../assets/image/TeamFoto/foto3swag.jpg";
+import foto4 from "../../assets/image/TeamFoto/foto4.jpg";
 import foto5 from "../../assets/image/TeamFoto/foto.jpg";
 import foto6 from "../../assets/image/TeamFoto/foto6.jpg";
-import foto7 from "../../assets/image/TeamFoto/foto.jpg";
-import foto8 from "../../assets/image/TeamFoto/foto.jpg";
-import foto9 from "../../assets/image/TeamFoto/foto.jpg";
-import foto10 from "../../assets/image/TeamFoto/foto.jpg";
-import foto11 from "../../assets/image/TeamFoto/foto.jpg";
+import foto7 from "../../assets/image/TeamFoto/foto7.jpg";
+import foto8 from "../../assets/image/TeamFoto/foto8.jpg";
+import foto9 from "../../assets/image/TeamFoto/foto9.jpg";
+import foto10 from "../../assets/image/TeamFoto/foto10.jpg";
+import foto11 from "../../assets/image/TeamFoto/foto11.jpg";
 import foto12 from "../../assets/image/TeamFoto/foto.jpg";
 import foto13 from "../../assets/image/TeamFoto/foto13.jpg";
 import foto14 from "../../assets/image/TeamFoto/foto.jpg";
@@ -29,23 +29,23 @@ export const Contacts = [
     name: "Sergei Andreiev",
     position: "Front-End Developer",
     description: "",
-    contacts: "",
+    contacts: "xsergeix@ukr.net",
     id: 2
   },
   {
     foto: foto3,
     name: "Urii Serbin",
     position: "Front-End Developer",
-    description: "Footer",
-    contacts: "",
+    description: "MainPage",
+    contacts: "serbin_y@ukr.net",
     id: 3
   },
   {
     foto: foto4,
-    name: "Bogdan Pechnik",
+    name: "Bogdan Pechenyk",
     position: "Front-End Developer",
-    description: "",
-    contacts: "",
+    description: "Team Lead, React Routing",
+    contacts: "bogdanpechenyk@gmail.com",
     id: 4
   },
   {
@@ -61,7 +61,7 @@ export const Contacts = [
     name: "Sergiy Stakhura",
     position: "Front-End Developer",
     description: "",
-    contacts: "",
+    contacts: "grey4uk14@gmail.com",
     id: 6
   },
   {
@@ -69,7 +69,7 @@ export const Contacts = [
     name: "Sergei Zuev",
     position: "Front-End Developer",
     description: "",
-    contacts: "",
+    contacts: "sergeyzuevpost@gmail.com",
     id: 7
   },
   {
@@ -84,16 +84,16 @@ export const Contacts = [
     foto: foto9,
     name: "Artur Bohanov",
     position: "Front-End Developer",
-    description: "",
-    contacts: "",
+    description: "CardList, Toogle",
+    contacts: "arturbohanov1908@gmail.com",
     id: 9
   },
   {
     foto: foto10,
     name: "Bogdan Illiakov",
     position: "Front-End Developer",
-    description: "",
-    contacts: "",
+    description: "AwerdsPage",
+    contacts: "stardestroyer@ukr.net",
     id: 10
   },
   {
@@ -101,7 +101,7 @@ export const Contacts = [
     name: "Alexander Logvinenko",
     position: "Front-End Developer",
     description: "AuthPage",
-    contacts: "",
+    contacts: "alexlogvin@yahoo.com",
     id: 11
   },
   {
