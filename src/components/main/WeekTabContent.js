@@ -11,11 +11,10 @@ import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
 // import { ProgressBar } from "./ path / ProgressBar";
 // import { CardList } from "./ path / CardList";
 
-export const WeekTabContent = ({ tasks, today, date }) => {
-  // console.log("tasks --->", tasks);
+export const WeekTabContent = ({ tasks }) => {
   // const [tasks, setTasks] = useState([]);
 
-  //   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
+  // const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
   // services
   //   .userSignIn({
@@ -38,22 +37,22 @@ export const WeekTabContent = ({ tasks, today, date }) => {
       <div className={styles.mainHeader}>
         {/* ========= CurrentDay ========== */}
         <div>
-          <CurrentDay days={today} date={date} />
+          <CurrentDay />
         </div>
 
         {/* ========= ProgressBar ========== */}
         <div>
           <ProgressBar />
           {/* <p>Набрано балів:</p>
-          <span>400 / 810</span> */}
-          {/* <img src={progressBar} width="254px" alt="progress in task doing" /> */}
+          <span>400 / 810</span>
+          <img src={progressBar} width="254px" alt="progress in task doing" /> */}
         </div>
       </div>
 
       {/* ========= CardList ========== */}
-      {/* <ul className={styles.cardList}> */}
-      <CardListUl cardList={tasks} />
-      {/* <li key="1">
+      <ul className={styles.cardList}>
+        <CardListUl cardList={tasks} />
+        {/* <li key="1">
           <img
             src={defaultImgTask}
             width="280px"
@@ -113,7 +112,7 @@ export const WeekTabContent = ({ tasks, today, date }) => {
           <span>Застелити ліжко</span>
           <span>3 бали</span>
         </li> */}
-      {/* </ul> */}
+      </ul>
     </div>
   );
 };

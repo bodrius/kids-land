@@ -7,7 +7,7 @@ const ButtonCurrentWeekRange = () => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>На сьогодні завдань немає</h2>
-      <NavLink to="/contact-us">
+      <NavLink to="/planning">
       <button type="button" className={styles.button}>
         Запланувати нові задачі
       </button>
