@@ -1,0 +1,40 @@
+.wrapper {
+    display: block;
+    letter-spacing: 0.16em;
+    margin-bottom: 30px;
+    /* justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap; */
+  }
+
+  .title {
+    display: block;
+    
+    text-align: center;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 21px;
+    letter-spacing: normal;
+  }
+
+  .button{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0px 4px 6px 0px rgba(29, 29, 27, 0.15);
+    background-color: #efbb43;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 5px 0 5px;
+    outline: none;
+    width: 165px;
+  }
+  

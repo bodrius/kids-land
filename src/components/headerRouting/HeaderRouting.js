@@ -1,38 +1,46 @@
 import React, { Suspense, lazy } from "react";
-import { Route, Link, Switch } from "react-router-dom";
-// import {LoaderUi} from "../ui/loader/Loader";
-import {MainPage} from '../mainPage/Mainpage'
-import {AwardsPage} from '../awards/Awards'
+import { Route, Switch, Redirect } from "react-router-dom";
+import { LoaderUi } from "../ui/loader/Loader";
 
-// const MainPage = lazy(() =>
-//   import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
-// );
-// const PlanningPage = lazy(() =>
-//   import("../PlanningPage" /* webpackChunkName: 'PlanningPage'*/)
-// );
-// const AwardsPage = lazy(() =>
-//   import("../awards/Awards" /* webpackChunkName: 'AwardsPage'*/)
-// );
-// const ContactsPage = lazy(() =>
-//   import("../ContactsPage" /* webpackChunkName: 'ContactsPage'*/)
-// );
-// const NotFound = lazy(() =>
-//   import("../pageNoteFound/NotFound" /* webpackChunkName: 'pageNoteFound'*/)
-// );
+const  MainPage  = lazy(() =>
+  import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
+);
+const PlanningPage = lazy(() =>
+  import("../planningPage/PlanningPage" /* webpackChunkName: 'PlanningPage'*/)
+);
+const AwardsPage = lazy(() =>
+  import("../awardsPage/AwardsPage" /* webpackChunkName: 'AwardsPage'*/)
+);
+const ContactsPage = lazy(() =>
+  import("../contactsPage/ContactsPage" /* webpackChunkName: 'ContactsPage'*/)
+);
 
-export const HeaderRouting = () => {
+const Auth = lazy(() =>
+  import("../auth/Auth" /* webpackChunkName: 'AuthPage'*/)
+);
+
+export const HeaderRouting = (token) => {
+  if (token) {
+    // if (true) {
+    return (
+      <Switch>
+        <Suspense fallback={<LoaderUi />}>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/planning" component={PlanningPage} />
+          <Route path="/awards" component={AwardsPage} />
+          <Route path="/contact-us" component={ContactsPage} />
+          <Redirect to="/" />
+        </Suspense>
+      </Switch>
+    );
+  }
   return (
     <>
-   
-
-      {/* <Suspense fallback={<LoaderUi />}> */}
-      <Suspense fallback={<div>LOADING</div> }>
+      <Suspense fallback={<LoaderUi />}>
         <Switch>
-          <Route exact path="/"  component={MainPage} />
-          {/* <Route path="/planning" component={PlanningPage} /> */}
-          <Route path="/awards" component={AwardsPage} />
-          {/* <Route path="/contacts-us" component={ContactsPage} />
-          <Route component={NotFound} /> */}
+          <Route path="/contact-us" component={ContactsPage} />
+          <Route axact path="/" component={Auth} />
+          <Redirect to="/" />
         </Switch>
       </Suspense>
     </>

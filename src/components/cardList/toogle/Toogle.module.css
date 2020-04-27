@@ -1,0 +1,52 @@
+/* .button {
+  background-color: rgb(218, 4, 4);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 18px;
+  position: relative;
+  width: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.button:focus,
+.button:active {
+  outline: none;
+}
+.button::-moz-focus-inner {
+  border: 0;
+} */
+
+.pin {
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  height: 14px;
+  left: 4px;
+  position: absolute;
+  top: 2px;
+  width: 14px;
+  transition: left ease 0.5s;
+}
+.off{
+  background-color: rgb(218, 4, 4);
+}
+.on {
+  background-color: rgb(142, 198, 63);
+}
+
+.on .pin {
+  left: 21px;
+}
+.done {
+  position: absolute;
+  left: 4px;
+  font-size: 14px;
+  top: 1px;
+}
+.yes {
+  position: absolute;
+  right: 7px;
+  font-size: 14px;
+  top: 1px;
+}

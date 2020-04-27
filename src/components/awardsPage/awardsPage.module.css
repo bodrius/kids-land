@@ -1,0 +1,212 @@
+.awardsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #fdfdfd;
+}
+
+.awardsHeaderBarContainer {
+  display: none;
+}
+
+.awardsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.awardsListItem:not(:last-child) {
+  margin-bottom: 22px;
+}
+
+.awardsListItem:last-child {
+  margin-bottom: 50px;
+}
+
+.awardsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.awardsListItemContainer {
+  width: 280px;
+  height: 262px;
+  border-radius: 10px;
+  background-color: #d3d3d3;
+}
+
+.awardsHeader {
+  display: flex;
+  align-items: center;
+  width: 130px;
+  height: 72px;
+}
+
+.awardsHeaderLogo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.awardsHeaderText {
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.awardsButtonWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.awardsButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: rgb(239, 187, 67);
+  box-shadow: 0px 4px 6px 0px rgba(29, 29, 27, 0.15);
+  width: 240px;
+  height: 48px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  color: #fff;
+  line-height: 18px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.awardsButton:hover,
+.awardsButton:focus {
+  transform: translate(-1.5px, -1.5px);
+}
+
+.awardsButton:active {
+  transform: translate(1.5px, 1.5px);
+}
+
+@media (min-width: 768px) {
+  .awardsWrapper {
+    width: 586px;
+  }
+
+  .awardsHeader {
+    height: 104px;
+  }
+
+  .awardsList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .awardsListItem:nth-child(odd) {
+    margin-right: 22px;
+  }
+
+  .awardsHeader {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .awardsHeaderLogo {
+    width: 130px;
+  }
+
+  .awardsHeaderBarContainer {
+    width: 340px;
+    /* height: 36px; */
+  }
+
+  .awardsHeaderText {
+    font-weight: 600;
+  }
+
+  .awardsListItem:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:last-child {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:nth-last-child(n + 2) {
+    margin-bottom: 20px;
+  }
+
+  .awardsListItem:last-child(2n) {
+    margin-bottom: 56px;
+  }
+
+  .awardsButtonWrapper {
+    margin-bottom: 60px;
+    margin-top: 56px;
+  }
+
+  .awardsHeaderBarContainer {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .awardsWrapper {
+    width: 1188px;
+  }
+
+  .awardsHeader {
+    height: 122px;
+  }
+
+  .awardsHeaderBarContainer {
+    width: 456px;
+  }
+
+  .awardsButtonWrapper {
+    margin-bottom: 10px;
+    margin-top: 26px;
+  }
+
+  .awardsListItem:nth-last-child(n + 2) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:last-child(2n) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:nth-child(odd) {
+    margin-right: 0px;
+  }
+
+  .awardsListItem:not(:last-child) {
+    margin-bottom: 0px;
+  }
+
+  .awardsListItem:nth-child(-n + 4) {
+    margin-bottom: 22px;
+  }
+
+  .awardsListItem:nth-child(-n + 4) {
+    margin-bottom: 22px;
+  }
+
+  .awardsListItem:nth-child(n + 1):nth-child(-n + 3) {
+    margin-right: 22px;
+  }
+
+  .awardsListItem:nth-child(n + 5):nth-child(-n + 7) {
+    margin-right: 22px;
+  }
+
+  .awardsList {
+    margin-bottom: 56px;
+  }
+}
