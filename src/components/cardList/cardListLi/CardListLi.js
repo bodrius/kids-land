@@ -5,6 +5,16 @@ import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
 const CardListLi = (list) => {
+  // switch (path) {
+  //   case "/awards":
+  //     return <Toogle />;
+  //   case "/":
+  //     return <Toogle />;
+
+  //   default:
+  //     break;
+  // }
+
   return (
     <li className={style.Card__list}>
       <div>

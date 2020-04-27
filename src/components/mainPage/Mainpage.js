@@ -30,9 +30,10 @@ const selectDay = (choosenDay) => {
   return days;
 };
 
-export const MainPage = () => {
+export const MainPage = (props) => {
   const day = setMainPath();
   const history = useHistory();
+console.log('props', props)
 
   useEffect(() => {
     history.push(day);
