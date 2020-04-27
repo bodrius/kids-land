@@ -47,12 +47,20 @@ const selectDay = (choosenDay) => {
     history.push(day);
   }, [day, history]);
 
-  useEffect(() => {
-    services
-      .getCurrentUser(userToken)
-      .then((data) => setTasks(data.data.user.tasks));
-  }, []);
+  // useEffect(() => {
+  //   services
+  //     .getCurrentUser(userToken)
+  //     .then((data) => setTasks(data.data.user.tasks));
+  // }, []);
 
+  // useEffect(() => {
+  //   // services
+  //   //   .getCurrentUser(userToken)
+  //   //   .then((data) => setTasks(data.data.user.tasks));
+  //   setTasks(userTasks);
+  // }, []);
+
+  
   // services
   //   .userSignIn({
   //     email: "test666@test",
