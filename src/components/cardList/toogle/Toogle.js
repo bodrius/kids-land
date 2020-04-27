@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Toogle.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { services } from "./../../../services/services";
+import { pointUser } from "../../../redux/auth/operations";
 
 function Toogle({ chooseAwards, card, collectAwards }) {
   const { userPoint, userToken, userId } = useSelector((state) => state.user);
@@ -11,6 +12,8 @@ function Toogle({ chooseAwards, card, collectAwards }) {
   //   .getCurrentUser(userToken)
   //   .then((data) => console.log("user", data));
   const [on, setOnState] = React.useState(false);
+
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     (async () => {
@@ -33,6 +36,7 @@ function Toogle({ chooseAwards, card, collectAwards }) {
        await setUpdatedPoints(calculatingPoints);
       }
       await collectAwards(updatedPoints);
+      await dispatch(pointUser(updatedPoints))
       // console.log("Calculation", updatedPoints);
     })();
   }, [on]);

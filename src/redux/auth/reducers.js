@@ -34,7 +34,7 @@ const reducer = {
   [types.ADD_POINT]: (state, { payload }) => {
     console.log("payload", payload);
     return {
-      userPoint: payload.points,
+      userPoint: payload,
     };
   },
   [types.USER_SIGNOUT]: () => initialState,
