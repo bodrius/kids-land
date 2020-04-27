@@ -14,10 +14,10 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
-  // const smth = document.getElementsByClassName('modalPrizesItemImageWrapper')
-  // const changeSmth = () => {
-  //   smth.style.backgroundImage = url(`../../assets/image/prizesImg/${imgName}.jpg`)
-  // }
+  const bgImg = (props) => {
+    const imgUrl = require(`../../assets/image/prizesImg/${props}.jpg`)
+    return imgUrl
+  }
 
   return (
     <>
@@ -32,15 +32,19 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
               height="auto"
             />
             {console.log("modal", modal)}
-            {
-              prizes.length > 0 ? <p className={styles.modalGreetings}>Вітаємо! Ти отримуєш:</p> : <p className={styles.modalGreetings}>Обери хоч щось!</p>
-            }
+            {prizes.length > 0 ? (
+              <p className={styles.modalGreetings}>Вітаємо! Ти отримуєш:</p>
+            ) : (
+              <p className={styles.modalGreetings}>Обери хоч щось!</p>
+            )}
             <ul className={styles.modalPrizes}>
               {prizes.map((prize) => (
                 <li key={prize.title} className={styles.modalPrizesItem}>
-                  <div className={styles.modalPrizesItemImageWrapper}>
-                    {/* {changeSmth()} */}
-                    {console.log("prize", prize)}
+                  <div
+                    id="sexyId"
+                    className={styles.modalPrizesItemImageWrapper}
+                    style={{backgroundImage: `url(${bgImg(prize.imgName)})`}}
+                  >
                   </div>
                   <p className={styles.modalPrizesName}>{prize.title}</p>
                 </li>
