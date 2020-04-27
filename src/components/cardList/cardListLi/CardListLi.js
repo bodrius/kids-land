@@ -3,7 +3,7 @@ import style from "./CardListLi.module.css";
 import Toogle from "../toogle/Toogle";
 
 const CardListLi = ({ list, chooseAwards, collectAwards }) => {
-  console.log('list------', list)
+  // console.log('list------', list)
   return (
     <li className={style.Card__list}>
       <div>
