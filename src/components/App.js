@@ -7,7 +7,6 @@ import {services} from '../services/services';
 export const App = () => {
   const token = useSelector((state) => state.user.userToken);
   const userId = useSelector((state) => state.user.userId);
-  const routing = HeaderRouting(token);
 // services.userSignIn({ "email": "test123@test.com", "password": "qwerty" }).then(data=>console.log('user', data));
 // console.log('userId', userId)
 

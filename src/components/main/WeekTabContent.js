@@ -32,6 +32,7 @@ console.log('tasks', tasks)
       <div className={styles.currentWeekRange}>
         <CurrentWeekRange />
         <ButtonCurrentWeekRange />
+        
       </div>
 
       <div className={styles.mainHeader}>

@@ -11,19 +11,10 @@ export const UserInfo = () => {
 
   const text = useRef(`${name}`);
 
-<<<<<<< HEAD
-export const UserInfo = () => {
-    return (
-      <div>
-      <h4>Vania</h4>
-      </div>
-    );
-=======
   const handleChange = (evt) => {
     text.current = evt.target.value;
     if (text.current.length > 9) text.current = text.current.substr(0, 9);
     localStorage.setItem("userName", JSON.stringify(text.current));
->>>>>>> dev
   };
 
   const handleKeyPress = (evt) => {

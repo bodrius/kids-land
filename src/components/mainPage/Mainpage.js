@@ -68,15 +68,17 @@ const selectDay = (choosenDay) => {
     <div>
       <div className={s.mainDiv}>
         {windowWidth < 768 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />,
+          <WeekTabContent tasks={tasks} />
         )}
         {windowWidth >= 769 && windowWidth < 1200 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />,
+          <WeekTabContent tasks={tasks} />
         )}
       </div>
 
       <div>
-        <WeekTabContent tasks={tasks} />
+        {/* <WeekTabContent tasks={tasks} /> */}
       </div>
     </div>
   );
