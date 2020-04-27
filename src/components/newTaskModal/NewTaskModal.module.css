@@ -18,7 +18,7 @@ html {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 888;
+    z-index: 880;
 }
 
 .content {
@@ -26,25 +26,29 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 282px;
-    /* min-height: 262px; */
+    width: 278px;
     background-color: #fff;
     background-image: url(../../assets/image/modalAddTask/1.jpg);
     border: none;
     background-repeat: no-repeat;
     border-radius: 10px;
+    background-color: #ffbc33;
+
 }
 
 .form {
     margin: 0;
-    margin-top: 130px;
     padding: 24px;
+
 }
 
 .formContainer {
     background-color: #ffbc33;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    /* height: 190px; */
+    margin-top: 130px;
+
 }
 
 .input {
@@ -58,14 +62,15 @@ html {
     width: 98%;
     font-style: italic;
     margin-bottom: 30px;
-    padding-left: 24px;
+    padding-left: 44px;
+    padding-bottom: 4px;
     outline-offset: 0px;
     text-align: center;
     outline: none;
     background-size: 10%;
     background-image: url("../../assets/image/icon/icon-edit/edit-24px.svg");
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: 8%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -86,24 +91,25 @@ html {
     background-position: center;
     cursor: pointer;
     position: absolute;
-    top: 8px;
+    top: 10px;
     right: 10px;
     outline: none;
+    background-image: url(../../assets/image/icon/icon-close/close.svg);
 }
 
 .buttonSubmit {
-    margin-top: 10px;
     font-family: sans-serif;
-    width: 60px;
-    padding: 5px;
     border-radius: 4px;
     border: none;
     background-color: #fff;
     font-weight: 600;
-    margin: 0 auto;
     display: block;
     cursor: pointer;
     outline: none;
+    padding: 10px 20px;
+    /* margin: 10px auto 15px; */
+    margin: 0 auto;
+    font-family: inherit;
 }
 
 @media (min-width: 768px) {
@@ -113,14 +119,14 @@ html {
         font-size: 16px;
     }
 
-    .content {
+    /* .content {
         width: 300px;
-    }
+    } */
 }
 
+/* 
 @media (min-width: 1200px) {
     .content {
-        background-image: url(../../assets/image/modalAddTask/3.jpg);
         width: 290px;
     }
 
@@ -133,4 +139,4 @@ html {
         padding-top: 7px;
         padding-bottom: 7px;
     }
-}
+} */
