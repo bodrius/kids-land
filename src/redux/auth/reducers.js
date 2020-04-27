@@ -31,6 +31,17 @@ const reducer = {
       userId: payload.user._id,
     };
   },
+  [types.ADD_POINT]: (state, { payload }) => {
+    console.log("payload", payload);
+    return {
+      ...state,
+      // userEmail: state.user.email,
+      // userToken: state.token,
+      // userTasks: state.user.tasks,
+      // userId: state.user._id,
+      userPoint: payload,
+    };
+  },
   [types.USER_SIGNOUT]: () => initialState,
 };
 

@@ -14,7 +14,7 @@ import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
 export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
   // const [tasks, setTasks] = useState([]);
 
-  //   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
+  // const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
   // services
   //   .userSignIn({
@@ -44,15 +44,15 @@ export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
         <div>
           <ProgressBar />
           {/* <p>Набрано балів:</p>
-          <span>400 / 810</span> */}
-          {/* <img src={progressBar} width="254px" alt="progress in task doing" /> */}
+          <span>400 / 810</span>
+          <img src={progressBar} width="254px" alt="progress in task doing" /> */}
         </div>
       </div>
 
       {/* ========= CardList ========== */}
-      {/* <ul className={styles.cardList}> */}
-      <CardListUl cardList={tasks} />
-      {/* <li key="1">
+      <ul className={styles.cardList}>
+        <CardListUl cardList={tasks} />
+        {/* <li key="1">
           <img
             src={defaultImgTask}
             width="280px"
@@ -112,7 +112,7 @@ export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
           <span>Застелити ліжко</span>
           <span>3 бали</span>
         </li> */}
-      {/* </ul> */}
+      </ul>
     </div>
   );
 };

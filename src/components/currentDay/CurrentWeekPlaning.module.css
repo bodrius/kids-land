@@ -1,13 +1,14 @@
 .wrapper {
   margin: 0 auto;
-  padding: 96px 0 40px 0;
+  padding: 25px 0 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 15px;
   letter-spacing: 0.08em;
   color: rgb(0, 0, 0);
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-bottom: ;
 }
 
 .week {
@@ -21,17 +22,11 @@
   flex-direction: row;
 }
 
-.arrowDown{
-  display: inline;
-  vertical-align: middle;
-  width: 20px;
-  height: 20px;
-}
-
 @media (min-width: 768px) {
   .wrapper {
     margin: 0 auto;
-    margin-bottom: 30px;
+    padding: 40px 0 10px 0;
+    margin-bottom: 20px;
     top: 115px;
     font-size: 18px;
     letter-spacing: 0.08em;
@@ -59,6 +54,7 @@
     margin-bottom: 0;
     flex-direction: row;
     justify-content: start;
+    padding: 40px 0 44px 0;
   }
 
   .week {
@@ -68,13 +64,6 @@
     vertical-align: middle;
     bottom: 2px;
     border: none;
-  }
-
-  .arrowDown{
-    display: inline;
-    vertical-align: middle;
-    width: 0;
-    height: 0;
   }
 }
 

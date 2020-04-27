@@ -22,7 +22,7 @@ const Auth = () => {
     }
     if (!password) {
       errors.password = "Required password";
-    } else if (password.length < 6) {
+    } else if (password.length < 2) {
       errors.password = "Must be 6 characters or more";
     }
     if (errors.length) {
