@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./CurrentDay.module.css";
 
+
 const CurrentDay = ({ days, date }) => {
   return (
     <div className={styles.wrapper}>
