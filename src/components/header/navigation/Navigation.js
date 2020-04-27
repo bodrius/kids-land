@@ -12,9 +12,11 @@ export const Navigation = () => {
       {window.screen.width < 1199 && isMenuOpen && (
         <>
           <div className={css.burgerContainer}>
+            <div className={css.overlay_2}>
             <div className={css.overlay}>
               <div className={css.pages}>
                 <NavLink
+                  onClick={openModal}
                   exact
                   to="/"
                   activeStyle={{ color: "black" }}
@@ -26,6 +28,7 @@ export const Navigation = () => {
               </div>
               <div className={css.pages}>
                 <NavLink
+                onClick={openModal}
                   to="planning"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
@@ -36,6 +39,7 @@ export const Navigation = () => {
               </div>
               <div className={css.pages}>
                 <NavLink
+                  onClick={openModal}
                   to="awards"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
@@ -46,6 +50,7 @@ export const Navigation = () => {
               </div>
               <div className={css.pages}>
                 <NavLink
+                  onClick={openModal}
                   to="contact-us"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
@@ -55,6 +60,7 @@ export const Navigation = () => {
                 </NavLink>
               </div>
               <button className={css.closeModal} onClick={openModal}></button>
+            </div>
             </div>
           </div>
         </>
