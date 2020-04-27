@@ -1,13 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./awardsModal.module.css";
-import one from "../../assets/image/prizesImg/1.jpg";
-import two from "../../assets/image/prizesImg/2.jpg";
-import thri from "../../assets/image/prizesImg/3.jpg";
-import fuor from "../../assets/image/prizesImg/4.jpg";
-import fiv from "../../assets/image/prizesImg/5.jpg";
-import six from "../../assets/image/prizesImg/6.jpg";
-import sivin from "../../assets/image/prizesImg/7.jpg";
-import iight from "../../assets/image/prizesImg/8.jpg";
 
 const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
   const [modal, openModal] = useState(openModaled);
