@@ -12,26 +12,26 @@ function Toogle({ chooseAwards, card, collectAwards }) {
   //   .then((data) => console.log("user", data));
   const [on, setOnState] = React.useState(false);
 
-  // React.useEffect(() => {
-  //   (async () => {
-  //     const shit = await services.getCurrentUser(userToken);
-  //     console.log('shit', shit)
-  //   })();
-  // }, [on]);
+  React.useEffect(() => {
+    (async () => {
+      const shit = await services.getCurrentUser(userToken);
+      console.log('shit', shit)
+    })();
+  }, [on]);
 
-  // React.useEffect(() => {
-  //   if (!on) {
-  //     const calculatingPoints = Number(updatedPoints) - Number(card.taskPoints);
-  //     setUpdatedPoints(calculatingPoints);
-  //     collectAwards(updatedPoints);
-  //     console.log("Calculation -- MINUS", updatedPoints);
-  //   } else {
-  //     const calculatingPoints = Number(updatedPoints) + Number(card.taskPoints);
-  //     setUpdatedPoints(calculatingPoints);
-  //     collectAwards(updatedPoints);
-  //     console.log("Calculation -- PLUS", updatedPoints);
-  //   }
-  // }, [on]);
+  React.useEffect(() => {
+    if (!on) {
+      const calculatingPoints = Number(updatedPoints) - Number(card.taskPoints);
+      setUpdatedPoints(calculatingPoints);
+      collectAwards(updatedPoints);
+      console.log("Calculation -- MINUS", updatedPoints);
+    } else {
+      const calculatingPoints = Number(updatedPoints) + Number(card.taskPoints);
+      setUpdatedPoints(calculatingPoints);
+      collectAwards(updatedPoints);
+      console.log("Calculation -- PLUS", updatedPoints);
+    }
+  }, [on]);
 
 
   const toggle = () => {
