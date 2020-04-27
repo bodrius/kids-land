@@ -40,7 +40,6 @@ function Toogle({ chooseAwards, card, collectAwards }) {
   const toggle = () => {
     if (userPoint >= card.taskPoints) {
       setOnState((o) => !o);
-
       chooseAwards(card.title, card.imgName, on);
     } else {
       alert("ИДИ ПОЛЫ ДРАИТЬ, ПАДЛА МЕЛКАЯ");
