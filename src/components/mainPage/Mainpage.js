@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
-import { services } from "../../services/services";
+// import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 
 const days = [
@@ -23,8 +23,11 @@ const setMainPath = () => {
   days.map((day) =>
     day.id === weekDay ? (day.selected = true) : (day.selected = false)
   );
+  // console.log('weekDay!!!!!!!!!!!!!!!!!!!!!!!!!!!!', day)
+
   return days;
 };
+const today = moment().format('MMMM Do YYYY');
 
 const selectDay = (choosenDay) => {
   days.map((day) =>
@@ -33,10 +36,9 @@ const selectDay = (choosenDay) => {
   return days;
 };
 console.log("days++++>", days)
-
- const MainPage = () => {
+ const  MainPage = () => {
   // console.log('tasks', user.tasks)
-  const userToken = useSelector((state) => state.user.userToken);
+  const {userToken, userTasks} = useSelector((state) => state.user);
   console.log("userToken ------->", userToken);
 
   const [tasks, setTasks] = useState([]);
@@ -48,11 +50,18 @@ console.log("days++++>", days)
     history.push(day);
   }, [day, history]);
 
-  useEffect(() => {
-    services
-      .getCurrentUser(userToken)
-      .then((data) => setTasks(data.data.user.tasks));
-  }, []);
+  // useEffect(() => {
+    // services
+    //   .getCurrentUser(userToken)
+    //   .then((data) => setTasks(data.data.user.tasks));
+  //   setTasks(userTasks);
+  // }, []);
+
+  // useEffect(() => {
+  //   services
+  //     .getCurrentUser(userToken)
+  //     .then((data) => setTasks(data.data.user.tasks));
+  // }, []);
 
   // services
   //   .userSignIn({
@@ -63,15 +72,16 @@ console.log("days++++>", days)
   //     console.log("data", data);
   //     return setTasks(data.data.user.tasks);
   //   });
-
+ 
   return (
     <div>
+      {console.log('today', today)}
       <div className={s.mainDiv}>
         {windowWidth < 768 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} today={today} />
         )}
         {windowWidth >= 769 && windowWidth < 1200 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} today={today} />
         )}
       </div>
 
@@ -81,5 +91,4 @@ console.log("days++++>", days)
     </div>
   );
 };
-
-export default MainPage;
+export default MainPage
