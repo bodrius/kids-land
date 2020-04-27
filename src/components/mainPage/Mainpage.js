@@ -33,7 +33,7 @@ const selectDay = (choosenDay) => {
   return days;
 };
 
- const MainPage = () => {
+const MainPage = () => {
   // console.log('tasks', user.tasks)
   const userToken = useSelector((state) => state.user.userToken);
   console.log("userToken ------->", userToken);
@@ -47,11 +47,29 @@ const selectDay = (choosenDay) => {
     history.push(day);
   }, [day, history]);
 
-  useEffect(() => {
-    services
-      .getCurrentUser(userToken)
-      .then((data) => setTasks(data.data.user.tasks));
-  }, []);
+  // useEffect(() => {
+  //   // services
+  //   //   .getCurrentUser(userToken)
+  //   //   .then((data) => setTasks(data.data.user.tasks));
+  //   const data = await setTasks(userTasks);
+  //   return data;
+  // }, [userTasks]);
+
+  // useEffect(() => {
+  //   async function fetchMyAPI() {
+  //     const data = await setTasks(userTasks);
+  //     console.log(data);
+  //   }
+
+  //   fetchMyAPI();
+  // }, [userTasks]);
+
+  // useEffect(() => {
+  //   // services
+  //   //   .getCurrentUser(userToken)
+  //   //   .then((data) => setTasks(data.data.user.tasks));
+  //   setTasks(userTasks);
+  // }, []);
 
   // services
   //   .userSignIn({

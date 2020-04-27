@@ -38,7 +38,20 @@ function Toogle({ chooseAwards, card, collectAwards }) {
     }
   };
   return (
-    <button className={on ? styles.on : styles.off} onClick={toggle}>
+    <button
+      className={on ? styles.on : styles.off}
+      onClick={toggle}
+      style={{
+        width: 40,
+        height: 18,
+        border: 0,
+        borderRadius: 50,
+        position: "relative",
+        cursor: "pointer",
+        WebkitAppearance: "none",
+        MozAppearance: "none",
+      }}
+    >
       <span className={styles.done}>&#10004;</span>
       <span className={styles.yes}>!</span>
       <span className={styles.pin} />
