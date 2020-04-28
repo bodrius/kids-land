@@ -9,10 +9,9 @@ import styles from "./WeekTabs.module.css";
   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
   return (
     <nav className={styles.weektabs}>
-      <h3>Дні тижня</h3>
       {days.map((day) => (
         <div key={day.id} className={selectedDayStyle} >
-          <li key={day.id}><button name={day.label} value={day.id} onClick={()=>choosenDay(day.id)}>{day.label}</button></li>
+          <li key={day.id} onClick={()=>choosenDay(day.id)}>{day.label}</li>
         </div>
       ))}
     </nav>
