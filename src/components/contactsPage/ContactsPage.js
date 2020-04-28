@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./ContactsPage.module.css";
 import { Contacts } from "./ContactsInformation";
+import { Footer } from "../Footer/Footer";
 
  const ContactsPage = () => {
   return (
+    <>
     <div className={styles.contacts}>
       <p className={styles.contacts_main_tittle}>Наша команда</p>
       <p className={styles.contacts_second_tittle}>
@@ -29,6 +31,8 @@ import { Contacts } from "./ContactsInformation";
         ))}
       </ul>
     </div>
+      <Footer/>
+      </>
   );
 };
 

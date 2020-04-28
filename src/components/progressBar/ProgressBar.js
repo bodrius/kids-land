@@ -30,15 +30,7 @@ const ProgressBar = ({ userPoints, weekPoints }) => {
           <span className={style.secondPoints}>
             {userPoints}/{weekPoints}
           </span>
-          <Progress
-            percent={percent}
-            theme={{
-              status: {
-                symbol: "",
-                color: "#fbc630"
-              }
-            }}
-          />
+          <Progress percent={percent} />
         </div>
       </div>
     </>
