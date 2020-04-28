@@ -3,7 +3,6 @@ import styles from "./styles.module.css";
 
 export const AddCustomTask = ({ handleOpenTaskModal }) => {
 
-
   let content = (
     <button onClick={handleOpenTaskModal} className={styles.addTaskBtn}>
       +
