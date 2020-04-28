@@ -48,7 +48,7 @@ function Toogle({ chooseAwards, card, collectAwards, value }) {
 
   const setAllButtonsId = async (e) => {
     const key = e.target.value;
-    setButtonId((prevState) => ({ ...prevState, [key]: !prevState.key }));
+    setButtonId((prevState) => {console.log('prevState', key); return{ ...prevState, [key]: !prevState.key }});
     if (userPoint >= card.taskPoints) {
       toggle();
       chooseAwards(card.title, card.imgName, on);
