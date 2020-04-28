@@ -25,7 +25,7 @@ const AwardsPage = () => {
   };
 
   const collectAwards = async (updatedPoints) => {
-    await services.updateUserPoints(userToken, userId, 700);
+    await services.updateUserPoints(userToken, userId, updatedPoints);
     await setPoints(updatedPoints);
     await dispatch(pointUser(updatedPoints));
     // console.log("points", points);
@@ -37,7 +37,7 @@ const AwardsPage = () => {
 
   useEffect(() => {
     const onKeyDown = (e) => {
-      console.log("e", e.key);
+      // console.log("e", e.key);
       if (e.keyCode === 27) {
         setModal(false);
       }

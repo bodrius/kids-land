@@ -14,7 +14,7 @@ import ButtonBad from "../../../common/buttonBad/ButtonBad";
   //     break;
   // }
 
-const CardListLi = ({ list, chooseAwards, collectAwards }) => {
+const CardListLi = ({ list, chooseAwards, collectAwards, value }) => {
   return (
     <li className={style.Card__list}>
       <div>
@@ -40,6 +40,7 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
               chooseAwards={chooseAwards}
               card={list}
               collectAwards={collectAwards}
+              value={value}
             />
           ) : (
             <button className={style.Card__listBtton}>+</button>

@@ -3,29 +3,38 @@ import styles from "./Toogle.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { services } from "./../../../services/services";
 
-function Toogle({ chooseAwards, card, collectAwards }) {
+function Toogle({ chooseAwards, card, collectAwards, value }) {
   const { userPoint, userToken, userId } = useSelector((state) => state.user);
   const [updatedPoints, setUpdatedPoints] = React.useState(userPoint);
   const user = useSelector((state) => state.user);
-  // const shit = services
-  //   .getCurrentUser(userToken)
-  //   .then((data) => console.log("user", data));
   const [on, setOnState] = React.useState(false);
 
-  React.useEffect(() => {
-    (async () => {
-      const shit = await services.getCurrentUser(userToken);
-      console.log("shit", shit);
-      await setUpdatedPoints(shit.data.user.points);
-    })();
-  }, [on]);
+  const initialState = {
+    1: false,
+    2: false,
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+    7: false,
+    8: false,
+  };
+  const [buttonId, setButtonId] = React.useState(initialState);
+
+  // React.useEffect(() => {
+  //   (async () => {
+  //     const shit = await services.getCurrentUser(userToken);
+  //     // console.log("shit", shit);
+  //     await setUpdatedPoints(shit.data.user.points);
+  //   })();
+  // }, [on]);
 
   React.useEffect(() => {
     (async () => {
-      if (on) {
+      if (!on) {
         const calculatingPoints =
           Number(updatedPoints) - Number(card.taskPoints);
-        // console.log('calculatingPoints', calculatingPoints)
+        console.log("calculatingPoints MINUS", calculatingPoints);
         await setUpdatedPoints(calculatingPoints);
       } else {
         const calculatingPoints =
@@ -37,19 +46,26 @@ function Toogle({ chooseAwards, card, collectAwards }) {
     })();
   }, [on]);
 
-  const toggle = () => {
+  const setAllButtonsId = async (e) => {
+    const key = e.target.value;
+    setButtonId((prevState) => ({ ...prevState, [key]: !prevState.key }));
     if (userPoint >= card.taskPoints) {
-      setOnState((o) => !o);
+      toggle();
       chooseAwards(card.title, card.imgName, on);
     } else {
       alert("ИДИ ПОЛЫ ДРАИТЬ, ПАДЛА МЕЛКАЯ");
     }
   };
 
+  const toggle = () => {
+    setOnState((o) => !o);
+  };
+
   return (
     <button
+      value={value}
       className={on ? styles.on : styles.off}
-      onClick={toggle}
+      onClick={setAllButtonsId}
       style={{
         width: 40,
         height: 18,
@@ -61,6 +77,7 @@ function Toogle({ chooseAwards, card, collectAwards }) {
         MozAppearance: "none",
       }}
     >
+      {console.log("buttonId", buttonId)}
       <span className={styles.done}>&#10004;</span>
       <span className={styles.yes}>!</span>
       <span className={styles.pin} />

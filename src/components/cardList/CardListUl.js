@@ -13,6 +13,7 @@ const CardListUl = ({ cardList, chooseAwards, collectAwards }) => {
             <CardListLi
               list={list}
               key={list._id}
+              value={list._id}
               chooseAwards={chooseAwards}
               collectAwards={collectAwards}
             />
