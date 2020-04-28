@@ -10,6 +10,7 @@ import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
 // import { CurrentDay } from "./";
 // import { ProgressBar } from "./ path / ProgressBar";
 // import { CardList } from "./ path / CardList";
+import DefaultPage from './../mainPage/defaultPage/DefaultPage';
 
 export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
   // const [tasks, setTasks] = useState([]);
@@ -48,10 +49,10 @@ export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
           <img src={progressBar} width="254px" alt="progress in task doing" /> */}
         </div>
       </div>
-
+      <div className={styles.cardList}>
       {/* ========= CardList ========== */}
-      <ul className={styles.cardList}>
-        <CardListUl cardList={tasks} />
+      {tasks ? (<CardListUl cardList={tasks} />): (<DefaultPage/>)}
+      
         {/* <li key="1">
           <img
             src={defaultImgTask}
@@ -112,7 +113,8 @@ export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
           <span>Застелити ліжко</span>
           <span>3 бали</span>
         </li> */}
-      </ul>
+      </div>
+
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { LoaderUi } from "../ui/loader/Loader";
 
 const MainPage = lazy(() =>
-  import("../mainPage/MainPage" /* webpackChunkName: 'MainPage'*/)
+  import("../mainPage/Mainpage" /* webpackChunkName: 'MainPage'*/)
 );
 const PlanningPage = lazy(() =>
   import("../planningPage/PlanningPage" /* webpackChunkName: 'PlanningPage'*/)

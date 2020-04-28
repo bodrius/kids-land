@@ -2,10 +2,6 @@ import React from "react";
 import * as moment from "moment";
 import styles from "./CurrentWeekRange.module.css";
 import "moment/locale/uk";
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
 const CurrentWeekRange = () => {
   const startOfWeek = moment().startOf("week").format("DD");
   const endOfWeek = moment().endOf("week").format("DD");

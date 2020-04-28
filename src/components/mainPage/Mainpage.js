@@ -35,11 +35,11 @@ const fullDate= moment(1518116057189).format("L")
  const  MainPage = () => {
   const {userToken, userTasks} = useSelector((state) => state.user);
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(null);
   const [dayLabel, setDayLabel] = useState(moment().format('dddd'))
   const [fullDate, setFullDate] =useState(moment().format('L'))
   
-  console.log("tasks --->!", tasks);
+  // console.log("tasks --->!", tasks);
   const day = setMainPath();
   const history = useHistory();
 
@@ -48,9 +48,7 @@ const fullDate= moment(1518116057189).format("L")
   }, [day, history]);
 
   useEffect(() => {
-    services
-      .getCurrentUser(userToken)
-      .then((data) => setTasks(data.data.user.tasks));
+      setTasks(userTasks);
   }, []);
   
   const selectDay = (id) => {
@@ -83,23 +81,23 @@ const fullDate= moment(1518116057189).format("L")
  
   return (
     <div className={s.container}>
-      <div >
-        {windowWidth < 768 && (
+      {/* <div > */}
+
+        {/* {windowWidth < 768 && (
           <WeekTabs choosenDay={selectDay} days={setMainPath()}  />
-        )}
-        {windowWidth >= 769 && windowWidth < 1200 && (
-          <WeekTabs choosenDay={selectDay} days={setMainPath() } />
-        )}
-      </div>
-      <div>
+        )} */}
+          <WeekTabs choosenDay={selectDay} days={setMainPath()} />
+        {/* )} */}
+      {/* </div> */}
+      {/* <div> */}
           <WeekTabContent dayLabel={dayLabel} tasks={tasks} fullDate={fullDate} />
-      </div>
+      {/* </div> */}
 
 
-      <div>
+      {/* <div>
         
-      </div>
+      </div> */}
     </div>
   );                                 
 };
-export default MainPage
+export default MainPage;
