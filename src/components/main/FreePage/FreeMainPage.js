@@ -1,9 +1,8 @@
 import React from 'react'
 
-const FreeMainPage = () => (
-    
-);
+const FreeMainPage = () => {
 return(
     <p>Hello</p>
 )
+};
 export default FreeMainPage;
