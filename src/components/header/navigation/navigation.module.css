@@ -41,14 +41,12 @@ ul {
 } */
 
 .pages {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 200px;
-
 }
 
 .pages:last-child {
     margin-bottom: 0px;
-
 }
 
 .pages::before {
@@ -137,27 +135,17 @@ ul {
     background-repeat: no-repeat;
 }
 
-@media (min-width: 767px) {
-    .burgerContainer{
-          position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 100000;
-    min-height: 100%;
+@media (max-width: 767px) {
+    .overlay{
+        min-height: 10%;
     }
-    .overlay {
-        align-items: flex-start;
-        min-width: 30%;
+    .pages{
+        margin: 0 auto; 
+    margin-bottom: 15px;
     }
     .text{
-        margin-left: 25px;
+        margin-left: 30px;
     }
-
-    .closeModal::after {
-        left: 88%;
-        top: 10px;
-    }
-
 }
 
 .pageList {
