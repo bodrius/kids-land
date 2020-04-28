@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
-import { services } from "../../services/services";
+// import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 
 const days = [
@@ -33,13 +33,12 @@ const selectDay = (choosenDay) => {
   return days;
 };
 
- const MainPage = () => {
+const MainPage = () => {
   // console.log('tasks', user.tasks)
   const userToken = useSelector((state) => state.user.userToken);
   console.log("userToken ------->", userToken);
 
   const [tasks, setTasks] = useState([]);
-  console.log("tasks --->!", tasks);
   const day = setMainPath();
   const history = useHistory();
 
@@ -67,10 +66,10 @@ const selectDay = (choosenDay) => {
     <div>
       <div className={s.mainDiv}>
         {windowWidth < 768 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          <WeekTabs choosenDay={selectDay} days={setMainPath()} />
         )}
         {windowWidth >= 769 && windowWidth < 1200 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          <WeekTabs choosenDay={selectDay} days={setMainPath()} />
         )}
       </div>
 

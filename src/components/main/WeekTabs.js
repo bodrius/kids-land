@@ -4,9 +4,6 @@ import React from "react";
 import styles from "./WeekTabs.module.css";
 
 export const WeekTabs = ({ days, choosenDay }) => {
-  // console.log("data--->", data);
-  console.log("choosenDay, day", choosenDay);
-  console.log("days", days);
   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
   return (
