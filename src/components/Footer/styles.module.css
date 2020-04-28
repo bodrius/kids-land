@@ -5,6 +5,7 @@
   line-height: 21px;
   letter-spacing: 2px;
   display: flex;
+  margin-bottom: 30px;
 }
 .footerLogoContainer {
   width: 72px;
@@ -30,7 +31,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
   }
   .footerLogoLabel {
     color: #000000;
@@ -47,6 +47,7 @@
   }
 }
 
+
 @media (min-width: 768px) {
   .footer {
     color: rgb(133, 133, 152);
@@ -62,17 +63,12 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
-  .footer {
-    margin: 60px 0px 30px;
-  }
-}
 
 @media (min-width: 1200px) {
   .footer {
     width: 1200px;
     margin: 0 auto;
-    margin: 20px 0px 40px;
+    margin-bottom: 30px;
     justify-content: flex-end;
   }
 }
