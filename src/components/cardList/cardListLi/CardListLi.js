@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./CardListLi.module.css";
+import moment from "moment";
 import Toogle from "../toogle/Toogle";
 import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import ButtonBad from "../../../common/buttonBad/ButtonBad";
@@ -16,7 +17,10 @@ function CardListLi({ list, chooseAwards, collectAwards, location }) {
         />
       );
     } else if (location.pathname === "/") {
-      return <ButtonGood />;
+      const date = moment().format("Do MMMM YYYY");
+      if (date === date) {
+        return <ButtonGood />;
+      }
     }
   };
 
