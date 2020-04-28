@@ -1,6 +1,18 @@
+.container{
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  
+}
 @media (min-width: 768px) {
     .mainDiv {
       min-height: calc(100vh - 35px);
+    }
+    .container{
+      flex-direction: column;
     }
   }
   
@@ -9,9 +21,14 @@
       min-height: 100vh;
       display: flex;
     }
+    .container{
+      flex-direction: column;
+    }
+
   }
 
   .mainDiv {
     min-height: calc(100vh - 77px);
     background-color: var(--bg-color-gray);
   }
+ 
