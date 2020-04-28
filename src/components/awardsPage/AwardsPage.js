@@ -6,6 +6,7 @@ import AwardsModal from "./../awardsModal/AwardsModal";
 import CardListUl from "./../cardList/CardListUl";
 import ProgressBar from "./../progressBar/ProgressBar";
 import { pointUser } from "../../redux/auth/operations";
+import { Footer } from "../Footer/Footer";
 
 const AwardsPage = () => {
   const { userToken, userId, userPoint } = useSelector((state) => {
@@ -179,6 +180,7 @@ const AwardsPage = () => {
             </button>
           )}
         </div>
+      <Footer/>
       </div>
     </div>
   );
