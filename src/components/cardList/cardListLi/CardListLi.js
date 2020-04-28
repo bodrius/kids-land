@@ -19,12 +19,12 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
     <li className={style.Card__list}>
       <div>
         <img
-          // alt="img"
-          // src={
-          //   list.source
-          //     ? require(`../../../assets/image/prizesImg/${list.imgName}.jpg`)
-          //     : require(`../../../assets/image/planImg/${list.imgName}.jpg`)
-          // }
+          alt="img"
+          src={
+            list.source
+              ? require(`../../../assets/image/prizesImg/${list.imgName}.jpg`)
+              : require(`../../../assets/image/planImg/${list.imgName}.jpg`)
+          }
           className={style.Card__listImg}
         />
       </div>

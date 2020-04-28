@@ -70,10 +70,10 @@ const MainPage = () => {
         (activeDay) => activeDay.days[0].length,
       );
       // const dateOffTask = resultforFilter.find((activeDay) => activeDay.days[0].date)
-      console.log('resultforFilter', resultforFilter)
-      const dateOffTask = resultforFilter[0].days[0][0].date
-      console.log('dateOffTask', dateOffTask)
-      setFullDate(moment(dateOffTask).format("L"));
+      // console.log('resultforFilter', resultforFilter)
+      // const dateOffTask = resultforFilter[0].days[0][0].date
+      // console.log('dateOffTask', dateOffTask)
+      // setFullDate(moment(dateOffTask).format("L"));
 
       setTasks(resultforFilter);
     });
