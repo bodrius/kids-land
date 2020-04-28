@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
-// import { services } from "../../services/services";
+import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
@@ -47,11 +47,11 @@ const MainPage = () => {
     history.push(day);
   }, [day, history]);
 
-  useEffect(() => {
-    services
-      .getCurrentUser(userToken)
-      .then((data) => setTasks(data.data.user.tasks));
-  }, []);
+  // useEffect(() => {
+  //   services
+  //     .getCurrentUser(userToken)
+  //     .then((data) => setTasks(data.data.user.tasks));
+  // }, []);
 
   const selectDay = (id) => {
     const currentDayForImage = days.find((day) => day.id === id);
