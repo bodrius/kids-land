@@ -2,11 +2,13 @@ import React from "react";
 import * as moment from "moment";
 import styles from "./CurrentWeekRange.module.css";
 import "moment/locale/uk";
+<<<<<<< HEAD
+=======
 
+>>>>>>> dev
 const CurrentWeekRange = () => {
   const startOfWeek = moment().startOf("week").format("DD");
   const endOfWeek = moment().endOf("week").format("DD");
-
   function getThisMonth() {
     const monthes = [
       "сiчня",
@@ -17,18 +19,16 @@ const CurrentWeekRange = () => {
       "червня",
       "липня",
       "серпня",
-      "вересеня",
+      "вересня",
       "жовтня",
       "листопада",
       "грудня",
     ];
-
     if (startOfWeek >= endOfWeek) {
       return monthes[moment().get("M") + 1];
     } else return monthes[moment().get("M")];
   }
   const month = getThisMonth(moment().get("M"));
-
   return (
     <div className={styles.wrapper}>
       <p className={styles.week}>
@@ -37,5 +37,4 @@ const CurrentWeekRange = () => {
     </div>
   );
 };
-
 export default CurrentWeekRange;

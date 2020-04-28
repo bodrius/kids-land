@@ -8,6 +8,7 @@ import "moment/locale/uk";
 // console.log('Date.now', Date.now())
 // console.log(moment(1518116057189).format("dddd"))
 
+
 const CurrentDay = ({ days, date }) => {
   
   return (
