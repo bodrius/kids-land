@@ -1,17 +1,23 @@
 @media (min-width: 768px) {
-    .mainDiv {
-      min-height: calc(100vh - 35px);
-    }
-  }
-  
-  @media (min-width: 1280px) {
-    .mainDiv {
-      min-height: 100vh;
-      display: flex;
-    }
-  }
-
   .mainDiv {
-    min-height: calc(100vh - 77px);
-    background-color: var(--bg-color-gray);
+    min-height: calc(100vh - 35px);
   }
+}
+
+@media (min-width: 1280px) {
+  .mainDiv {
+    min-height: 100vh;
+    display: flex;
+  }
+}
+
+.mainDiv {
+  min-height: calc(100vh - 77px);
+  background-color: var(--bg-color-gray);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
