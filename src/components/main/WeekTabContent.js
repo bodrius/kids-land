@@ -29,90 +29,21 @@ export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
 
   return (
     <div className={styles.container}>
-      {/* ====== CurrentWeekRange ======== */}
       <div className={styles.currentWeekRange}>
         <CurrentWeekRange />
-        <ButtonCurrentWeekRange />
+        {/* <ButtonCurrentWeekRange /> */}
       </div>
-
       <div className={styles.mainHeader}>
-        {/* ========= CurrentDay ========== */}
         <div>
           <CurrentDay days={dayLabel} date={fullDate}/>
         </div>
-
-        {/* ========= ProgressBar ========== */}
         <div>
           <ProgressBar />
-          {/* <p>Набрано балів:</p>
-          <span>400 / 810</span>
-          <img src={progressBar} width="254px" alt="progress in task doing" /> */}
         </div>
       </div>
       <div className={styles.cardList}>
-      {/* ========= CardList ========== */}
-      {tasks ? (<CardListUl cardList={tasks} />): (<DefaultPage/>)}
+      {tasks.length ? (<CardListUl cardList={tasks} />): (<DefaultPage/>)}
       
-        {/* <li key="1">
-          <img
-            src={defaultImgTask}
-            width="280px"
-            height="200px"
-            alt="task title"
-          />
-          <span>Застелити ліжко</span>
-          <span>3 бали</span>
-        </li>
-        <li key="2">
-          <img
-            src={defaultImgTask}
-            width="280px"
-            height="200px"
-            alt="task title"
-          />
-          <span>Застелити ліжко</span>
-          <span>3 бали</span>
-        </li>
-        <li key="3">
-          <img
-            src={defaultImgTask}
-            width="280px"
-            height="200px"
-            alt="task title"
-          />
-          <span>Застелити ліжко</span>
-          <span>3 бали</span>
-        </li>
-        <li key="4">
-          <img
-            src={defaultImgTask}
-            width="280px"
-            height="200px"
-            alt="task title"
-          />
-          <span>Застелити ліжко</span>
-          <span>3 бали</span>
-        </li>
-        <li key="5">
-          <img
-            src={defaultImgTask}
-            width="280px"
-            height="200px"
-            alt="task title"
-          />
-          <span>Застелити ліжко</span>
-          <span>3 бали</span>
-        </li>
-        <li key="6">
-          <img
-            src={defaultImgTask}
-            width="280px"
-            height="200px"
-            alt="task title"
-          />
-          <span>Застелити ліжко</span>
-          <span>3 бали</span>
-        </li> */}
       </div>
 
     </div>

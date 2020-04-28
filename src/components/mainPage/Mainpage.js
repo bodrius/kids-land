@@ -9,13 +9,13 @@ import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
 const days = [
-  { id: 1, label: "Понеділок", name: "monday", selected: false },
-  { id: 2, label: "Вівторок", name: "tuesday", selected: false },
-  { id: 3, label: "Середа", name: "wednesday", selected: false },
-  { id: 4, label: "Четвер", name: "thursday", selected: false },
-  { id: 5, label: "П'ятниця", name: "friday", selected: false },
-  { id: 6, label: "Субота", name: "Saturday", selected: false },
-  { id: 7, label: "Неділя", name: "Sunday", selected: false },
+  { id: 1, label: "Понеділок", name: "monday", dayDate:"27.04.2020", selected: false,  },
+  { id: 2, label: "Вівторок", name: "tuesday", dayDate:"28.04.2020", selected: false },
+  { id: 3, label: "Середа", name: "wednesday", dayDate:"29.04.2020", selected: false },
+  { id: 4, label: "Четвер", name: "thursday", dayDate:"30.04.2020", selected: false },
+  { id: 5, label: "П'ятниця", name: "friday", dayDate:"01.05.2020", selected: false },
+  { id: 6, label: "Субота", name: "Saturday", dayDate:"02.05.2020", selected: false },
+  { id: 7, label: "Неділя", name: "Sunday", dayDate:"03.05.2020", selected: false },
 ];
 
 const windowWidth = document.documentElement.clientWidth;
@@ -28,13 +28,10 @@ const setMainPath = () => {
   return days;
 };
 
-const dayLabel = moment(1518116057189).format("dddd");
-
-const fullDate = moment(1518116057189).format("L");
 const MainPage = () => {
   const { userToken, userTasks } = useSelector((state) => state.user);
 
-  const [tasks, setTasks] = useState(null);
+  const [tasks, setTasks] = useState([]);
   const [dayLabel, setDayLabel] = useState(moment().format('dddd'))
   const [fullDate, setFullDate] =useState(moment().format('L'))
   
@@ -45,8 +42,15 @@ const MainPage = () => {
     history.push(day);
   }, [day, history]);
 
+
+  
   useEffect(() => {
-      setTasks(userTasks);
+   const dayId = days.find((day) =>
+    day.label.toLowerCase() === dayLabel.toLowerCase() ? (day.id):null
+  );
+  console.log("dayId", dayId.id);
+
+    selectDay(dayId.id)
   }, []);
   
   const selectDay = (id) => {
@@ -70,7 +74,9 @@ const MainPage = () => {
     });
     console.log("currentDayForImage", currentDayForImage);
     setDayLabel(currentDayForImage.label);
-    setFullDate(moment(1588095698476).format("L"));
+    setFullDate(currentDayForImage.dayDate);
+    console.log("Some date----->", currentDayForImage.dayDate);
+
 
     return currentDayForImage.name;
   };

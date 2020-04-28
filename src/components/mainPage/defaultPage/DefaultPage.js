@@ -1,7 +1,11 @@
 import React from 'react';
+import ButtonCurrentWeekRange from '../../CurrentWeekRange/ButtonCurrentWeekRange';
+import s from "./DefaultPage.module.css"
 const DefaultPage = () => {
     return(
-        <h2>hello</h2>
+        <div className ={s.container}>
+            <ButtonCurrentWeekRange/>
+        </div>
     )
 }
     
