@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./CardListLi.module.css";
 import Toogle from "../toogle/Toogle";
-import ButtonGood from "../../../common/bottonGod/ButtonGood";
-import ButtonBad from "../../../common/buttonBad/ButtonBad";
+// import ButtonGood from "../../../common/bottonGod/ButtonGood";
+// import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
   // switch (path) {
   //   case "/awards":
