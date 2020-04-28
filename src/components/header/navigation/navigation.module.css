@@ -34,15 +34,12 @@ ul {
     min-width: 100%;
 
 }
-/* .overlay_2{
-    position: fixed;
-    width: 100%;
-    z-index: 100001;
-} */
+
 
 .pages {
     margin-bottom: 10px;
     width: 200px;
+    margin-bottom: 15px;
 
 }
 
@@ -136,8 +133,22 @@ ul {
     background-position: center;
     background-repeat: no-repeat;
 }
+@media (max-width: 767px) {
+    .overlay{
+        min-height: 10%;
 
-@media (min-width: 767px) {
+    }
+    .pages{
+        margin: 0 auto; 
+    margin-bottom: 15px;
+    }
+    .text{
+        margin-left: 30px;
+    }
+
+}
+
+@media (min-width: 768px) {
     .burgerContainer{
           position: fixed;
     right: 0;

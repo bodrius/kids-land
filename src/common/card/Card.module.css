@@ -54,6 +54,7 @@
   padding: 0;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .Popup {
@@ -79,6 +80,7 @@
     flex-direction: row;
     justify-content: center;
     max-width: 582px;
+    padding-bottom: 70px;
   }
 }
 
@@ -105,5 +107,6 @@
 
   .Card__listUl {
     max-width: 1186px;
+    padding-bottom: 50px;
   }
 }
