@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import s from "./MainPage.module.css";
 import moment from "moment";
 import { WeekTabs } from "../main/WeekTabs";
-import { services } from "../../services/services";
+// import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
