@@ -12,7 +12,7 @@ import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
 // import { CardList } from "./ path / CardList";
 import DefaultPage from './../mainPage/defaultPage/DefaultPage';
 
-export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
+export const WeekTabContent = ({ tasks, fullDate, dayLabel, totalPoints, planingPoints}) => {
   // const [tasks, setTasks] = useState([]);
 
   // const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
@@ -38,7 +38,7 @@ export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
           <CurrentDay days={dayLabel} date={fullDate}/>
         </div>
         <div>
-          <ProgressBar />
+          <ProgressBar userPoints={totalPoints}  weekPoints={planingPoints}/>
         </div>
       </div>
       <div className={styles.cardList}>
