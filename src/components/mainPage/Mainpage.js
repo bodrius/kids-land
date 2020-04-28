@@ -9,13 +9,55 @@ import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
 const days = [
-  { id: 1, label: "Понеділок", name: "monday", dayDate:"27.04.2020", selected: false,  },
-  { id: 2, label: "Вівторок", name: "tuesday", dayDate:"28.04.2020", selected: false },
-  { id: 3, label: "Середа", name: "wednesday", dayDate:"29.04.2020", selected: false },
-  { id: 4, label: "Четвер", name: "thursday", dayDate:"30.04.2020", selected: false },
-  { id: 5, label: "П'ятниця", name: "friday", dayDate:"01.05.2020", selected: false },
-  { id: 6, label: "Субота", name: "Saturday", dayDate:"02.05.2020", selected: false },
-  { id: 7, label: "Неділя", name: "Sunday", dayDate:"03.05.2020", selected: false },
+  {
+    id: 1,
+    label: "Понеділок",
+    name: "monday",
+    dayDate: "27.04.2020",
+    selected: false,
+  },
+  {
+    id: 2,
+    label: "Вівторок",
+    name: "tuesday",
+    dayDate: "28.04.2020",
+    selected: false,
+  },
+  {
+    id: 3,
+    label: "Середа",
+    name: "wednesday",
+    dayDate: "29.04.2020",
+    selected: false,
+  },
+  {
+    id: 4,
+    label: "Четвер",
+    name: "thursday",
+    dayDate: "30.04.2020",
+    selected: false,
+  },
+  {
+    id: 5,
+    label: "П'ятниця",
+    name: "friday",
+    dayDate: "01.05.2020",
+    selected: false,
+  },
+  {
+    id: 6,
+    label: "Субота",
+    name: "Saturday",
+    dayDate: "02.05.2020",
+    selected: false,
+  },
+  {
+    id: 7,
+    label: "Неділя",
+    name: "Sunday",
+    dayDate: "03.05.2020",
+    selected: false,
+  },
 ];
 
 const windowWidth = document.documentElement.clientWidth;
@@ -32,9 +74,9 @@ const MainPage = () => {
   const { userToken, userTasks } = useSelector((state) => state.user);
 
   const [tasks, setTasks] = useState([]);
-  const [dayLabel, setDayLabel] = useState(moment().format('dddd'))
-  const [fullDate, setFullDate] =useState(moment().format('L'))
-  
+  const [dayLabel, setDayLabel] = useState(moment().format("dddd"));
+  const [fullDate, setFullDate] = useState(moment().format("L"));
+
   const day = setMainPath();
   const history = useHistory();
 
@@ -42,17 +84,15 @@ const MainPage = () => {
     history.push(day);
   }, [day, history]);
 
-
-  
   useEffect(() => {
-   const dayId = days.find((day) =>
-    day.label.toLowerCase() === dayLabel.toLowerCase() ? (day.id):null
-  );
-  console.log("dayId", dayId.id);
+    const dayId = days.find((day) =>
+      day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
+    );
+    console.log("dayId", dayId.id);
 
-    selectDay(dayId.id)
+    selectDay(dayId.id);
   }, []);
-  
+
   const selectDay = (id) => {
     const currentDayForImage = days.find((day) => day.id === id);
     const res = services.getCurrentUser(userToken).then((data) => {
@@ -77,14 +117,13 @@ const MainPage = () => {
     setFullDate(currentDayForImage.dayDate);
     console.log("Some date----->", currentDayForImage.dayDate);
 
-
     return currentDayForImage.name;
   };
 
   return (
     <div className={s.container}>
-          <WeekTabs choosenDay={selectDay} days={setMainPath()} />
-          <WeekTabContent dayLabel={dayLabel} tasks={tasks} fullDate={fullDate} />
+      <WeekTabs choosenDay={selectDay} days={setMainPath()} />
+      <WeekTabContent dayLabel={dayLabel} tasks={tasks} fullDate={fullDate} />
     </div>
   );
 };
