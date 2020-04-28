@@ -70,7 +70,7 @@ const MainPage = () => {
         ],
       }));
        console.log('result---------->', result)
-      const points = result.reduce((acc, resultItem)=> {console.log("mmmmmmmmmmmmmmmmmmmmmm",resultItem.days[0].length); return acc= acc+resultItem.days.length&&resultItem.points?resultItem.days.length*resultItem.points:0},0)
+      // const points = result.reduce((acc, resultItem)=> {console.log("mmmmmmmmmmmmmmmmmmmmmm",resultItem.days[0].length); return acc= acc+resultItem.days.length&&resultItem.points?resultItem.days.length*resultItem.points:0},0)
       setPlaningPoints(points)
       console.log('points', points)
       const resultforFilter = result.filter(
