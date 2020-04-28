@@ -9,13 +9,13 @@ import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
 const days = [
-  { id: 1, label: "Понеділок", name: "monday", dayDate:"27.04.2020", selected: false,  },
-  { id: 2, label: "Вівторок", name: "tuesday", dayDate:"28.04.2020", selected: false },
-  { id: 3, label: "Середа", name: "wednesday", dayDate:"29.04.2020", selected: false },
-  { id: 4, label: "Четвер", name: "thursday", dayDate:"30.04.2020", selected: false },
-  { id: 5, label: "П'ятниця", name: "friday", dayDate:"01.05.2020", selected: false },
-  { id: 6, label: "Субота", name: "Saturday", dayDate:"02.05.2020", selected: false },
-  { id: 7, label: "Неділя", name: "Sunday", dayDate:"03.05.2020", selected: false },
+  { id: 1, label: "Понеділок", name: "monday", selected: false,  },
+  { id: 2, label: "Вівторок", name: "tuesday", selected: false },
+  { id: 3, label: "Середа", name: "wednesday", selected: false },
+  { id: 4, label: "Четвер", name: "thursday", selected: false },
+  { id: 5, label: "П'ятниця", name: "friday", selected: false },
+  { id: 6, label: "Субота", name: "Saturday", selected: false },
+  { id: 7, label: "Неділя", name: "Sunday", selected: false },
 ];
 
 const windowWidth = document.documentElement.clientWidth;
@@ -67,14 +67,21 @@ const MainPage = () => {
           ),
         ],
       }));
+      console.log('result---------->', result)
       const resultforFilter = result.filter(
-        (activeDay) => activeDay.days[0].length
+        (activeDay) => activeDay.days[0].length,
       );
+      // const dateOffTask = resultforFilter.find((activeDay) => activeDay.days[0].date)
+      console.log('resultforFilter', resultforFilter)
+      const dateOffTask = resultforFilter[0].days[0][0].date
+      console.log('dateOffTask', dateOffTask)
+      setFullDate(moment(dateOffTask).format("L"));
+
       setTasks(resultforFilter);
     });
     console.log("currentDayForImage", currentDayForImage);
     setDayLabel(currentDayForImage.label);
-    setFullDate(currentDayForImage.dayDate);
+    // setFullDate(currentDayForImage.dayDate);
     console.log("Some date----->", currentDayForImage.dayDate);
 
 
