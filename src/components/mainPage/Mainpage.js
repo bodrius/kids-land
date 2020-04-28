@@ -71,16 +71,16 @@ const MainPage = () => {
       }));
        console.log('result---------->', result)
       // const points = result.reduce((acc, resultItem)=> {console.log("mmmmmmmmmmmmmmmmmmmmmm",resultItem.days[0].length); return acc= acc+resultItem.days.length&&resultItem.points?resultItem.days.length*resultItem.points:0},0)
-      setPlaningPoints(points)
-      console.log('points', points)
+      // setPlaningPoints(points)
+      // console.log('points', points)
       const resultforFilter = result.filter(
         (activeDay) => activeDay.days[0].length,
       );
       // setPlaningPoints(resultforFilter.reduce(((acc, activeDay) => acc+ activeDay.points),0))
-      console.log('resultforFilter', resultforFilter)
-      const dateOffTask = resultforFilter[0].days[0][0].date
-      console.log('dateOffTask', dateOffTask)
-      setFullDate(moment(dateOffTask).format("L"));
+      // console.log('resultforFilter', resultforFilter)
+      // const dateOffTask = resultforFilter[0].days[0][0].date
+      // console.log('dateOffTask', dateOffTask)
+      // setFullDate(moment(dateOffTask).format("L"));
 
       setTasks(resultforFilter);
     });
