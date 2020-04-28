@@ -37,5 +37,5 @@ export const logoutUser = (param) => async (dispatch, getState) => {
 export const pointUser = (param) => async (dispatch, getState) => {
   console.log("param POINT", param);
 
-  dispatch({ type: types.USER_SIGNOUT, payload: param });
+  dispatch({ type: types.ADD_POINT, payload: param });
 };
