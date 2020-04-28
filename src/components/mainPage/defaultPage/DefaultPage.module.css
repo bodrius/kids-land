@@ -1,0 +1,6 @@
+.container{
+    background-image: url("../../../assets/image/defaultPage/defaultPage.jpg");
+    width: 100%;
+    height: 454px;
+    background-size: cover;
+}

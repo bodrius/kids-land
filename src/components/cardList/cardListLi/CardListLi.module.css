@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 280px;
-  height: 262px;
+  height: auto;
   border-radius: 5px;
   margin-bottom: 20px;
 }
@@ -16,10 +16,15 @@
   height: 68px;
   justify-content: space-between;
   align-items: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .Card__listImg {
   width: 280px;
   height: 196px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
 }
 .Card__listTitle {
   margin: 0;
@@ -74,10 +79,7 @@
   .Card__list {
     margin-right: 22px;
   }
-  .Card__list:nth-child(4n) {
+  .Card__list:nth-child(3n) {
     margin-right: 0;
-  }
-  .Card__list:nth-last-child(-n + 4) {
-    margin-bottom: 0;
   }
 }
