@@ -6,20 +6,10 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      console.log("e", e.key);
-      if (e.keyCode === 27) {
-        openModal(false);
-      }
-    };
-
-    document.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, []);
+  const bgImg = (props) => {
+    const imgUrl = require(`../../assets/image/prizesImg/${props}.jpg`)
+    return imgUrl
+  }
 
   return (
     <>
@@ -34,18 +24,19 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
               height="auto"
             />
             {console.log("modal", modal)}
-            <p className={styles.modalGreetings}>congratz, but where milk</p>
+            {prizes.length > 0 ? (
+              <p className={styles.modalGreetings}>Вітаємо! Ти отримуєш:</p>
+            ) : (
+              <p className={styles.modalGreetings}>Обери хоч щось!</p>
+            )}
             <ul className={styles.modalPrizes}>
               {prizes.map((prize) => (
                 <li key={prize.title} className={styles.modalPrizesItem}>
-                  <div className={styles.modalPrizesItemImageWrapper}>
-                    <img
-                      src={prize.imgName}
-                      alt="prize"
-                      width="100"
-                      height="100"
-                      className={styles.modalPrizesPhoto}
-                    />
+                  <div
+                    id="sexyId"
+                    className={styles.modalPrizesItemImageWrapper}
+                    style={{backgroundImage: `url(${bgImg(prize.imgName)})`}}
+                  >
                   </div>
                   <p className={styles.modalPrizesName}>{prize.title}</p>
                 </li>

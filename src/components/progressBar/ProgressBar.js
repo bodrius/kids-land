@@ -38,7 +38,11 @@ const ProgressBar = ({ userPoints, weekPoints }) => {
 };
 
 const mapStateToProps = state => ({
+<<<<<<< HEAD
   //   userPoints: 300,
+=======
+//   // userPoints: 300,
+>>>>>>> dev
   countPoints: 800
 });
 

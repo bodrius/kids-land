@@ -1,4 +1,4 @@
-button {
+/* .button {
   background-color: rgb(218, 4, 4);
   border: 0;
   border-radius: 50px;
@@ -10,13 +10,13 @@ button {
   -moz-appearance: none;
 }
 
-button:focus,
-button:active {
+.button:focus,
+.button:active {
   outline: none;
 }
-button::-moz-focus-inner {
+.button::-moz-focus-inner {
   border: 0;
-}
+} */
 
 .pin {
   background-color: rgb(255, 255, 255);
@@ -28,12 +28,14 @@ button::-moz-focus-inner {
   width: 14px;
   transition: left ease 0.5s;
 }
-
-button.on {
+.off{
+  background-color: rgb(218, 4, 4);
+}
+.on {
   background-color: rgb(142, 198, 63);
 }
 
-button.on .pin {
+.on .pin {
   left: 21px;
 }
 .done {

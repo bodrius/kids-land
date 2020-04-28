@@ -5,6 +5,7 @@
   line-height: 21px;
   letter-spacing: 2px;
   display: flex;
+  margin-bottom: 30px;
 }
 .footerLogoContainer {
   width: 72px;
@@ -24,8 +25,6 @@
   color: rgb(133, 133, 152);
 }
 /* footer */
-
-
 
 @media (max-width: 768px) {
   .footer {
@@ -48,6 +47,7 @@
   }
 }
 
+
 @media (min-width: 768px) {
   .footer {
     color: rgb(133, 133, 152);
@@ -60,5 +60,15 @@
   .footerLogoIcon {
     margin-left: 4px;
     margin-right: 4px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .footer {
+    width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    justify-content: flex-end;
   }
 }

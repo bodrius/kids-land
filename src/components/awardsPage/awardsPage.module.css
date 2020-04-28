@@ -85,6 +85,15 @@
   outline: none;
 }
 
+.awardsButton:hover,
+.awardsButton:focus {
+  transform: translate(-1.5px, -1.5px);
+}
+
+.awardsButton:active {
+  transform: translate(1.5px, 1.5px);
+}
+
 @media (min-width: 768px) {
   .awardsWrapper {
     width: 586px;
@@ -161,8 +170,8 @@
   }
 
   .awardsButtonWrapper {
-    margin-bottom: 44px;
-    margin-top: 56px;
+    margin-bottom: 50px;
+    margin-top: 26px;
   }
 
   .awardsListItem:nth-last-child(n + 2) {

@@ -6,6 +6,7 @@ import styles from "./CurrentWeekPlaning.module.css";
 const CurrentWeekPlaning = () => {
   const startOfWeek = moment().startOf("week").format("DD");
   const endOfWeek = moment().endOf("week").format("DD.MM.YYYY");
+
   return (
     <>
       <p className={styles.wrapper}>
@@ -20,5 +21,3 @@ const CurrentWeekPlaning = () => {
 };
 
 export default CurrentWeekPlaning;
-
-//need show in planing rout section
