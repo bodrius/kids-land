@@ -36,10 +36,10 @@ const selectDay = (choosenDay) => {
 const MainPage = () => {
   // console.log('tasks', user.tasks)
   const {userToken,userTasks} = useSelector((state) => state.user);
-  console.log("userToken ------->", userToken);
+  // console.log("userToken ------->", userToken);
 
   const [tasks, setTasks] = useState([]);
-  console.log("tasks --->!", tasks);
+  // console.log("tasks --->!", tasks);
   const day = setMainPath();
   const history = useHistory();
 
@@ -52,7 +52,7 @@ const MainPage = () => {
     //   .getCurrentUser(userToken)
     //   .then((data) => setTasks(data.data.user.tasks));
     setTasks(userTasks);
-  }, []);
+  }, [userTasks]);
   // useEffect(() => {
   //   // services
   //   //   .getCurrentUser(userToken)
@@ -91,17 +91,17 @@ const MainPage = () => {
     <div>
       <div className={s.mainDiv}>
         {windowWidth < 768 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />,
-          <WeekTabContent tasks={tasks} />
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          // <WeekTabContent tasks={tasks} />
         )}
         {windowWidth >= 769 && windowWidth < 1200 && (
-          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />,
-          <WeekTabContent tasks={tasks} />
+          <WeekTabs choosenDay={selectDay()} days={setMainPath()} />
+          // <WeekTabContent tasks={tasks} />
         )}
       </div>
 
       <div>
-        {/* <WeekTabContent tasks={tasks} /> */}
+        <WeekTabContent tasks={tasks} />
       </div>
     </div>
   );
