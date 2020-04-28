@@ -4,20 +4,22 @@ import Toogle from "../toogle/Toogle";
 import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
-// switch (path) {
-//   case "/awards":
-//     return <Toogle />;
-//   case "/":
-//     return <Toogle />;
+function CardListLi({ list, chooseAwards, collectAwards, location }) {
+  const drawing = () => {
+    if (location.pathname === "/awards") {
+      return (
+        <Toogle
+          point={list.taskPoints}
+          chooseAwards={chooseAwards}
+          card={list}
+          collectAwards={collectAwards}
+        />
+      );
+    } else if (location.pathname === "/") {
+      return <ButtonGood />;
+    }
+  };
 
-//   default:
-//     break;
-// }
-const drawing = () => {
-  return <button className={style.Card__listBtton}>+</button>;
-};
-
-const CardListLi = ({ list, chooseAwards, collectAwards }) => {
   return (
     <li className={style.Card__list}>
       <div>
@@ -36,20 +38,9 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
           <p className={style.Card__listTitle}>{list.title}</p>
           <p className={style.Card__listPoint}>{list.taskPoints} БАЛIВ</p>
         </div>
-        <div className={style.Card__listBt}>
-          {list.source ? (
-            <Toogle
-              point={list.taskPoints}
-              chooseAwards={chooseAwards}
-              card={list}
-              collectAwards={collectAwards}
-            />
-          ) : (
-            drawing
-          )}
-        </div>
+        <div className={style.Card__listBt}>{drawing()}</div>
       </div>
     </li>
   );
-};
+}
 export default CardListLi;

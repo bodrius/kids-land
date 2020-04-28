@@ -35,7 +35,7 @@ const selectDay = (choosenDay) => {
 
  const MainPage = () => {
   // console.log('tasks', user.tasks)
-  const userToken = useSelector((state) => state.user.userToken);
+  const {userToken, userTasks} = useSelector((state) => state.user);
   console.log("userToken ------->", userToken);
 
   const [tasks, setTasks] = useState([]);
@@ -47,11 +47,13 @@ const selectDay = (choosenDay) => {
     history.push(day);
   }, [day, history]);
 
-  // useEffect(() => {
-  //   services
-  //     .getCurrentUser(userToken)
-  //     .then((data) => setTasks(data.data.user.tasks));
-  // }, []);
+  useEffect(() => {
+    // services
+    //   .getCurrentUser(userToken)
+    //   .then((data) => setTasks(data.data.user.tasks));
+    const data =  setTasks(userTasks);
+    return data;
+  }, [userTasks]);
 
   // services
   //   .userSignIn({
