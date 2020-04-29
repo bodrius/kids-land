@@ -1,60 +1,8 @@
 import React from "react";
 import styles from "./Toogle.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { services } from "./../../../services/services";
 
 function Toogle({ chooseAwards, card, pointsToModal, choosenAwards }) {
-  // const { userPoint, userToken, userId } = useSelector((state) => state.user);
-  // const [updatedPoints, setUpdatedPoints] = React.useState(userPoint);
-  // const user = useSelector((state) => state.user);
   const [on, setOnState] = React.useState(false);
-
-  // const initialState = {
-  //   1: false,
-  //   2: false,
-  //   3: false,
-  //   4: false,
-  //   5: false,
-  //   6: false,
-  //   7: false,
-  //   8: false,
-  // };
-  // const [buttonId, setButtonId] = React.useState(initialState);
-
-  // React.useEffect(() => {
-  //   (async () => {
-  //     const shit = await services.getCurrentUser(userToken);
-  //     // console.log("shit", shit);
-  //     await setUpdatedPoints(shit.data.user.points);
-  //   })();
-  // }, [on]);
-
-  // React.useEffect(() => {
-  //   (async () => {
-  //     if (!on) {
-  //       const calculatingPoints =
-  //         Number(updatedPoints) - Number(card.taskPoints);
-  //       console.log("calculatingPoints MINUS", calculatingPoints);
-  //       await setUpdatedPoints(calculatingPoints);
-  //     } else {
-  //       const calculatingPoints =
-  //         Number(updatedPoints) + Number(card.taskPoints);
-  //       await setUpdatedPoints(calculatingPoints);
-  //     }
-  //     await collectAwards(updatedPoints);
-  //     // console.log("Calculation", updatedPoints);
-  //   })();
-  // }, [on]);
-
-  // const setAllButtonsId = async (e) => {
-  //   const key = e.target.value;
-  //   setButtonId((prevState) => {console.log('prevState', key); return{ ...prevState, [key]: !prevState.key }});
-  //   if (userPoint >= card.taskPoints) {
-  //     toggle();
-  //   } else {
-  //     alert("ИДИ ПОЛЫ ДРАИТЬ, ПАДЛА МЕЛКАЯ");
-  //   }
-  // };
 
   const toggle = (e) => {
     setOnState((o) => !o);
@@ -80,7 +28,6 @@ function Toogle({ chooseAwards, card, pointsToModal, choosenAwards }) {
         MozAppearance: "none",
       }}
     >
-      {/* {console.log("buttonId", buttonId)} */}
       <span className={styles.done}>&#10004;</span>
       <span className={styles.yes}>!</span>
       <span className={styles.pin} />

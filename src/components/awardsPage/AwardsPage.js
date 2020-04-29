@@ -19,14 +19,6 @@ const AwardsPage = () => {
   const [fail, setFail] = useState(false);
   const dispatch = useDispatch();
 
-  const chooseAwards = (title, imgName, isOn, taskPoints) => {
-    if (isOn) {
-      setToggle(toggle.filter((elem) => elem.imgName !== imgName));
-    } else {
-      setToggle([...toggle, { title, imgName, taskPoints }]);
-    }
-  };
-
   useEffect(() => {
     if (pointsTotal > points) {
       setFail(true);
@@ -34,6 +26,32 @@ const AwardsPage = () => {
       setFail(false);
     }
   }, [modal]);
+
+  useEffect(() => {
+    setModal(false);
+  }, []);
+
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.keyCode === 27) {
+        setModal(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+
+  const chooseAwards = (title, imgName, isOn, taskPoints) => {
+    if (isOn) {
+      setToggle(toggle.filter((elem) => elem.imgName !== imgName));
+    } else {
+      setToggle([...toggle, { title, imgName, taskPoints }]);
+    }
+  };
 
   const collectAwards = async () => {
     if (points > pointsTotal) {
@@ -61,25 +79,6 @@ const AwardsPage = () => {
     }
   };
 
-  useEffect(() => {
-    setModal(false);
-  }, []);
-
-  useEffect(() => {
-    const onKeyDown = (e) => {
-      // console.log("e", e.key);
-      if (e.keyCode === 27) {
-        setModal(false);
-      }
-    };
-
-    document.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, []);
-
   const openModal = () => {
     setModal(true);
   };
@@ -87,16 +86,6 @@ const AwardsPage = () => {
   const closeModal = () => {
     setModal(false);
   };
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const shit = await services.getCurrentUser(userToken);
-  //     console.log("shit", shit);
-  //     const userPoints = shit.data.user.points;
-  //     setPoints(userPoints);
-  //     services.updateUserPoints(userToken, userId, 100); //
-  //   })();
-  // }, []);
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
