@@ -1,7 +1,7 @@
 .Card__list {
   display: flex;
   flex-wrap: wrap;
-  width: 280px;
+  width: 270px;
   height: auto;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -24,7 +24,6 @@
   height: 196px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-
 }
 .Card__listTitle {
   margin: 0;
@@ -78,8 +77,5 @@
 @media (min-width: 1200px) {
   .Card__list {
     margin-right: 22px;
-  }
-  .Card__list:nth-child(3n) {
-    margin-right: 0;
   }
 }

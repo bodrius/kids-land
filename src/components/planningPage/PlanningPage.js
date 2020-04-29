@@ -9,7 +9,6 @@ import { NewTaskModal } from "../newTaskModal/NewTaskModal";
 import CurrentWeekPlaning from "../currentDay/CurrentWeekPlaning";
 import { services } from "../../services/services";
 import styles from "./styles.module.css";
-
 const PlanningPage = () => {
   const [tasks, setTasks] = React.useState([]);
   const [allUserPoints, setAllUserPoints] = React.useState(0);
@@ -22,14 +21,13 @@ const PlanningPage = () => {
   const plusPoint = (p) => {
     setAllUserPoints(allUserPoints + p);
   };
+  // console.log('allUserPoints', allUserPoints)
   function handleOpenTaskModal() {
     setModalIsOpen(true);
   }
-
   function handleCloseTaskModal() {
     setModalIsOpen(false);
   }
-
   function handleCollectCustomTask(task) {
     services.createUserTask(userToken, task).then(({ data: { tasks } }) => {
       setTasks(tasks);
@@ -66,5 +64,4 @@ const PlanningPage = () => {
     </div>
   );
 };
-
 export default PlanningPage;
