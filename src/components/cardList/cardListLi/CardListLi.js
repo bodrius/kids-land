@@ -15,7 +15,7 @@ import Toogle from "../toogle/Toogle";
   // }
 
 
-const CardListLi = ({ list, chooseAwards, collectAwards }) => {
+const CardListLi = ({ list, chooseAwards, collectAwards, toggle , pointsToModal}) => {
 
   return (
     <li className={style.Card__list}>

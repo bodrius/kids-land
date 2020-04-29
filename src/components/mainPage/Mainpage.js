@@ -83,7 +83,7 @@ const MainPage = () => {
       // console.log('dateOffTask', dateOffTask)
       // setFullDate(moment(dateOffTask).format("L"));
       // setPlaningPoints(points);
-      // setTasks(resultforFilter);
+      setTasks(resultforFilter);
     });
     console.log("currentDayForImage", currentDayForImage);
     setDayLabel(currentDayForImage.label);
