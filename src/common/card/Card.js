@@ -4,9 +4,11 @@ import CardTransition from "././CardTransition.module.css";
 import { CSSTransition } from "react-transition-group";
 import { StaticRouter } from "react-router-dom";
 import { ButtonPlus } from "../buttonPlus/ButtonPlus.js";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 export const Card = ({
-  data: { imgName, title, taskPoints, days },
+  data: { imgName, title, taskPoints, days, _id },
   plusPoint,
 }) => {
   const [state, setState] = React.useState({ visible: false });
@@ -20,18 +22,15 @@ export const Card = ({
           days={days}
           point={taskPoints}
           plusPoint={plusPoint}
+          id={_id}
         />
         <div>
           <img
-<<<<<<< HEAD
             src={
               imgName
                 ? require(`../../assets/image/planImg/${imgName}.jpg`)
-                : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
+                : require(`../../assets/image/modalAddTask/3.jpg`)
             }
-=======
-            src={imgName ? require(`../../assets/image/planImg/${imgName}.jpg`) : require(`../../assets/image/modalAddTask/3.jpg`)}
->>>>>>> dev
             alt="img"
             className={style.Card__listImg}
           />
@@ -60,7 +59,7 @@ export const Card = ({
   );
 };
 
-export const Popup = ({ visible, days, point, plusPoint }) => {
+export const Popup = ({ visible, days, point, plusPoint, id }) => {
   return (
     <CSSTransition
       in={visible}
@@ -77,6 +76,7 @@ export const Popup = ({ visible, days, point, plusPoint }) => {
               key={index}
               text={day.title}
               checked={day.isActive}
+              id={id}
             />
           );
         })}
@@ -85,21 +85,57 @@ export const Popup = ({ visible, days, point, plusPoint }) => {
   );
 };
 
-const CheckBox = ({ text, checked, point, plusPoint }) => {
+const CheckBox = ({ text, checked, point, plusPoint, id }) => {
   const [state, setState] = React.useState(checked);
+  const { userToken } = useSelector((state) => state.user);
   return (
     <li className={style.Popup__li}>
       <label>
         <input
           type="checkbox"
           checked={state}
-          onChange={() => {
+          onChange={async () => {
+            console.log("text", text);
+            console.log("id", id);
+            console.log("userToken", userToken);
             setState(!state);
             plusPoint(!state ? point : -1 * point);
+            const chooseDays = await currentTask(id, userToken);
+            console.log("chooseDays", chooseDays);
+            await updateСommission(text, id, userToken, chooseDays);
           }}
         />
         <span>{text}</span>
       </label>
     </li>
   );
+};
+
+const currentTask = async (id, token) => {
+  const data = await axios.get("https://kidslike.goit.co.ua/api/auth/current", {
+    headers: {
+      "content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const res = data.data.user.tasks.find((t) => t._id === id);
+  console.log(res.days);
+  return res;
+};
+
+const updateСommission = (day, commissionId, token, days) => {
+  const filter = days.days.map((d) =>
+    d.title === day ? { ...d, isActive: !d.isActive } : d
+  );
+
+  fetch(`https://kidslike.goit.co.ua/api/tasks/${commissionId}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ days: filter }),
+  })
+    .then((res) => res.json())
+    .then((resData) => console.log(resData));
 };
