@@ -4,15 +4,15 @@ import Toogle from "../toogle/Toogle";
 // import ButtonGood from "../../../common/bottonGod/ButtonGood";
 // import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
-  // switch (path) {
-  //   case "/awards":
-  //     return <Toogle />;
-  //   case "/":
-  //     return <Toogle />;
+// switch (path) {
+//   case "/awards":
+//     return <Toogle />;
+//   case "/":
+//     return <Toogle />;
 
-  //   default:
-  //     break;
-  // }
+//   default:
+//     break;
+// }
 
 const CardListLi = ({ list, chooseAwards, collectAwards }) => {
   return (
@@ -23,7 +23,9 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
           src={
             list.source
               ? require(`../../../assets/image/prizesImg/${list.imgName}.jpg`)
-              : require(`../../../assets/image/planImg/${list.imgName}.jpg`)
+              : list.imgName
+              ? require(`../../../assets/image/planImg/${list.imgName}.jpg`)
+              : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
           }
           className={style.Card__listImg}
         />

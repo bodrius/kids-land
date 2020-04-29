@@ -1,24 +1,31 @@
 .weektabs {
-  padding-top: 132px;
-  width: 240px;
-  height: 790px;
-  background-color: #efbb43;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 18px;
+  /* padding-top: 132px; */
+  /* padding-left: 0; */
+  display: flex;
+  flex-direction: row;
+  width: 278px;
+  height: 26px;
+  margin: 0 0 26px 0;
+  /* background-color: #efbb43; */
 }
 .item {
-  display: block;
-  width: 210px;
-  height: 44px;
+  display: inline;
+  width: 35px;
+  height: 24px;
   font-size: 14px;
+  line-height: 21px;
   font-weight: bold;
   background-color: #f6da98;
-  margin: 0 0 6px 0;
+  /* margin: 0 0 6px 0; */
   list-style: none;
-  text-align: left;
-  text-indent: 34px;
-  transform: translate(30px);
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  line-height: 42px;
+  text-align: center;
+  align-items: center;
+  /* text-indent: 34px; */
+  /* transform: translate(30px); */
+  border-radius: 8px;
 }
 .activeItem {
   composes: item;
@@ -26,5 +33,57 @@
   background-color: "white";
 }
 .item:hover {
-  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.12), 4px 6px 8px rgba(0, 0, 0, 0.18);
+  background-color: #efbb43;
+}
+
+@media (min-width: 768px) {
+  .weektabs {
+    width: 390px;
+    height: 30px;
+    padding: 20px 0 15px 0;
+    padding-right: 90px;
+    /* background-color: #efbb43; */
+  }
+  .item {
+    width: 40px;
+    height: 27px;
+    line-height: 26px;
+  }
+  .item:hover {
+    background-color: #fdf8ed;
+  }
+}
+@media (min-width: 1200px) {
+  .weektabs {
+    padding-top: 132px;
+    width: 240px;
+    height: 88vh;
+    background-color: #efbb43;
+    flex-direction: column;
+    justify-content: start;
+    
+  }
+  .item {
+    display: block;
+    width: 210px;
+    height: 44px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #f6da98;
+    margin: 0 0 6px 0;
+    list-style: none;
+    text-align: left;
+    text-indent: 34px;
+    transform: translate(30px);
+    border-radius: 8px 0 0 8px;
+    line-height: 42px;
+  }
+  .activeItem {
+    composes: item;
+    background-color: #fdf8ed;
+    background-color: "white";
+  }
+  .item:hover {
+    box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.12), 4px 6px 8px rgba(0, 0, 0, 0.18);
+  }
 }

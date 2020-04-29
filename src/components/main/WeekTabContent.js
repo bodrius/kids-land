@@ -6,46 +6,69 @@ import CurrentWeekRange from "../currentDay/CurrentWeekRange";
 import CurrentDay from "../currentDay/CurrentDay";
 import ProgressBar from "../progressBar/ProgressBar";
 import CardListUl from "../cardList/CardListUl";
-import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
-// import { CurrentDay } from "./";
-// import { ProgressBar } from "./ path / ProgressBar";
-// import { CardList } from "./ path / CardList";
-import DefaultPage from './../mainPage/defaultPage/DefaultPage';
+import DefaultPage from "./../mainPage/defaultPage/DefaultPage";
+import { WeekTabs } from "./WeekTabs";
 
-export const WeekTabContent = ({ tasks, fullDate, dayLabel }) => {
-  // const [tasks, setTasks] = useState([]);
-
-  // const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
-
-  // services
-  //   .userSignIn({
-  //     email: "test666@test",
-  //     password: "qwerty",
-  //   })
-  //   .then((data) => {
-  //     console.log("data", data);
-  //     return setTasks(data.data.user.tasks);
-  //   });
-
+export const WeekTabContent = ({
+  tasks,
+  fullDate,
+  dayLabel,
+  selectDay,
+  days,
+}) => {
   return (
     <div className={styles.container}>
-      <div className={styles.currentWeekRange}>
-        <CurrentWeekRange />
-        {/* <ButtonCurrentWeekRange /> */}
-      </div>
-      <div className={styles.mainHeader}>
+      {window.innerWidth < 769 && (
         <div>
-          <CurrentDay days={dayLabel} date={fullDate}/>
+          <div className={styles.currentWeekRange}>
+            <CurrentWeekRange />
+          </div>
+          <div className={styles.mainHeader}>
+            <CurrentDay days={dayLabel} date={fullDate} />
+          </div>
+          <div className={styles.cardList}>
+            {tasks.length ? <CardListUl cardList={tasks} /> : <DefaultPage />}
+          </div>
+          <div>
+            <ProgressBar />
+          </div>
         </div>
+      )}
+      {window.innerWidth >= 770 && window.innerWidth <= 1199 && (
         <div>
-          <ProgressBar />
+          <div className={styles.weekTabsPlusWeekRange}>
+            <CurrentWeekRange className={styles.currentWeekRange} />
+            <WeekTabs choosenDay={selectDay} days={days} />
+          </div>
+          <div>
+            <ProgressBar />
+          </div>
+          <div className={styles.mainHeader}>
+              <CurrentDay days={dayLabel} date={fullDate} />
+          </div>
+          <div className={styles.cardList}>
+            {tasks.length ? <CardListUl cardList={tasks} /> : <DefaultPage />}
+          </div>
         </div>
-      </div>
-      <div className={styles.cardList}>
-      {tasks.length ? (<CardListUl cardList={tasks} />): (<DefaultPage/>)}
-      
-      </div>
-
+      )}
+      {window.innerWidth > 1199 && (
+        <div>
+          <div className={styles.currentWeekRange}>
+            <CurrentWeekRange />
+          </div>
+          <div className={styles.mainHeader}>
+            <div>
+              <CurrentDay days={dayLabel} date={fullDate} />
+            </div>
+            <div>
+              <ProgressBar />
+            </div>
+          </div>
+          <div className={styles.cardList}>
+            {tasks.length ? <CardListUl cardList={tasks} /> : <DefaultPage />}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
