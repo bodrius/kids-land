@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./modalLogout.module.css";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../../redux/auth/operations";
-import { NavLink} from 'react-router-dom'
+
 
 export const ModaLogout = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -55,15 +56,15 @@ export const ModaLogout = () => {
               Ви дійсно бажаєте вийти?
             </strong>
             <div className={styles.answerBox}>
-            <NavLink exact to='/'>
-              <button
-                type="button"
-                className={styles.btnForLogout}
-                onClick={() => dispatch(logoutUser())}
-              >
-                        Так
-              </button>
-              </NavLink> 
+              <NavLink exact to="/">
+                <button
+                  type="button"
+                  className={styles.btnForLogout}
+                  onClick={() => dispatch(logoutUser())}
+                >
+                  Так
+                </button>
+              </NavLink>
               <button
                 type="button"
                 className={styles.btnForLogout}
