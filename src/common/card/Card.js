@@ -11,7 +11,7 @@ export const Card = ({
 }) => {
   const [state, setState] = React.useState({ visible: false });
   const [point, setPoint] = React.useState(0);
-  console.log("card");
+  // console.log("card");
   return (
     <>
       <li className={style.Card__list}>
@@ -23,7 +23,7 @@ export const Card = ({
         />
         <div>
           <img
-            src={require(`../../assets/image/planImg/${imgName}.jpg`)}
+            src={imgName ? require(`../../assets/image/planImg/${imgName}.jpg`) : require(`../../assets/image/modalAddTask/3.jpg`)}
             alt="img"
             className={style.Card__listImg}
           />

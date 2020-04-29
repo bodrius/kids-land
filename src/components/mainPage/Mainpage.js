@@ -9,55 +9,13 @@ import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
 const days = [
-  {
-    id: 1,
-    label: "Понеділок",
-    name: "monday",
-    dayDate: "27.04.2020",
-    selected: false,
-  },
-  {
-    id: 2,
-    label: "Вівторок",
-    name: "tuesday",
-    dayDate: "28.04.2020",
-    selected: false,
-  },
-  {
-    id: 3,
-    label: "Середа",
-    name: "wednesday",
-    dayDate: "29.04.2020",
-    selected: false,
-  },
-  {
-    id: 4,
-    label: "Четвер",
-    name: "thursday",
-    dayDate: "30.04.2020",
-    selected: false,
-  },
-  {
-    id: 5,
-    label: "П'ятниця",
-    name: "friday",
-    dayDate: "01.05.2020",
-    selected: false,
-  },
-  {
-    id: 6,
-    label: "Субота",
-    name: "Saturday",
-    dayDate: "02.05.2020",
-    selected: false,
-  },
-  {
-    id: 7,
-    label: "Неділя",
-    name: "Sunday",
-    dayDate: "03.05.2020",
-    selected: false,
-  },
+  { id: 1, label: "Понеділок", name: "monday", selected: false,  },
+  { id: 2, label: "Вівторок", name: "tuesday", selected: false },
+  { id: 3, label: "Середа", name: "wednesday", selected: false },
+  { id: 4, label: "Четвер", name: "thursday", selected: false },
+  { id: 5, label: "П'ятниця", name: "friday", selected: false },
+  { id: 6, label: "Субота", name: "Saturday", selected: false },
+  { id: 7, label: "Неділя", name: "Sunday", selected: false },
 ];
 
 const windowWidth = document.documentElement.clientWidth;
@@ -76,10 +34,12 @@ const MainPage = () => {
   const [tasks, setTasks] = useState([]);
   const [dayLabel, setDayLabel] = useState(moment().format("dddd"));
   const [fullDate, setFullDate] = useState(moment().format("L"));
-
+  const [planingPoints, setPlaningPoints]=useState(0)
+  const [totalPoints, setTotalPoints]=useState(0)
   const day = setMainPath();
   const history = useHistory();
-
+ console.log('planingPoints', planingPoints);
+ console.log('totalPoints', totalPoints)
   useEffect(() => {
     history.push(day);
   }, [day, history]);
@@ -96,7 +56,9 @@ const MainPage = () => {
   const selectDay = (id) => {
     const currentDayForImage = days.find((day) => day.id === id);
     const res = services.getCurrentUser(userToken).then((data) => {
-      const result = data.data.user.tasks.map((task) => ({
+      setTotalPoints(data.data.user.points);
+      let acc;
+      const result = data.data.user.tasks.map((task) =>({
         title: task.title,
         points: task.taskPoints,
         imgName: task.imgName,
@@ -107,14 +69,24 @@ const MainPage = () => {
           ),
         ],
       }));
+       console.log('result---------->', result)
+      // const points = result.reduce((acc, resultItem)=> {console.log("mmmmmmmmmmmmmmmmmmmmmm",resultItem.days[0].length); return acc= acc+resultItem.days.length&&resultItem.points?resultItem.days.length*resultItem.points:0},0)
+      // setPlaningPoints(points)
+      // console.log('points', points)
       const resultforFilter = result.filter(
-        (activeDay) => activeDay.days[0].length
+        (activeDay) => activeDay.days[0].length,
       );
+      // setPlaningPoints(resultforFilter.reduce(((acc, activeDay) => acc+ activeDay.points),0))
+      // console.log('resultforFilter', resultforFilter)
+      // const dateOffTask = resultforFilter[0].days[0][0].date
+      // console.log('dateOffTask', dateOffTask)
+      // setFullDate(moment(dateOffTask).format("L"));
+
       setTasks(resultforFilter);
     });
     console.log("currentDayForImage", currentDayForImage);
     setDayLabel(currentDayForImage.label);
-    setFullDate(currentDayForImage.dayDate);
+    // setFullDate(currentDayForImage.dayDate);
     console.log("Some date----->", currentDayForImage.dayDate);
 
     return currentDayForImage.name;
@@ -123,7 +95,7 @@ const MainPage = () => {
   return (
     <div className={s.container}>
       <WeekTabs choosenDay={selectDay} days={setMainPath()} />
-      <WeekTabContent dayLabel={dayLabel} tasks={tasks} fullDate={fullDate} />
+      <WeekTabContent dayLabel={dayLabel} tasks={tasks} fullDate={fullDate} planingPoints={planingPoints} totalPoints={totalPoints}/>
     </div>
   );
 };
