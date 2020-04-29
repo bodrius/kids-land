@@ -6,7 +6,6 @@ import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
 function CardListLi({ list, chooseAwards, collectAwards, location }) {
-  console.log("object123", list.days[0][0].isDone);
   const date = moment().format("Do MMMM YYYY");
 
   const drawing = () => {
