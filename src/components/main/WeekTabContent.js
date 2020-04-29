@@ -15,6 +15,8 @@ export const WeekTabContent = ({
   dayLabel,
   selectDay,
   days,
+  totalPoints,
+  planingPoints,
 }) => {
   return (
     <div className={styles.container}>
@@ -30,7 +32,7 @@ export const WeekTabContent = ({
             {tasks.length ? <CardListUl cardList={tasks} /> : <DefaultPage />}
           </div>
           <div>
-            <ProgressBar />
+            <ProgressBar userPoints={totalPoints} weekPoints={planingPoints} />
           </div>
         </div>
       )}
@@ -41,10 +43,10 @@ export const WeekTabContent = ({
             <WeekTabs choosenDay={selectDay} days={days} />
           </div>
           <div>
-            <ProgressBar />
+            <ProgressBar userPoints={totalPoints} weekPoints={planingPoints} />
           </div>
           <div className={styles.mainHeader}>
-              <CurrentDay days={dayLabel} date={fullDate} />
+            <CurrentDay days={dayLabel} date={fullDate} />
           </div>
           <div className={styles.cardList}>
             {tasks.length ? <CardListUl cardList={tasks} /> : <DefaultPage />}
@@ -61,7 +63,10 @@ export const WeekTabContent = ({
               <CurrentDay days={dayLabel} date={fullDate} />
             </div>
             <div>
-              <ProgressBar />
+              <ProgressBar
+                userPoints={totalPoints}
+                weekPoints={planingPoints}
+              />
             </div>
           </div>
           <div className={styles.cardList}>

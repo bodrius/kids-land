@@ -7,7 +7,7 @@ import "react-sweet-progress/lib/style.css";
 const ProgressBar = ({ userPoints, weekPoints }) => {
   let percent = 100;
   if (weekPoints) {
-    percent = parseFloat((userPoints / weekPoints) * 100);
+    percent = parseFloat((userPoints / weekPoints)<1?(userPoints / weekPoints) * 100:100);
   }
   if (userPoints === 0) {
     percent = 0;
@@ -38,7 +38,6 @@ const ProgressBar = ({ userPoints, weekPoints }) => {
 };
 
 const mapStateToProps = state => ({
-//   // userPoints: 300,
   countPoints: 800
 });
 

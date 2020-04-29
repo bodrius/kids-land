@@ -39,7 +39,7 @@ export const HeaderRouting = (token) => {
       <Suspense fallback={<LoaderUi />}>
         <Switch>
           <Route path="/contact-us" component={ContactsPage} />
-          <Route axact path="/" component={Auth} />
+          <Route exact path="/" component={Auth} />
           <Redirect to="/" />
         </Switch>
       </Suspense>

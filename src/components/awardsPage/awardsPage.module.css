@@ -35,6 +35,7 @@
   height: 262px;
   border-radius: 10px;
   background-color: #d3d3d3;
+  position: relative;
 }
 
 .awardsHeader {
