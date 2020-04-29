@@ -14,6 +14,8 @@ import DefaultPage from './../mainPage/defaultPage/DefaultPage';
 
 export const WeekTabContent = ({ tasks, fullDate, dayLabel, totalPoints, planingPoints}) => {
   // const [tasks, setTasks] = useState([]);
+console.log('tasks', tasks)
+  //   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
   // const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
 
