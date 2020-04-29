@@ -22,7 +22,6 @@ const PlanningPage = () => {
   const plusPoint = (p) => {
     setAllUserPoints(allUserPoints + p);
   };
-
   function handleOpenTaskModal() {
     setModalIsOpen(true);
   }
@@ -59,7 +58,7 @@ const PlanningPage = () => {
       )}
       <div className={styles.topComponentsContainer}>
         <CurrentWeekPlaning />
-        <PlanningPoints />
+        <PlanningPoints score={total}/>
         <AddCustomTask handleOpenTaskModal={handleOpenTaskModal} />
       </div>
       <CardList plusPoint={plusPoint} data={tasks} />
