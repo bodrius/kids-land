@@ -9,6 +9,10 @@ import { NewTaskModal } from "../newTaskModal/NewTaskModal";
 import CurrentWeekPlaning from "../currentDay/CurrentWeekPlaning";
 import { services } from "../../services/services";
 import styles from "./styles.module.css";
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 const PlanningPage = () => {
   const [tasks, setTasks] = React.useState(data.user.tasks);
   const [allUserPoints, setAllUserPoints] = React.useState(0);
@@ -36,15 +40,29 @@ const PlanningPage = () => {
   function handleCollectCustomTask(task) {
     setCustomTask(task);
   }
+<<<<<<< HEAD
   async function answerFromServer(userToken, customTask) {
     const answer = await services
       .createUserTask(userToken, customTask)
+=======
+
+  async function answerFromServer(userToken, customTask) {
+    const answer = await services
+      .createUserTask(userToken, customTask)
+
+>>>>>>> dev
       // .then(({data: {tasks}, status}) => {
       //   status === 200 && console.log('tasks', tasks.map((task) => {
       //     return `${task.title}, ${task.imgName}`
       //   }))
       // });
+<<<<<<< HEAD
       // .then((data) => data.status.ok && action для записи в стор)
+=======
+
+      // .then((data) => data.status.ok && action для записи в стор)
+
+>>>>>>> dev
       .then(({ data: { tasks }, status }) => {
         status === 200 &&
           console.log(
@@ -54,6 +72,10 @@ const PlanningPage = () => {
             })
           );
       });
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
     await services
       .getCurrentUser(userToken)
       .then((data) => setTasks(data.data.user.tasks));
@@ -61,10 +83,18 @@ const PlanningPage = () => {
   }
   // иф статус ОК - добавить в стор
   // обновить значение в сторе
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
   React.useEffect(() => {
     answerFromServer(userToken, customTask);
     console.log("customTask", customTask);
   }, [customTask]);
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
   return (
     <>
       {modalIsOpen && (
