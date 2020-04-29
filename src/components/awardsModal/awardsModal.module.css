@@ -83,6 +83,44 @@
   text-align: center;
 }
 
+.modalCheckDiv {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.modalCheckButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: rgb(239, 187, 67);
+  box-shadow: 0px 4px 6px 0px rgba(29, 29, 27, 0.15);
+  width: 160px;
+  height: 48px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  color: #fff;
+  line-height: 18px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.modalCheckButton:disabled {
+background-color: #A9A9A9;
+}
+
+.modalCheckButton:hover,
+.modalCheckButton:focus {
+  transform: translate(-1.5px, -1.5px);
+}
+
+.modalCheckButton:active {
+  transform: translate(1.5px, 1.5px);
+}
+
 @media (min-width: 768px) {
   .modalBackdrop {
     height: 100%;

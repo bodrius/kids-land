@@ -15,21 +15,50 @@ const AwardsPage = () => {
   const [points, setPoints] = useState(userPoint);
   const [modal, setModal] = useState(false);
   const [toggle, setToggle] = useState([]);
+  const [pointsTotal, setPointsTotal] = useState(null);
+  const [fail, setFail] = useState(false);
   const dispatch = useDispatch();
 
-  const chooseAwards = (title, imgName, isOn) => {
+  const chooseAwards = (title, imgName, isOn, taskPoints) => {
     if (isOn) {
       setToggle(toggle.filter((elem) => elem.imgName !== imgName));
     } else {
-      setToggle([...toggle, { title, imgName }]);
+      setToggle([...toggle, { title, imgName, taskPoints }]);
     }
   };
 
-  const collectAwards = async (updatedPoints) => {
-    await services.updateUserPoints(userToken, userId, updatedPoints);
-    await setPoints(updatedPoints);
-    await dispatch(pointUser(updatedPoints));
-    // console.log("points", points);
+  useEffect(() => {
+    if (pointsTotal > points) {
+      setFail(true);
+    } else {
+      setFail(false);
+    }
+  }, [modal]);
+
+  const collectAwards = async () => {
+    if (points > pointsTotal) {
+      const calculatedPoints = Number(points) - Number(pointsTotal);
+      await services.updateUserPoints(userToken, userId, calculatedPoints);
+      await setPoints(calculatedPoints);
+      await dispatch(pointUser(calculatedPoints));
+    }
+  };
+
+  const pointsToModal = () => {
+    const stopRightThereCriminalScum = toggle.map((card) => card.taskPoints);
+    if (toggle[0]) {
+      const countingPoints = stopRightThereCriminalScum.reduce(function (
+        previousValue,
+        currentValue,
+        index,
+        array
+      ) {
+        return previousValue + currentValue;
+      });
+      setPointsTotal(countingPoints);
+    } else {
+      setPointsTotal(0);
+    }
   };
 
   useEffect(() => {
@@ -55,13 +84,17 @@ const AwardsPage = () => {
     setModal(true);
   };
 
+  const closeModal = () => {
+    setModal(false);
+  };
+
   // useEffect(() => {
   //   (async () => {
   //     const shit = await services.getCurrentUser(userToken);
-  //     console.log('shit', shit)
+  //     console.log("shit", shit);
   //     const userPoints = shit.data.user.points;
-  //     setPoints(userPoints)
-  //     // services.updateUserPoints(userToken, userId, 100);
+  //     setPoints(userPoints);
+  //     services.updateUserPoints(userToken, userId, 100); //
   //   })();
   // }, []);
 
@@ -160,7 +193,8 @@ const AwardsPage = () => {
         <CardListUl
           cardList={cardList}
           chooseAwards={chooseAwards}
-          collectAwards={collectAwards}
+          toggle={toggle}
+          pointsToModal={pointsToModal}
         />
         <div className={css.awardsButtonWrapper}>
           {modal ? (
@@ -169,6 +203,10 @@ const AwardsPage = () => {
                 prizes={toggle}
                 openModaled={modal}
                 useOutsideAlerter={useOutsideAlerter}
+                pointsTotal={pointsTotal}
+                closeModal={closeModal}
+                collectAwards={collectAwards}
+                fail={fail}
               />
               <button className={css.awardsButton} onClick={openModal} disabled>
                 Підтвердити
@@ -180,7 +218,7 @@ const AwardsPage = () => {
             </button>
           )}
         </div>
-      <Footer/>
+        <Footer />
       </div>
     </div>
   );
