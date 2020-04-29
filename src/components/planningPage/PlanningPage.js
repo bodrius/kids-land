@@ -11,13 +11,13 @@ import { services } from "../../services/services";
 import styles from "./styles.module.css";
 
 const PlanningPage = () => {
-  const [tasks, setTasks] = React.useState(data.user.tasks);
+  const [tasks, setTasks] = React.useState([]);
   const [allUserPoints, setAllUserPoints] = React.useState(0);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
-  const [customTask, setCustomTask] = React.useState({});
+  // const [customTask, setCustomTask] = React.useState({});
   const userToken = useSelector((state) => state.user.userToken);
-  console.log("userToken", userToken);
-  console.log("tasks", tasks);
+  // console.log("userToken", userToken);
+  // console.log("tasks", tasks);
   const total = tasks.reduce((prev, current) => {
     const days = current.days.filter((day) => day.isActive === true).length;
     return prev + current.taskPoints * days;
@@ -38,47 +38,57 @@ const PlanningPage = () => {
   }
 
   function handleCollectCustomTask(task) {
-    setCustomTask(task);
+    services.createUserTask(userToken, task).then(({ data: { tasks } }) => {
+      setTasks(tasks);
+    });
+    // setTasks([...tasks, task]);
+    // setCustomTask(task);
   }
 
-  async function answerFromServer(userToken, customTask) {
-    const answer = await services
-      .createUserTask(userToken, customTask)
+  // async function answerFromServer(userToken, customTask) {
+  //   const answer = await services
+  // .createUserTask(userToken, customTask)
 
-      // .then(({data: {tasks}, status}) => {
-      //   status === 200 && console.log('tasks', tasks.map((task) => {
-      //     return `${task.title}, ${task.imgName}`
-      //   }))
-      // });
+  // .then(({data: {tasks}, status}) => {
+  //   status === 200 && console.log('tasks', tasks.map((task) => {
+  //     return `${task.title}, ${task.imgName}`
+  //   }))
+  // });
 
-      // .then((data) => data.status.ok && action для записи в стор)
+  // .then((data) => data.status.ok && action для записи в стор)
 
-      .then(({ data: { tasks }, status }) => {
-        status === 200 &&
-          console.log(
-            "tasks",
-            tasks.map((task) => {
-              return `${task.title}, ${task.imgName}`;
-            })
-          );
-      });
+  // .then(({ data: { tasks }, status }) => {
+  //   status === 200 &&
+  //     console.log(
+  //       "tasks",
+  //       tasks.map((task) => {
+  //         return `${task.title}, ${task.imgName}`;
+  //       })
+  //     );
+  // });
 
-    await services
-      .getCurrentUser(userToken)
-      .then((data) => setTasks(data.data.user.tasks));
-    console.log("answer", answer);
-  }
+  // await services
+  //   .getCurrentUser(userToken)
+  //   .then((data) => setTasks(data.data.user.tasks));
+  // }
 
   // иф статус ОК - добавить в стор
   // обновить значение в сторе
 
+  const getTasks = () => {
+    services.getCurrentUser(userToken).then(({ data: { user } }) => {
+      if (user.tasks.length !== tasks.length) {
+        setTasks(user.tasks);
+      }
+    });
+  };
+
   React.useEffect(() => {
-    answerFromServer(userToken, customTask);
-    console.log("customTask", customTask);
-  }, [customTask]);
+    getTasks();
+  }, [tasks]);
 
   return (
-    <>
+    <div className={styles.containerStyles}>
       {modalIsOpen && (
         <NewTaskModal
           onClose={handleCloseTaskModal}
@@ -92,7 +102,7 @@ const PlanningPage = () => {
       </div>
       <CardList plusPoint={plusPoint} data={tasks} />
       <Footer />
-    </>
+    </div>
   );
 };
 
