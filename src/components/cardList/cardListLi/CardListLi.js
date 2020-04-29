@@ -24,7 +24,8 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
           src={
             list.source
               ? require(`../../../assets/image/prizesImg/${list.imgName}.jpg`)
-              : require(`../../../assets/image/planImg/${list.imgName}.jpg`)
+              // : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
+              : list.imgName?require(`../../../assets/image/planImg/${list.imgName}.jpg`):"https://pluspng.com/img-png/task-png-big-image-png-2400.png"
           }
           className={style.Card__listImg}
         />
