@@ -31,6 +31,8 @@ function CardListLi({ list, chooseAwards, collectAwards, location }) {
     }
   };
 
+
+const CardListLi = ({ list, chooseAwards, collectAwards }) => {
   return (
     <li className={style.Card__list}>
       <div>
@@ -39,7 +41,8 @@ function CardListLi({ list, chooseAwards, collectAwards, location }) {
           src={
             list.source
               ? require(`../../../assets/image/prizesImg/${list.imgName}.jpg`)
-              : require(`../../../assets/image/planImg/bed.jpg`)
+              // : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
+              : list.imgName?require(`../../../assets/image/planImg/${list.imgName}.jpg`):"https://pluspng.com/img-png/task-png-big-image-png-2400.png"
           }
           className={style.Card__listImg}
         />
@@ -49,7 +52,20 @@ function CardListLi({ list, chooseAwards, collectAwards, location }) {
           <p className={style.Card__listTitle}>{list.title}</p>
           <p className={style.Card__listPoint}>{list.taskPoints} БАЛIВ</p>
         </div>
-        <div className={style.Card__listBt}>{drawing()}</div>
+        <div className={style.Card__listBt}>
+          {list.source ? (
+            <Toogle
+              point={list.taskPoints}
+              chooseAwards={chooseAwards}
+              card={list}
+              // choosenAwards={toggle}
+              // pointsToModal={pointsToModal}
+            />
+          ) : (
+            <button className={style.Card__listBtton}>+</button>
+          )}
+        </div>
+
       </div>
     </li>
   );
