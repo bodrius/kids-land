@@ -1,24 +1,25 @@
-.container {
+.container{
   width: 1040px;
   height: 790px;
-  padding: 44px 78px 78px 80px;
   /* background-color: orange; */
-  background-color: #fafafa;
+  background-color: #ececec;
 }
 .currentWeekRange {
   display: block;
-  background-color: orange;
+  /* background-color: orange; */
   height: 40px;
 }
 .mainHeader {
   display: flex;
   justify-content: space-between;
-  background-color: pink;
+  /* background-color: pink; */
 }
 .cardList {
-  display: flex;
+  padding-top: 30px;
+
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: rgb(115, 115, 155);
+  justify-content: space-between; */
+  /* background-color: rgb(115, 115, 155); */
 }

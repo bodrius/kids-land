@@ -10,7 +10,7 @@
   /* padding-top: 60px; */
 }
 
-@media (max-width: 1200px) and (min-width: 760px) {
+@media (max-width: 1199px) and (min-width: 760px) {
   .week {
     padding: 24px 45px 24px 95px;
   }
@@ -20,6 +20,7 @@
   .week {
     font-size: 18px;
     justify-content: start;
-    padding: 24px 0 16px;
+    padding: 24px 0 16px 20px;
+
   }
 }

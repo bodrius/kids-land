@@ -34,19 +34,18 @@ ul {
     min-width: 100%;
 
 }
-/* .overlay_2{
-    position: fixed;
-    width: 100%;
-    z-index: 100001;
-} */
+
 
 .pages {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 200px;
+    margin-bottom: 15px;
+
 }
 
 .pages:last-child {
     margin-bottom: 0px;
+
 }
 
 .pages::before {
@@ -134,10 +133,10 @@ ul {
     background-position: center;
     background-repeat: no-repeat;
 }
-
 @media (max-width: 767px) {
     .overlay{
         min-height: 10%;
+
     }
     .pages{
         margin: 0 auto; 
@@ -146,6 +145,30 @@ ul {
     .text{
         margin-left: 30px;
     }
+
+}
+
+@media (min-width: 768px) {
+    .burgerContainer{
+          position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100000;
+    min-height: 100%;
+    }
+    .overlay {
+        align-items: flex-start;
+        min-width: 30%;
+    }
+    .text{
+        margin-left: 25px;
+    }
+
+    .closeModal::after {
+        left: 88%;
+        top: 10px;
+    }
+
 }
 
 .pageList {
