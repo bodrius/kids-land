@@ -9,13 +9,49 @@ import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
 const days = [
-  { id: 1, label: "Понеділок", name: "monday", selected: false },
-  { id: 2, label: "Вівторок", name: "tuesday", selected: false },
-  { id: 3, label: "Середа", name: "wednesday", selected: false },
-  { id: 4, label: "Четвер", name: "thursday", selected: false },
-  { id: 5, label: "П'ятниця", name: "friday", selected: false },
-  { id: 6, label: "Субота", name: "Saturday", selected: false },
-  { id: 7, label: "Неділя", name: "Sunday", selected: false },
+  {
+    id: 1,
+    label: "Понеділок",
+    shortLabel: "Пн",
+    name: "monday",
+    selected: false,
+  },
+  {
+    id: 2,
+    label: "Вівторок",
+    shortLabel: "Вт",
+    name: "tuesday",
+    selected: false,
+  },
+  {
+    id: 3,
+    label: "Середа",
+    shortLabel: "Ср",
+    name: "wednesday",
+    selected: false,
+  },
+  {
+    id: 4,
+    label: "Четвер",
+    shortLabel: "Чт",
+    name: "thursday",
+    selected: false,
+  },
+  {
+    id: 5,
+    label: "П'ятниця",
+    shortLabel: "Пт",
+    name: "friday",
+    selected: false,
+  },
+  {
+    id: 6,
+    label: "Субота",
+    shortLabel: "Сб",
+    name: "Saturday",
+    selected: false,
+  },
+  { id: 7, label: "Неділя", shortLabel: "Нд", name: "Sunday", selected: false },
 ];
 
 const windowWidth = document.documentElement.clientWidth;
@@ -98,11 +134,11 @@ const MainPage = () => {
     <div className={s.container}>
       {window.innerWidth < 769 && (
         <>
-          <WeekTabs days={days} choosenDay={selectDay} />
+          <WeekTabs days={setMainPath()} choosenDay={selectDay} />
           <WeekTabContent
             dayLabel={dayLabel}
-            tasks={tasks}
             fullDate={fullDate}
+            tasks={tasks}
             totalPoints={totalPoints}
             planingPoints={planingPoints}
           />
@@ -112,22 +148,27 @@ const MainPage = () => {
         <>
           <WeekTabContent
             dayLabel={dayLabel}
-            tasks={tasks}
             fullDate={fullDate}
-            selectDay={selectDay}
+            tasks={tasks}
+            choosenDay={selectDay}
             days={setMainPath()}
             totalPoints={totalPoints}
             planingPoints={planingPoints}
+            today={setMainPath()}
           />
         </>
       )}
       {window.innerWidth >= 1200 && (
         <>
-          <WeekTabs days={days} choosenDay={selectDay} />
+          <WeekTabs
+            days={setMainPath()}
+            choosenDay={selectDay}
+            // today={setMainPath()}
+          />
           <WeekTabContent
             dayLabel={dayLabel}
-            tasks={tasks}
             fullDate={fullDate}
+            tasks={tasks}
             totalPoints={totalPoints}
             planingPoints={planingPoints}
           />

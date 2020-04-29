@@ -3,7 +3,9 @@ import React from "react";
 // import { days } from "./days";
 import styles from "./WeekTabs.module.css";
 
-export const WeekTabs = ({ today, days, choosenDay }) => {
+export const WeekTabs = ({ days, choosenDay }) => {
+  console.log("days++++", days);
+  console.log("choosenDay+++++", choosenDay);
   const selectedDayStyle = styles.selected ? styles.activeItem : styles.item;
   return (
     <nav className={styles.weektabs}>

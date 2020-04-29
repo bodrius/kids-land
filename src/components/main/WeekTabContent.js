@@ -13,10 +13,11 @@ export const WeekTabContent = ({
   tasks,
   fullDate,
   dayLabel,
-  selectDay,
   days,
   totalPoints,
   planingPoints,
+  today,
+  choosenDay,
 }) => {
   return (
     <div className={styles.container}>
@@ -40,7 +41,7 @@ export const WeekTabContent = ({
         <div>
           <div className={styles.weekTabsPlusWeekRange}>
             <CurrentWeekRange className={styles.currentWeekRange} />
-            <WeekTabs choosenDay={selectDay} days={days} />
+            <WeekTabs choosenDay={choosenDay} days={days} today={today} />
           </div>
           <div>
             <ProgressBar userPoints={totalPoints} weekPoints={planingPoints} />
