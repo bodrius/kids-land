@@ -42,8 +42,8 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
               point={list.taskPoints}
               chooseAwards={chooseAwards}
               card={list}
-              choosenAwards={toggle}
-              pointsToModal={pointsToModal}
+              // choosenAwards={toggle}
+              // pointsToModal={pointsToModal}
             />
           ) : (
             <button className={style.Card__listBtton}>+</button>
