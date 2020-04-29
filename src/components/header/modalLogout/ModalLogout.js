@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./modalLogout.module.css";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../../redux/auth/operations";
+import { NavLink} from 'react-router-dom'
 
 export const ModaLogout = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -44,7 +45,8 @@ export const ModaLogout = () => {
         className={styles.btnLogout}
         onClick={() => setModalIsOpen(true)}
       >
-        Вийти
+
+         Вийти
       </button>
       {modalIsOpen ? (
         <div className={styles.modalBackdrop}>
@@ -53,13 +55,15 @@ export const ModaLogout = () => {
               Ви дійсно бажаєте вийти?
             </strong>
             <div className={styles.answerBox}>
+            <NavLink exact to='/'>
               <button
                 type="button"
                 className={styles.btnForLogout}
                 onClick={() => dispatch(logoutUser())}
               >
-                Так
+                        Так
               </button>
+              </NavLink> 
               <button
                 type="button"
                 className={styles.btnForLogout}
