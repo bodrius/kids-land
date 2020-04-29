@@ -1,22 +1,38 @@
 import React from "react";
 import style from "./CardListLi.module.css";
+import moment from "moment";
 import Toogle from "../toogle/Toogle";
-// import ButtonGood from "../../../common/bottonGod/ButtonGood";
-// import ButtonBad from "../../../common/buttonBad/ButtonBad";
+import ButtonGood from "../../../common/bottonGod/ButtonGood";
+import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
-  // switch (path) {
-  //   case "/awards":
-  //     return <Toogle />;
-  //   case "/":
-  //     return <Toogle />;
+function CardListLi({ list, chooseAwards, collectAwards, location }) {
+  const date = moment().format("Do MMMM YYYY");
 
-  //   default:
-  //     break;
-  // }
+  const drawing = () => {
+    if (location.pathname === "/awards") {
+      return (
+        <Toogle
+          point={list.taskPoints}
+          chooseAwards={chooseAwards}
+          card={list}
+          collectAwards={collectAwards}
+        />
+      );
+    } else if (location.pathname === "/") {
+      if (date === date) {
+        return <Toogle />;
+      } else if (date !== date) {
+        if (list.days[0][0].isDone === false) {
+          return <ButtonBad />;
+        } else if (list.days[0][0].isDone === true) {
+          return <ButtonGood />;
+        }
+      }
+    }
+  };
 
 
 const CardListLi = ({ list, chooseAwards, collectAwards }) => {
-
   return (
     <li className={style.Card__list}>
       <div>
@@ -49,8 +65,9 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
             <button className={style.Card__listBtton}>+</button>
           )}
         </div>
+
       </div>
     </li>
   );
-};
+}
 export default CardListLi;

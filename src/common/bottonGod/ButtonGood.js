@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./ButtonGood.module.css"
 
-const ButtonGood = (list) => {
+const ButtonGood = () => {
   return (
     <div className={style.button}>
       <button className={style.buttonGood}>&#10004;</button>
