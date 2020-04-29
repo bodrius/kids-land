@@ -23,11 +23,15 @@ export const Card = ({
         />
         <div>
           <img
+<<<<<<< HEAD
             src={
               imgName
                 ? require(`../../assets/image/planImg/${imgName}.jpg`)
                 : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
             }
+=======
+            src={imgName ? require(`../../assets/image/planImg/${imgName}.jpg`) : require(`../../assets/image/modalAddTask/3.jpg`)}
+>>>>>>> dev
             alt="img"
             className={style.Card__listImg}
           />

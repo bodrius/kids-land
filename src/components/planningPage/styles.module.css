@@ -1,4 +1,8 @@
 
+.containerStyles {
+  background-color: #fafafa;
+}
+
 @media (min-width: 1200px) {
     .topComponentsContainer {
       width: 1200px;
