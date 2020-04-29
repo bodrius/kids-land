@@ -5,7 +5,7 @@ import CardListLi from "./cardListLi/CardListLi";
 import style from "./CardListUl.module.css";
 
 
-const CardListUl = ({ cardList, chooseAwards, toggle, pointsToModal }) => {
+const CardListUl = ({ cardList, chooseAwards, toggle, pointsToModal, location }) => {
 
   return (
     <ul className={style.card__listUL}>
@@ -17,7 +17,7 @@ const CardListUl = ({ cardList, chooseAwards, toggle, pointsToModal }) => {
               key={list._id}
               value={list._id}
               chooseAwards={chooseAwards}
-
+              location={location}
               toggle={toggle}
               pointsToModal={pointsToModal}
             />
