@@ -1,12 +1,13 @@
 * {
   outline: none;
+  /* background-color: #fafafa; */
 }
  
 .Card__list {
   display: flex;
   flex-wrap: wrap;
   width: 280px;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-bottom: 20px;
   position: relative;
 }
@@ -17,10 +18,12 @@
   height: 68px;
   justify-content: space-between;
   align-items: center;
+  border-radius: 0 0 6px 6px;
 }
 .Card__listImg {
   width: 280px;
   height: 196px;
+  border-radius: 6px 6px 0 0;
 }
 .Card__listTitle {
   margin: 0;
@@ -73,12 +76,12 @@
 .Card__plus {
   font-size: 28px;
   font-weight: 500;
+  cursor: pointer;
 }
 
-@media (min-width: 768px) {
+ @media (min-width: 768px) {
   .Card__listUl {
     flex-direction: row;
-    justify-content: center;
     max-width: 582px;
     padding-bottom: 70px;
   }
@@ -87,12 +90,7 @@
 @media (min-width: 768px) and (max-width: 1199px) {
   .Card__list:nth-child(2n + 1) {
     margin-right: 22px;
-  }
-  .Card__list:nth-last-child(-n + 2) {
-    margin-bottom: 0;
-  }
-
-  
+  } 
 }
 @media (min-width: 1200px) {
   .Card__list {
@@ -101,12 +99,9 @@
   .Card__list:nth-child(4n) {
     margin-right: 0;
   }
-  .Card__list:nth-last-child(-n + 4) {
-    margin-bottom: 0;
-  }
 
   .Card__listUl {
     max-width: 1186px;
     padding-bottom: 50px;
   }
-}
+} 
