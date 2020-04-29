@@ -48,16 +48,17 @@ const MainPage = () => {
     const dayId = days.find((day) =>
       day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
     );
-    console.log("dayId", dayId.id);
+    // console.log("dayId", dayId.id);
 
     selectDay(dayId.id);
   }, []);
 
-  const selectDay = (id) => {
+  const selectDay = async (id) => {
     const currentDayForImage = days.find((day) => day.id === id);
-    const res = services.getCurrentUser(userToken).then((data) => {
+     await services.getCurrentUser(userToken).then((data) => {
       setTotalPoints(data.data.user.points);
-      let acc;
+      const points = data.data.user.tasks.reduce((acc, task)=> {let sum=task.days.filter(day=>day.isActive).length*task.taskPoints; return sum?acc+sum:acc },0)
+      console.log('------>>>>>points', points)
       const result = data.data.user.tasks.map((task) =>({
         title: task.title,
         points: task.taskPoints,
@@ -70,24 +71,24 @@ const MainPage = () => {
         ],
       }));
        console.log('result---------->', result)
-      // const points = result.reduce((acc, resultItem)=> {console.log("mmmmmmmmmmmmmmmmmmmmmm",resultItem.days[0].length); return acc= acc+resultItem.days.length&&resultItem.points?resultItem.days.length*resultItem.points:0},0)
+      // const points = result.reduce((acc, resultItem)=> {console.log("mmmmmmmmmmmmmmmmmmmmmm",resultItem.days.length); return acc+resultItem.days[0].length!==0&&resultItem.points?resultItem.days[0].length*resultItem.points:0},0)
       // setPlaningPoints(points)
       // console.log('points', points)
       const resultforFilter = result.filter(
         (activeDay) => activeDay.days[0].length,
       );
-      // setPlaningPoints(resultforFilter.reduce(((acc, activeDay) => acc+ activeDay.points),0))
+      setPlaningPoints(resultforFilter.reduce(((acc, activeDay) => acc+ activeDay.points),0))
       // console.log('resultforFilter', resultforFilter)
       // const dateOffTask = resultforFilter[0].days[0][0].date
       // console.log('dateOffTask', dateOffTask)
       // setFullDate(moment(dateOffTask).format("L"));
-
-      setTasks(resultforFilter);
+      // setPlaningPoints(points);
+      // setTasks(resultforFilter);
     });
     console.log("currentDayForImage", currentDayForImage);
     setDayLabel(currentDayForImage.label);
     // setFullDate(currentDayForImage.dayDate);
-    console.log("Some date----->", currentDayForImage.dayDate);
+    // console.log("Some date----->", currentDayForImage.dayDate);
 
     return currentDayForImage.name;
   };
