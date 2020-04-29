@@ -3,9 +3,12 @@ import style from "./CardListLi.module.css";
 import moment from "moment";
 import Toogle from "../toogle/Toogle";
 import ButtonGood from "../../../common/bottonGod/ButtonGood";
-// import ButtonBad from "../../../common/buttonBad/ButtonBad";
+import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
 function CardListLi({ list, chooseAwards, collectAwards, location }) {
+  console.log("object123", list.days[0][0].isDone);
+  const date = moment().format("Do MMMM YYYY");
+
   const drawing = () => {
     if (location.pathname === "/awards") {
       return (
@@ -17,9 +20,14 @@ function CardListLi({ list, chooseAwards, collectAwards, location }) {
         />
       );
     } else if (location.pathname === "/") {
-      const date = moment().format("Do MMMM YYYY");
       if (date === date) {
-        return <ButtonGood />;
+        return <Toogle />;
+      } else if (date !== date) {
+        if (list.days[0][0].isDone === false) {
+          return <ButtonBad />;
+        } else if (list.days[0][0].isDone === true) {
+          return <ButtonGood />;
+        }
       }
     }
   };
@@ -32,7 +40,7 @@ function CardListLi({ list, chooseAwards, collectAwards, location }) {
           src={
             list.source
               ? require(`../../../assets/image/prizesImg/${list.imgName}.jpg`)
-              : require(`../../../assets/image/planImg/${list.imgName}.jpg`)
+              : require(`../../../assets/image/planImg/bed.jpg`)
           }
           className={style.Card__listImg}
         />

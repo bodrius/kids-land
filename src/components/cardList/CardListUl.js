@@ -17,7 +17,6 @@ const CardListUl = ({ cardList, chooseAwards, collectAwards, location }) => {
               collectAwards={collectAwards}
               location={location}
             />
-            
           );
         })}
     </ul>
