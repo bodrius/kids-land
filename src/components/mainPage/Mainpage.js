@@ -78,12 +78,12 @@ const MainPage = () => {
         (activeDay) => activeDay.days[0].length,
       );
       setPlaningPoints(resultforFilter.reduce(((acc, activeDay) => acc+ activeDay.points),0))
-      console.log('resultforFilter', resultforFilter)
-      const dateOffTask = resultforFilter[0].days[0][0].date
-      console.log('dateOffTask', dateOffTask)
-      setFullDate(moment(dateOffTask).format("L"));
-      setPlaningPoints(points);
-      setTasks(resultforFilter);
+      // console.log('resultforFilter', resultforFilter)
+      // const dateOffTask = resultforFilter[0].days[0][0].date
+      // console.log('dateOffTask', dateOffTask)
+      // setFullDate(moment(dateOffTask).format("L"));
+      // setPlaningPoints(points);
+      // setTasks(resultforFilter);
     });
     console.log("currentDayForImage", currentDayForImage);
     setDayLabel(currentDayForImage.label);
