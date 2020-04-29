@@ -4,10 +4,12 @@
     box-shadow: 2px 3.464px 8px 0px rgba(29, 29, 27, 0.1);
 
 }
-.contactLink{
+
+.contactLink {
     color: #c2c2cb;
     font-size: 12px;
 }
+
 .headerContainer {
     margin: 0 auto;
     margin-left: 10px;
@@ -28,6 +30,7 @@
 }
 
 .userInfoContainer {
+    display: flex;
     order: 1;
 }
 
@@ -49,11 +52,10 @@
 
     .userInfoContainer {
         order: 2;
-        /* margin-right: 40px; */
     }
 
     .navContainer {
-        
+
         order: 1;
     }
 
@@ -63,11 +65,13 @@
     .headerContainer {
         width: 1200px;
     }
+
     .navigUserInfoContainer {
         width: 640px;
     }
 }
-.navLinkDiv{
+
+.navLinkDiv {
     font-size: 12px;
     margin-right: 20px;
     font-family: 'Montserrat', sans-serif;
