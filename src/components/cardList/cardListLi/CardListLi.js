@@ -5,8 +5,8 @@ import Toogle from "../toogle/Toogle";
 import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import ButtonBad from "../../../common/buttonBad/ButtonBad";
 
-function CardListLi({ list, chooseAwards, collectAwards, location }) {
   const date = moment().format("Do MMMM YYYY");
+  const CardListLi = ({ list, chooseAwards, collectAwards, toggle , pointsToModal, location}) => {
 
   const drawing = () => {
     if (location.pathname === "/awards") {
@@ -32,7 +32,7 @@ function CardListLi({ list, chooseAwards, collectAwards, location }) {
   };
 
 
-const CardListLi = ({ list, chooseAwards, collectAwards }) => {
+
   return (
     <li className={style.Card__list}>
       <div>
@@ -58,8 +58,8 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
               point={list.taskPoints}
               chooseAwards={chooseAwards}
               card={list}
-              // choosenAwards={toggle}
-              // pointsToModal={pointsToModal}
+              choosenAwards={toggle}
+              pointsToModal={pointsToModal}
             />
           ) : (
             <button className={style.Card__listBtton}>+</button>
