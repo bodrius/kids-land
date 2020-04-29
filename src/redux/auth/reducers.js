@@ -8,6 +8,7 @@ const initialState = {
   userTasks: null,
   userPoint: null,
   userId: null,
+  weekPoints: 0,
 };
 
 const reducer = {
@@ -35,13 +36,13 @@ const reducer = {
     console.log("payload", payload);
     return {
       ...state,
-      // userEmail: state.user.email,
-      // userToken: state.token,
-      // userTasks: state.user.tasks,
-      // userId: state.user._id,
       userPoint: payload,
     };
   },
+  [types.USER_TASK_POINTS]: (state, { payload }) => ({
+    ...state,
+    weekPoints: payload,
+  }),
   [types.USER_SIGNOUT]: () => initialState,
 };
 

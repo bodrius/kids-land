@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0981a67a-e652-4f90-9dbf-ca225137898c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/redux/auth/operations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/operations.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1b5juerZt5yOnQq7UcUWGQmjUa1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0981a67a-e652-4f90-9dbf-ca225137898c" name="Default Changelist" comment="" />
+      <created>1587929072934</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587929072934</updated>
+      <workItem from="1587929076959" duration="551000" />
+      <workItem from="1587929722803" duration="1335000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="700" y="442" key="#ESLint" timestamp="1587930019225">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="700" y="442" key="#ESLint/0.0.1680.1050@0.0.1680.1050" timestamp="1587930019225" />
+    <state x="259" y="119" width="899" height="742" key="#JavaScript" timestamp="1587931070696">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="259" y="119" width="899" height="742" key="#JavaScript/0.0.1680.1050@0.0.1680.1050" timestamp="1587931070696" />
+    <state x="639" y="389" key="#Scopes" timestamp="1587930633620">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="639" y="389" key="#Scopes/0.0.1680.1050@0.0.1680.1050" timestamp="1587930633620" />
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587929860008">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1587929860008" />
+    <state x="341" y="164" key="SettingsEditor" timestamp="1587930994563">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1587930994563" />
+    <state x="690" y="441" key="VCS.ChangelistChooser" timestamp="1587930122437">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="690" y="441" key="VCS.ChangelistChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1587930122437" />
+    <state x="627" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587930249441">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="627" y="445" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1587930249441" />
+    <state x="504" y="247" key="run.anything.popup" timestamp="1587929824287">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="504" y="247" key="run.anything.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1587929824287" />
+  </component>
+</project>

@@ -4,10 +4,18 @@ import moment from "moment";
 import Toogle from "../toogle/Toogle";
 import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import ButtonBad from "../../../common/buttonBad/ButtonBad";
+import { useDispatch } from "react-redux";
 
-  const date = moment().format("Do MMMM YYYY");
-  const CardListLi = ({ list, chooseAwards, collectAwards, toggle , pointsToModal, location}) => {
-
+const date = moment().format("Do MMMM YYYY");
+const CardListLi = ({
+  list,
+  chooseAwards,
+  collectAwards,
+  toggle,
+  pointsToModal,
+  location,
+}) => {
+  console.log("list", list);
   const drawing = () => {
     if (location.pathname === "/awards") {
       return (
@@ -31,8 +39,6 @@ import ButtonBad from "../../../common/buttonBad/ButtonBad";
     }
   };
 
-
-
   return (
     <li className={style.Card__list}>
       <div>
@@ -41,8 +47,10 @@ import ButtonBad from "../../../common/buttonBad/ButtonBad";
           src={
             list.source
               ? require(`../../../assets/image/prizesImg/${list.imgName}.jpg`)
-              // : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
-              : list.imgName?require(`../../../assets/image/planImg/${list.imgName}.jpg`):"https://pluspng.com/img-png/task-png-big-image-png-2400.png"
+              : // : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
+              list.imgName
+              ? require(`../../../assets/image/planImg/${list.imgName}.jpg`)
+              : "https://pluspng.com/img-png/task-png-big-image-png-2400.png"
           }
           className={style.Card__listImg}
         />
@@ -50,7 +58,9 @@ import ButtonBad from "../../../common/buttonBad/ButtonBad";
       <div className={style.Card__listFooter}>
         <div className={style.Card__listText}>
           <p className={style.Card__listTitle}>{list.title}</p>
-          <p className={style.Card__listPoint}>{list.taskPoints} БАЛIВ</p>
+          <p className={style.Card__listPoint}>
+            {list.points || list.taskPoints} БАЛIВ
+          </p>
         </div>
         <div className={style.Card__listBt}>
           {list.source ? (
@@ -62,12 +72,16 @@ import ButtonBad from "../../../common/buttonBad/ButtonBad";
               pointsToModal={pointsToModal}
             />
           ) : (
-            <button className={style.Card__listBtton}>+</button>
+            <button
+              className={style.Card__listBtton}
+              onClick={() => console.log(list.points)}
+            >
+              +
+            </button>
           )}
         </div>
-
       </div>
     </li>
   );
-}
+};
 export default CardListLi;
