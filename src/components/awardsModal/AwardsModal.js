@@ -1,15 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./awardsModal.module.css";
 
-const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
+const AwardsModal = ({
+  openModaled,
+  prizes,
+  useOutsideAlerter,
+  pointsTotal,
+  closeModal,
+  collectAwards,
+  fail,
+}) => {
   const [modal, openModal] = useState(openModaled);
+  const [modalCheck, setModalCheck] = useState(false);
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
+  useEffect(() => {
+    if (pointsTotal > 0) {
+      setModalCheck(true);
+    }
+  }, []);
+
   const bgImg = (props) => {
-    const imgUrl = require(`../../assets/image/prizesImg/${props}.jpg`)
-    return imgUrl
-  }
+    const imgUrl = require(`../../assets/image/prizesImg/${props}.jpg`);
+    return imgUrl;
+  };
 
   return (
     <>
@@ -24,10 +39,24 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
               height="auto"
             />
             {console.log("modal", modal)}
-            {prizes.length > 0 ? (
-              <p className={styles.modalGreetings}>Вітаємо! Ти отримуєш:</p>
+            {modalCheck ? (
+              <>
+                {fail ? (
+                  <p className={styles.modalGreetings}>Недостатньо балів!</p>
+                ) : (
+                  <p className={styles.modalGreetings}>
+                    Ти дійсно бажаєш витратити {pointsTotal} балів?
+                  </p>
+                )}
+              </>
             ) : (
-              <p className={styles.modalGreetings}>Обери хоч щось!</p>
+              <>
+                {prizes.length > 0 ? (
+                  <p className={styles.modalGreetings}>Вітаємо! Ти отримуєш:</p>
+                ) : (
+                  <p className={styles.modalGreetings}>Обери хоч щось!</p>
+                )}
+              </>
             )}
             <ul className={styles.modalPrizes}>
               {prizes.map((prize) => (
@@ -35,13 +64,50 @@ const AwardsModal = ({ openModaled, prizes, useOutsideAlerter }) => {
                   <div
                     id="sexyId"
                     className={styles.modalPrizesItemImageWrapper}
-                    style={{backgroundImage: `url(${bgImg(prize.imgName)})`}}
-                  >
-                  </div>
+                    style={{ backgroundImage: `url(${bgImg(prize.imgName)})` }}
+                  ></div>
                   <p className={styles.modalPrizesName}>{prize.title}</p>
                 </li>
               ))}
             </ul>
+            <div>
+              <div className={styles.modalCheckDiv}>
+                {modalCheck ? (
+                  <>
+                    {fail ? (
+                      <button
+                        disabled={true}
+                        className={styles.modalCheckButton}
+                        onClick={() => {
+                          setModalCheck(false);
+                          collectAwards();
+                        }}
+                      >
+                        Так!
+                      </button>
+                    ) : (
+                      <button
+                        className={styles.modalCheckButton}
+                        onClick={() => {
+                          setModalCheck(false);
+                          collectAwards();
+                        }}
+                      >
+                        Так!
+                      </button>
+                    )}
+                    <button
+                      className={styles.modalCheckButton}
+                      onClick={() => closeModal()}
+                    >
+                      Повернутися
+                    </button>
+                  </>
+                ) : (
+                  <> </>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       ) : (

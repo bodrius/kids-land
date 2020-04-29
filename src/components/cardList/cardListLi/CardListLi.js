@@ -14,8 +14,9 @@ import Toogle from "../toogle/Toogle";
   //     break;
   // }
 
+
 const CardListLi = ({ list, chooseAwards, collectAwards }) => {
-  // console.log('list------', list)
+
   return (
     <li className={style.Card__list}>
       <div>
@@ -41,7 +42,8 @@ const CardListLi = ({ list, chooseAwards, collectAwards }) => {
               point={list.taskPoints}
               chooseAwards={chooseAwards}
               card={list}
-              collectAwards={collectAwards}
+              choosenAwards={toggle}
+              pointsToModal={pointsToModal}
             />
           ) : (
             <button className={style.Card__listBtton}>+</button>
