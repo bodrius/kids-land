@@ -123,7 +123,7 @@ const currentTask = async (id, token) => {
 
 const updateСommission = (day, commissionId, token, days) => {
   const filter = days.days.map((d) =>
-    d.title === day ? { ...d, isDone: false } : d
+    d.title === day ? { ...d, isDone: true } : d
   );
 
   fetch(`https://kidslike.goit.co.ua/api/tasks/${commissionId}`, {
