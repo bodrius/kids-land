@@ -25,6 +25,7 @@ const CurrentWeekRange = () => {
     } else return monthes[moment().get("M")];
   }
   const month = getThisMonth(moment().get("M"));
+
   return (
     <div className={styles.wrapper}>
       <p className={styles.week}>

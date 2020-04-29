@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./CardListLi.module.css";
 import moment from "moment";
 import Toogle from "../toogle/Toogle";
-import ButtonGood from "../../../common/bottonGod/ButtonGood";
-import ButtonBad from "../../../common/buttonBad/ButtonBad";
-import { useDispatch } from "react-redux";
+// import ButtonGood from "../../../common/bottonGod/ButtonGood";
+// import ButtonBad from "../../../common/buttonBad/ButtonBad";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const date = moment().format("Do MMMM YYYY");
+
 const CardListLi = ({
   list,
   chooseAwards,
@@ -14,30 +16,31 @@ const CardListLi = ({
   toggle,
   pointsToModal,
   location,
+  dayLabel,
 }) => {
-  console.log("list", list);
-  const drawing = () => {
-    if (location.pathname === "/awards") {
-      return (
-        <Toogle
-          point={list.taskPoints}
-          chooseAwards={chooseAwards}
-          card={list}
-          collectAwards={collectAwards}
-        />
-      );
-    } else if (location.pathname === "/") {
-      if (date === date) {
-        return <Toogle />;
-      } else if (date !== date) {
-        if (list.days[0][0].isDone === false) {
-          return <ButtonBad />;
-        } else if (list.days[0][0].isDone === true) {
-          return <ButtonGood />;
-        }
-      }
-    }
-  };
+  const { userToken } = useSelector((state) => state.user);
+  // const drawing = () => {
+  //   if (location.pathname === "/awards") {
+  //     return (
+  //       <Toogle
+  //         point={list.taskPoints}
+  //         chooseAwards={chooseAwards}
+  //         card={list}
+  //         collectAwards={collectAwards}
+  //       />
+  //     );
+  //   } else if (location.pathname === "/") {
+  //     if (date === date) {
+  //       return <Toogle />;
+  //     } else if (date !== date) {
+  //       if (list.days[0][0].isDone === false) {
+  //         return <ButtonBad />;
+  //       } else if (list.days[0][0].isDone === true) {
+  //         return <ButtonGood />;
+  //       }
+  //     }
+  //   }
+  // };
 
   return (
     <li className={style.Card__list}>
@@ -72,16 +75,67 @@ const CardListLi = ({
               pointsToModal={pointsToModal}
             />
           ) : (
-            <button
-              className={style.Card__listBtton}
-              onClick={() => console.log(list.points)}
-            >
-              +
-            </button>
+            <>
+              {!list.days[0][0].isDone ? (
+                <button
+                  disabled={moment().format("dddd") !== dayLabel.toLowerCase()}
+                  style={{
+                    backgroundColor:
+                      moment().format("dddd") !== dayLabel.toLowerCase()
+                        ? "red"
+                        : "green",
+                  }}
+                  className={style.Card__listBtton}
+                  onClick={async () => {
+                    const chooseDays = await currentTask(list.id, userToken);
+                    await updateСommission(
+                      list.days[0][0].title,
+                      list.id,
+                      userToken,
+                      chooseDays
+                    );
+                  }}
+                >
+                  +
+                </button>
+              ) : (
+                <button>done</button>
+              )}
+            </>
           )}
         </div>
       </div>
     </li>
   );
 };
+
+const currentTask = async (id, token) => {
+  const data = await axios.get("https://kidslike.goit.co.ua/api/auth/current", {
+    headers: {
+      "content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const res = data.data.user.tasks.find((t) => t._id === id);
+  console.log(res.days);
+  return res;
+};
+
+const updateСommission = (day, commissionId, token, days) => {
+  const filter = days.days.map((d) =>
+    d.title === day ? { ...d, isDone: false } : d
+  );
+
+  fetch(`https://kidslike.goit.co.ua/api/tasks/${commissionId}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ days: filter }),
+  })
+    .then((res) => res.json())
+    .then((resData) => console.log(resData));
+};
+
 export default CardListLi;

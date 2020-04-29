@@ -6,48 +6,94 @@ import CurrentWeekRange from "../currentDay/CurrentWeekRange";
 import CurrentDay from "../currentDay/CurrentDay";
 import ProgressBar from "../progressBar/ProgressBar";
 import CardListUl from "../cardList/CardListUl";
-import ButtonCurrentWeekRange from "../CurrentWeekRange/ButtonCurrentWeekRange";
-// import { CurrentDay } from "./";
-// import { ProgressBar } from "./ path / ProgressBar";
-// import { CardList } from "./ path / CardList";
-import DefaultPage from './../mainPage/defaultPage/DefaultPage';
-
-export const WeekTabContent = ({ tasks, fullDate, dayLabel, totalPoints, planingPoints}) => {
-  // const [tasks, setTasks] = useState([]);
-console.log('tasks', tasks)
-  //   const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
-
-  // const selectedDayStyle = days.selected ? styles.activeItem : styles.item;
-
-  // services
-  //   .userSignIn({
-  //     email: "test666@test",
-  //     password: "qwerty",
-  //   })
-  //   .then((data) => {
-  //     console.log("data", data);
-  //     return setTasks(data.data.user.tasks);
-  //   });
-
+import DefaultPage from "./../mainPage/defaultPage/DefaultPage";
+import { WeekTabs } from "./WeekTabs";
+import moment from "moment";
+export const WeekTabContent = ({
+  tasks,
+  fullDate,
+  dayLabel,
+  days,
+  totalPoints,
+  planingPoints,
+  today,
+  choosenDay,
+  detect,
+}) => {
+  console.log("tasks", tasks);
   return (
     <div className={styles.container}>
-      <div className={styles.currentWeekRange}>
-        <CurrentWeekRange />
-        {/* <ButtonCurrentWeekRange /> */}
-      </div>
-      <div className={styles.mainHeader}>
+      {window.innerWidth < 769 && (
         <div>
-          <CurrentDay days={dayLabel} date={fullDate}/>
+          <>
+            <div className={styles.currentWeekRange}>
+              <CurrentWeekRange />
+            </div>
+            <div className={styles.mainHeader}>
+              <CurrentDay days={dayLabel} date={fullDate} />
+            </div>
+            <div className={styles.cardList}>
+              {detect.length ? (
+                <CardListUl dayLabel={dayLabel} cardList={tasks} />
+              ) : (
+                <DefaultPage />
+              )}
+            </div>
+            <div>
+              <ProgressBar
+                userPoints={totalPoints}
+                weekPoints={planingPoints}
+              />
+            </div>
+          </>
         </div>
+      )}
+      {window.innerWidth >= 770 && window.innerWidth <= 1199 && (
         <div>
-          <ProgressBar userPoints={totalPoints}  weekPoints={planingPoints}/>
+          <div className={styles.weekTabsPlusWeekRange}>
+            <CurrentWeekRange className={styles.currentWeekRange} />
+            <WeekTabs choosenDay={choosenDay} days={days} today={today} />
+          </div>
+          <div>
+            <ProgressBar userPoints={totalPoints} weekPoints={planingPoints} />
+          </div>
+          <div className={styles.mainHeader}>
+            <CurrentDay days={dayLabel} date={fullDate} />
+          </div>
+          <div className={styles.cardList}>
+            {detect.length ? (
+              <CardListUl dayLabel={dayLabel} cardList={tasks} />
+            ) : (
+              <DefaultPage />
+            )}
+          </div>
         </div>
-      </div>
-      <div className={styles.cardList}>
-      {tasks.length ? (<CardListUl cardList={tasks} />): (<DefaultPage/>)}
-      
-      </div>
-
+      )}
+      {window.innerWidth > 1199 && (
+        <div>
+          <div className={styles.currentWeekRange}>
+            <CurrentWeekRange />
+          </div>
+          <div className={styles.mainHeader}>
+            <div>
+              <CurrentDay days={dayLabel} date={fullDate} />
+            </div>
+            <div>
+              <ProgressBar
+                userPoints={totalPoints}
+                weekPoints={planingPoints}
+              />
+            </div>
+          </div>
+          <div className={styles.cardList}>
+            {detect.length ? (
+              <CardListUl dayLabel={dayLabel} cardList={tasks} />
+            ) : (
+              <DefaultPage />
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
