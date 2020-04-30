@@ -98,7 +98,7 @@ ul {
 
 
 
-.openModal:hover .buttonbar:nth-of-type(1) {
+/* .openModal:hover .buttonbar:nth-of-type(1) {
     width: 35px;
     background-color: red;
 }
@@ -115,7 +115,7 @@ ul {
 
 .openModal:hover .buttonbar {
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
+} */
 
 .closeModal {
     background-color: rgb(239, 187, 67);
@@ -126,7 +126,7 @@ ul {
 }
 
 .closeModal::after {
-    left: 90%;
+    left: 80%;
     top: 8px;
     position: absolute;
     content: '';
