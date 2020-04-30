@@ -12,7 +12,7 @@ const initialState = {
 
 const reducer = {
   [types.LOGIN_USER]: (state, { payload }) => {
-    console.log("reducer --->LOGIN", payload);
+    // console.log("reducer --->LOGIN", payload);
     return {
       userEmail: payload.user.email,
       userToken: payload.token,
@@ -22,7 +22,7 @@ const reducer = {
     };
   },
   [types.REGISTR_USER]: (state, { payload }) => {
-    console.log("payload", payload);
+    // console.log("payload", payload);
     return {
       userEmail: payload.user.email,
       userToken: payload.token,
@@ -32,7 +32,7 @@ const reducer = {
     };
   },
   [types.ADD_POINT]: (state, { payload }) => {
-    console.log("payload", payload);
+    // console.log("payload", payload);
     return {
       ...state,
       // userEmail: state.user.email,
