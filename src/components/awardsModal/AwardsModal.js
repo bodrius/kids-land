@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Confetti from "react-dom-confetti";
 import styles from "./awardsModal.module.css";
 
 const AwardsModal = ({
@@ -12,7 +13,22 @@ const AwardsModal = ({
 }) => {
   const [modal, openModal] = useState(openModaled);
   const [modalCheck, setModalCheck] = useState(false);
+  const [confetti, setConfetti] = useState(false);
   const wrapperRef = useRef(null);
+
+  const config = {
+    angle: 90,
+    spread: "120",
+    startVelocity: "60",
+    elementCount: "100",
+    dragFriction: 0.1,
+    duration: "10000",
+    stagger: "10",
+    width: "10px",
+    height: "10px",
+    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"],
+  };
+
   useOutsideAlerter(wrapperRef);
 
   useEffect(() => {
@@ -38,7 +54,6 @@ const AwardsModal = ({
               width="120"
               height="auto"
             />
-            {console.log("modal", modal)}
             {modalCheck ? (
               <>
                 {fail ? (
@@ -91,6 +106,7 @@ const AwardsModal = ({
                         onClick={() => {
                           setModalCheck(false);
                           collectAwards();
+                          setConfetti(true);
                         }}
                       >
                         Так!
@@ -107,6 +123,9 @@ const AwardsModal = ({
                   <> </>
                 )}
               </div>
+            </div>
+            <div className={styles.confettiWrapper}>
+              <Confetti active={confetti} config={config} />
             </div>
           </div>
         </div>

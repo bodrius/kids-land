@@ -109,7 +109,7 @@
 }
 
 .modalCheckButton:disabled {
-background-color: #A9A9A9;
+  background-color: #a9a9a9;
 }
 
 .modalCheckButton:hover,
@@ -119,6 +119,12 @@ background-color: #A9A9A9;
 
 .modalCheckButton:active {
   transform: translate(1.5px, 1.5px);
+}
+
+.confettiWrapper {
+  margin: 0 auto;
+  width: 2px;
+  height: 2px;
 }
 
 @media (min-width: 768px) {
