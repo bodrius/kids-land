@@ -35,6 +35,7 @@
   height: 262px;
   border-radius: 10px;
   background-color: #d3d3d3;
+  position: relative;
 }
 
 .awardsHeader {
@@ -93,7 +94,6 @@
 .awardsButton:active {
   transform: translate(1.5px, 1.5px);
 }
-
 @media (min-width: 768px) {
   .awardsWrapper {
     width: 586px;

@@ -22,7 +22,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "UserInfo, ModalLogout",
     contacts: "vladyslav.work@gmail.com",
-    id: 1
+    id: 1,
   },
   {
     foto: foto2,
@@ -30,7 +30,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "Header, Logo, Navigation",
     contacts: "xsergeix@ukr.net",
-    id: 2
+    id: 2,
   },
   {
     foto: foto3,
@@ -38,7 +38,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "MainPage",
     contacts: "serbin_y@ukr.net",
-    id: 3
+    id: 3,
   },
   {
     foto: foto4,
@@ -46,7 +46,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "Team Lead, React Routing, Loader",
     contacts: "bogdanpechenyk@gmail.com",
-    id: 4
+    id: 4,
   },
   {
     foto: foto5,
@@ -54,7 +54,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "PlaningPage",
     contacts: "shelukhin_g@ukr.net",
-    id: 5
+    id: 5,
   },
   {
     foto: foto6,
@@ -62,7 +62,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "services, DayList",
     contacts: "grey4uk14@gmail.com",
-    id: 6
+    id: 6,
   },
   {
     foto: foto7,
@@ -70,7 +70,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "Footer, PlaningPoint, AddCustomTask",
     contacts: "sergeyzuevpost@gmail.com",
-    id: 7
+    id: 7,
   },
   {
     foto: foto8,
@@ -78,7 +78,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "ContactsPage, ProgressBar",
     contacts: "gorban77@gmail.com",
-    id: 8
+    id: 8,
   },
   {
     foto: foto9,
@@ -86,15 +86,15 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "CardList, TaskToogle",
     contacts: "arturbohanov1908@gmail.com",
-    id: 9
+    id: 9,
   },
   {
     foto: foto10,
     name: "Bogdan Illiakov",
     position: "Front-End Developer",
-    description: "AwerdsPage",
+    description: "AwardsPage",
     contacts: "stardestroyer@ukr.net",
-    id: 10
+    id: 10,
   },
   {
     foto: foto11,
@@ -102,7 +102,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "AuthPage, AuthForm",
     contacts: "alexlogvin@yahoo.com",
-    id: 11
+    id: 11,
   },
   {
     foto: foto12,
@@ -110,7 +110,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "NewTaskModal",
     contacts: "galinas.vm@gmail.com",
-    id: 12
+    id: 12,
   },
   {
     foto: foto13,
@@ -118,7 +118,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "WeekTabContent, WeekTabs",
     contacts: "vasyl.manyo@ukr.net",
-    id: 13
+    id: 13,
   },
   {
     foto: foto14,
@@ -126,7 +126,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "AwardsSubmitData, AwardsTitle, AwardsPage",
     contacts: "workromanmail@gmail.com",
-    id: 14
+    id: 14,
   },
   {
     foto: foto15,
@@ -134,7 +134,7 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "CongratsModal, AwardsPage",
     contacts: "elizarieva.ellie@gmail.com",
-    id: 15
+    id: 15,
   },
   {
     foto: foto16,
@@ -142,6 +142,6 @@ export const Contacts = [
     position: "Front-End Developer",
     description: "CurrentDay, CurrentWeek",
     contacts: "rrrgo3@gmail.com",
-    id: 16
-  }
+    id: 16,
+  },
 ];

@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./Toogle.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { services } from "./../../../services/services";
 
-function Toogle({ chooseAwards, card, collectAwards }) {
+
+//function Toogle({ chooseAwards, card, collectAwards }) {
   // const { userPoint, userToken, userId } = useSelector((state) => state.user);
   // const [updatedPoints, setUpdatedPoints] = React.useState(userPoint);
   // const user = useSelector((state) => state.user);
@@ -45,12 +44,29 @@ function Toogle({ chooseAwards, card, collectAwards }) {
   //     alert("ИДИ ПОЛЫ ДРАИТЬ, ПАДЛА МЕЛКАЯ");
   //   }
   // };
+  // const [on, setOnState] = React.useState(false);
+  // const toggle = () => setOnState(o => !o);
+
+  
+  
+  
+  
+function Toogle({ chooseAwards, card, pointsToModal, choosenAwards }) {
   const [on, setOnState] = React.useState(false);
-  const toggle = () => setOnState(o => !o);
+
+  const toggle = (e) => {
+    setOnState((o) => !o);
+    chooseAwards(card.title, card.imgName, on, card.taskPoints);
+  };
+
+  React.useEffect(() => {
+    pointsToModal(choosenAwards);
+  }, [on]);
+
   return (
     <button
       className={on ? styles.on : styles.off}
-      onClick={toggle}
+      onClick={(e) => toggle(e)}
       style={{
         width: 40,
         height: 18,
