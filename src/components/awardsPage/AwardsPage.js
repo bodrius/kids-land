@@ -191,11 +191,11 @@ const AwardsPage = () => {
           <CSSTransition
             in={modal}
             classNames={animation}
-            timeout={1000}
+            timeout={500}
             unmountOnExit
           >
-            <div>
-              {modal ? (
+            <div className={css.backdropDiv}>
+
                 <AwardsModal
                   prizes={toggle}
                   openModaled={modal}
@@ -205,9 +205,7 @@ const AwardsPage = () => {
                   collectAwards={collectAwards}
                   fail={fail}
                 />
-              ) : (
-                <> </>
-              )}
+
             </div>
           </CSSTransition>
           {modal ? (
