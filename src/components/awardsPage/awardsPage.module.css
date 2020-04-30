@@ -94,7 +94,6 @@
 .awardsButton:active {
   transform: translate(1.5px, 1.5px);
 }
-
 @media (min-width: 768px) {
   .awardsWrapper {
     width: 586px;

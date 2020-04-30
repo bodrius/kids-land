@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { CSSTransition } from "react-transition-group";
 import css from "./awardsPage.module.css";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
@@ -7,6 +8,7 @@ import CardListUl from "./../cardList/CardListUl";
 import ProgressBar from "./../progressBar/ProgressBar";
 import { pointUser } from "../../redux/auth/operations";
 import { Footer } from "../Footer/Footer";
+import animation from "./awardsModalAnimation.module.css";
 
 const AwardsPage = () => {
   const { userToken, userId, userPoint, weekPoints } = useSelector((state) => {
@@ -186,17 +188,30 @@ const AwardsPage = () => {
           pointsToModal={pointsToModal}
         />
         <div className={css.awardsButtonWrapper}>
+          <CSSTransition
+            in={modal}
+            classNames={animation}
+            timeout={1000}
+            unmountOnExit
+          >
+            <div>
+              {modal ? (
+                <AwardsModal
+                  prizes={toggle}
+                  openModaled={modal}
+                  useOutsideAlerter={useOutsideAlerter}
+                  pointsTotal={pointsTotal}
+                  closeModal={closeModal}
+                  collectAwards={collectAwards}
+                  fail={fail}
+                />
+              ) : (
+                <> </>
+              )}
+            </div>
+          </CSSTransition>
           {modal ? (
             <>
-              <AwardsModal
-                prizes={toggle}
-                openModaled={modal}
-                useOutsideAlerter={useOutsideAlerter}
-                pointsTotal={pointsTotal}
-                closeModal={closeModal}
-                collectAwards={collectAwards}
-                fail={fail}
-              />
               <button className={css.awardsButton} onClick={openModal} disabled>
                 Підтвердити
               </button>
