@@ -40,7 +40,7 @@ let days = [
   },
   {
     id: 5,
-    label: "П'ятниця",
+    label: "П’ятниця",
     shortLabel: "Пт",
     name: "friday",
     selected: false,
@@ -83,10 +83,6 @@ const MainPage = () => {
     history.push(day);
   }, [day, history]);
 
-  // useEffect(() => {
-  //   const dayId = days.find((day) =>
-  //     day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
-  //   );
   useEffect(() => {
     const newDays = days.map((day, indx) => ({
       ...day,
@@ -94,9 +90,14 @@ const MainPage = () => {
     }));
     console.log("newDays-------", newDays);
     days = newDays;
-    const dayId = days.find((day) =>
-      day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
-    );
+
+    const dayId = days.find((day) => {
+      console.log("day", day.label.toLowerCase());
+      console.log("dasyLabel", dayLabel);
+      console.log(dayLabel === day.label.toLowerCase());
+      return day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null;
+    });
+    console.log("daysId", dayId);
     selectDay(dayId.id);
   }, []);
 
