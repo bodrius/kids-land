@@ -12,9 +12,8 @@ const Auth = () => {
 
   const dispatch = useDispatch();
 
-  const validate = (value) => {
+  const validate = () => {
     const errors = {};
-    // console.log("email, password", value);
     if (!email) {
       errors.email = "Required email";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
@@ -22,7 +21,7 @@ const Auth = () => {
     }
     if (!password) {
       errors.password = "Required password";
-    } else if (password.length < 2) {
+    } else if (password.length < 6) {
       errors.password = "Must be 6 characters or more";
     }
     if (errors.length) {
@@ -46,13 +45,12 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(e);
     const contact = {
       email: email,
       password: password,
     };
-    console.log("errors", mainerror);
-    if (mainerror === null) {
+    console.log("ERRORS", mainerror);
+    if (mainerror !== null) {
       addContact(contact, e.target.value);
     } else {
       setEmail("");
@@ -61,7 +59,6 @@ const Auth = () => {
   };
 
   const addContact = async (contact, value) => {
-    console.log(contact, value);
     if (value === "REGISTR_USER") {
       dispatch(registerUser(contact));
     } else if (value === "LOGIN_USER") {
@@ -148,7 +145,6 @@ const Auth = () => {
             onChange={handleChange}
             value={email}
           />
-          {/* {formik.errors.email ? <div>{formik.errors.email}</div> : null} */}
           <h2 className={styles.authTextInput}>Пароль</h2>
           <input
             className={styles.input}
@@ -161,7 +157,6 @@ const Auth = () => {
             onChange={handleChange}
             value={password}
           />
-          {/* {formik.errors.password ? <div>{formik.errors.password}</div> : null} */}
           <div className={styles.divFlex}>
             <div className={styles.divbtn}>
               <button
