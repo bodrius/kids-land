@@ -8,7 +8,7 @@ import { registerUser, loginUser } from "../../redux/auth/operations";
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  let mainerror = null;
+  let mainerror = true;
 
   const dispatch = useDispatch();
 
@@ -24,11 +24,14 @@ const Auth = () => {
     } else if (password.length < 6) {
       errors.password = "Must be 6 characters or more";
     }
-    if (errors.length) {
-      mainerror = errors;
+    if (Object.keys(errors).length === 0) {
+      mainerror = false;
+      // console.log("errors false", errors, "mainerror1", mainerror);
     } else {
-      mainerror = null;
+      mainerror = true;
+      // console.log("errors true", errors, "mainerror2", mainerror);
     }
+
     return errors;
   };
 
@@ -49,8 +52,8 @@ const Auth = () => {
       email: email,
       password: password,
     };
-    console.log("ERRORS", mainerror);
-    if (mainerror === null) {
+    // console.log("ERRORS", mainerror);
+    if (mainerror === false) {
       addContact(contact, e.target.value);
     } else {
       setEmail("");

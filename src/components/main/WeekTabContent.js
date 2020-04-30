@@ -23,7 +23,7 @@ export const WeekTabContent = ({
   console.log("tasks", tasks);
   return (
     <div className={styles.container}>
-      {window.innerWidth < 769 && (
+      {window.innerWidth < 768 && (
         <div>
           <>
             <div className={styles.currentWeekRange}>

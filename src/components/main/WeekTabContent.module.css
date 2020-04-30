@@ -27,6 +27,9 @@
     display: flex;
     justify-content: space-between;
   }
+  .cardList {
+    padding-left: 94px;
+  }
 }
 @media (min-width: 1200px) {
   .container {
@@ -43,7 +46,10 @@
     display: flex;
     justify-content: space-between;
   }
+  
   .cardList {
     padding-top: 30px;
+    padding-left: 94px;
+
   }
 }
