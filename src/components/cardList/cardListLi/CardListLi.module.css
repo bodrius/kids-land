@@ -70,9 +70,9 @@
   .Card__list:nth-child(2n + 1) {
     margin-right: 22px;
   }
-  .Card__list:nth-last-child(-n + 2) {
+  /* .Card__list:nth-last-child(-n + 1) {
     margin-bottom: 0;
-  }
+  } */
 }
 @media (min-width: 1200px) {
   .Card__list {

@@ -138,8 +138,10 @@ const Auth = () => {
           <h2 className={styles.authTextInput}>Email</h2>
           <input
             className={styles.input}
-            type="text"
+            type="email"
             name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            required
             placeholder={
               formik.errors.email ? formik.errors.email : "Enter Email"
             }
@@ -152,6 +154,7 @@ const Auth = () => {
             className={styles.input}
             type="password"
             name="password"
+            required
             placeholder={
               formik.errors.password ? formik.errors.password : "Enter password"
             }
