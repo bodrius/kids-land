@@ -14,11 +14,12 @@
     margin: 0 auto;
     margin-left: 10px;
     margin-right: 10px;
-    width: 210px;
+    width: 67%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+
 }
 
 .navigUserInfoContainer {
@@ -29,8 +30,8 @@
 }
 
 .userInfoContainer {
-    order: 1;
     display: flex;
+    order: 1;
 }
 
 .navContainer {
@@ -51,7 +52,6 @@
 
     .userInfoContainer {
         order: 2;
-        /* margin-right: 40px; */
     }
 
     .navContainer {

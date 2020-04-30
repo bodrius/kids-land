@@ -1,0 +1,21 @@
+.planListBlock{
+    width: 280px;
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (min-width: 768px){
+    .planListBlock{
+        width: 590px;
+    }
+}
+
+@media (min-width: 1200px){
+    .planListBlock{
+        width: 1200px;
+    }
+}

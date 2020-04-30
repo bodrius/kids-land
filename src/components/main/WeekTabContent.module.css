@@ -1,25 +1,49 @@
-.container{
-  width: 1040px;
-  height: 790px;
-  /* background-color: orange; */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 282px;
   background-color: #ececec;
+  background-color: #fafafa;
 }
 .currentWeekRange {
   display: block;
-  /* background-color: orange; */
   height: 40px;
 }
 .mainHeader {
   display: flex;
   justify-content: space-between;
-  /* background-color: pink; */
 }
 .cardList {
   padding-top: 30px;
+}
 
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between; */
-  /* background-color: rgb(115, 115, 155); */
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+    height: 70px;
+    background-color: #efbb43;
+  }
+  .weekTabsPlusWeekRange {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1040px;
+    height: 88vh;
+    background-color: #ececec;
+    overflow: scroll;
+  }
+  .currentWeekRange {
+    display: block;
+    height: 40px;
+  }
+  .mainHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+  .cardList {
+    padding-top: 30px;
+  }
 }
