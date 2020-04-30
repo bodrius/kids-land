@@ -9,7 +9,7 @@ import { pointUser } from "../../redux/auth/operations";
 import { Footer } from "../Footer/Footer";
 
 const AwardsPage = () => {
-  const { userToken, userId, userPoint } = useSelector((state) => {
+  const { userToken, userId, userPoint, weekPoints } = useSelector((state) => {
     return state.user;
   });
   const [points, setPoints] = useState(userPoint);
@@ -18,7 +18,7 @@ const AwardsPage = () => {
   const [pointsTotal, setPointsTotal] = useState(null);
   const [fail, setFail] = useState(false);
   const dispatch = useDispatch();
-
+  console.log("points ------ !!!", points);
   useEffect(() => {
     if (pointsTotal > points) {
       setFail(true);
@@ -175,7 +175,7 @@ const AwardsPage = () => {
           </div>
           <div className={css.awardsHeaderBarContainer}>
             <div className={css.awardsHeaderBar}>
-              <ProgressBar userPoints={points} />
+              <ProgressBar userPoints={points} weekPoints={weekPoints} />
             </div>
           </div>
         </div>

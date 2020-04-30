@@ -4,8 +4,10 @@ import style from "./ProgressBar.module.css";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 
-const ProgressBar = ({ userPoints }) => {
-  const { weekPoints } = useSelector((state) => state.user);
+const ProgressBar = ({ userPoints, weekPoints }) => {
+  console.log("weekPoints", weekPoints);
+  console.log("userPoints", userPoints);
+  // const { weekPoints } = useSelector((state) => state.user);
 
   let percent = 100;
   if (weekPoints) {

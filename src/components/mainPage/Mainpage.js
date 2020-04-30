@@ -75,8 +75,9 @@ const MainPage = () => {
   const [detect, setDetect] = useState([]);
   const day = setMainPath();
   const history = useHistory();
+  const dispatch = useDispatch();
 
-console.log()
+  console.log();
 
   useEffect(() => {
     history.push(day);
@@ -97,12 +98,14 @@ console.log()
       day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
     );
     selectDay(dayId.id);
-    
   }, []);
 
   const selectDay = async (id) => {
     const currentDayForImage = days.find((day) => day.id === id);
     await services.getCurrentUser(userToken).then((data) => {
+      console.log("------ !! ----", data.data.user.points);
+      dispatch({ type: "ADD_POINT", payload: data.data.user.points });
+
       setTotalPoints(data.data.user.points);
       const points = data.data.user.tasks.reduce((acc, task) => {
         let sum =
@@ -118,7 +121,9 @@ console.log()
         date: task.date,
         days: [
           task.days.filter(
-            (task) => task.isActive && task.name === currentDayForImage.name
+            (task) =>
+              task.isActive &&
+              task.name.toLowerCase() === currentDayForImage.name.toLowerCase()
           ),
         ],
         isDone: task.days[0].isDone,
@@ -140,22 +145,30 @@ console.log()
       const resultforFilter = result.filter(
         (activeDay) => activeDay.days[0].length
       );
+
       setDetect(resultforFilter);
       console.log("resultforFilter", resultforFilter);
       if (resultforFilter.length === 0) {
-        console.log("00000000000");
         setPlaningPoints(0);
         return;
       } else {
         setPlaningPoints(
           resultforFilter.reduce((acc, activeDay) => acc + activeDay.points, 0)
         );
+        console.log(
+          "reduce",
+          resultforFilter.reduce((acc, activeDay) => acc + activeDay.points, 0)
+        );
+        dispatch({
+          type: "USER_TASK_POINTS",
+          payload: points,
+        });
       }
 
       // const dateOffTask = resultforFilter[0].days[0][0].date;
       setPlaningPoints(points);
       setTasks(resultforFilter);
-      console.log('curentDayForImage', currentDayForImage)
+      console.log("curentDayForImage", currentDayForImage);
     });
     setFullDate(currentDayForImage.dateOfWeek);
 
