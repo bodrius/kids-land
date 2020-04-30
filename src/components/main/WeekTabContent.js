@@ -44,7 +44,7 @@ console.log('tasks', tasks)
         </div>
       </div>
       <div className={styles.cardList}>
-      {tasks.length ? (<CardListUl cardList={tasks} />): (<DefaultPage/>)}
+      {tasks.length>0 ? (<CardListUl cardList={tasks} />): (<DefaultPage/>)}
       
       </div>
 

@@ -8,8 +8,8 @@ import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
-const days = [
-  { id: 1, label: "Понеділок", name: "monday", selected: false,  },
+let days = [
+  { id: 1, label: "Понеділок", name: "monday", selected: false },
   { id: 2, label: "Вівторок", name: "tuesday", selected: false },
   { id: 3, label: "Середа", name: "wednesday", selected: false },
   { id: 4, label: "Четвер", name: "thursday", selected: false },
@@ -30,7 +30,8 @@ const setMainPath = () => {
 
 const MainPage = () => {
   const { userToken, userTasks } = useSelector((state) => state.user);
-
+  // const startOfWeek = Date.now();
+  //  moment().startOf("week").format("L");
   const [tasks, setTasks] = useState([]);
   const [dayLabel, setDayLabel] = useState(moment().format("dddd"));
   const [fullDate, setFullDate] = useState(moment().format("L"));
@@ -38,8 +39,7 @@ const MainPage = () => {
   const [totalPoints, setTotalPoints]=useState(0)
   const day = setMainPath();
   const history = useHistory();
- console.log('planingPoints', planingPoints);
- console.log('totalPoints', totalPoints)
+  console.log('startOfWeek_____', moment().weekday(0).format("L"))
   useEffect(() => {
     history.push(day);
   }, [day, history]);
@@ -48,9 +48,10 @@ const MainPage = () => {
     const dayId = days.find((day) =>
       day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
     );
-    // console.log("dayId", dayId.id);
-
     selectDay(dayId.id);
+    const newDays=days.map((day,indx)=>({...day,dateOfWeek:`${moment().weekday(indx).format("L")}`}));
+    console.log('newDays-------', newDays)
+    days=newDays;
   }, []);
 
   const selectDay = async (id) => {
@@ -77,16 +78,17 @@ const MainPage = () => {
       const resultforFilter = result.filter(
         (activeDay) => activeDay.days[0].length,
       );
-      setPlaningPoints(resultforFilter.reduce(((acc, activeDay) => acc+ activeDay.points),0))
-      console.log('resultforFilter', resultforFilter)
-      const dateOffTask = resultforFilter[0].days[0][0].date
-      console.log('dateOffTask', dateOffTask)
-      setFullDate(moment(dateOffTask).format("L"));
+      setPlaningPoints(resultforFilter.reduce(((acc, activeDay) => acc+ activeDay.points),0));
+      console.log('resultforFilter', resultforFilter);
+      // const dateOffTask =resultforFilter.length? resultforFilter[0].days[0][0].date:0;
+      // console.log('dateOffTask', dateOffTask);
+     
       setPlaningPoints(points);
       setTasks(resultforFilter);
     });
     console.log("currentDayForImage", currentDayForImage);
     setDayLabel(currentDayForImage.label);
+    setFullDate(currentDayForImage.dateOfWeek);
     // setFullDate(currentDayForImage.dayDate);
     // console.log("Some date----->", currentDayForImage.dayDate);
 
