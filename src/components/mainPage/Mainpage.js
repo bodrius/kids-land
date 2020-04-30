@@ -29,7 +29,7 @@ const setMainPath = () => {
 };
 
 const MainPage = () => {
-  const { userToken, userTasks } = useSelector((state) => state.user);
+  const { userToken, userTasks,userId } = useSelector((state) => state.user);
   // const startOfWeek = Date.now();
   //  moment().startOf("week").format("L");
   const [tasks, setTasks] = useState([]);
@@ -55,6 +55,7 @@ const MainPage = () => {
   }, []);
 
   const selectDay = async (id) => {
+    await services.updateUserPoints(userToken,userId,200).then(data=>console.log('data',data));
     const currentDayForImage = days.find((day) => day.id === id);
      await services.getCurrentUser(userToken).then((data) => {
       setTotalPoints(data.data.user.points);
