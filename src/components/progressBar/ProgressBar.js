@@ -6,7 +6,6 @@ import "react-sweet-progress/lib/style.css";
 
 const ProgressBar = ({ userPoints }) => {
   const { weekPoints } = useSelector((state) => state.user);
-
   let percent = 100;
   if (weekPoints) {
     percent = parseFloat(
