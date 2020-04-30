@@ -38,6 +38,12 @@
     order: 2;
 }
 
+@media (max-width: 768px) {
+    .headerContainer {
+        
+    }
+}
+
 
 @media (min-width: 768px) {
     .headerContainer {

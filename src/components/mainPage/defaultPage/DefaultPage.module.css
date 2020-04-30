@@ -4,3 +4,10 @@
     height: 454px;
     background-size: cover;
 }
+
+
+@media(min-width:768px){
+    .container{
+        transform: translateX(-49px)
+    }
+}
