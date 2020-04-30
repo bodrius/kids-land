@@ -9,7 +9,7 @@ import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
-const days = [
+let days = [
   {
     id: 1,
     label: "Понеділок",
@@ -49,10 +49,10 @@ const days = [
     id: 6,
     label: "Субота",
     shortLabel: "Сб",
-    name: "Saturday",
+    name: "saturday",
     selected: false,
   },
-  { id: 7, label: "Неділя", shortLabel: "Нд", name: "Sunday", selected: false },
+  { id: 7, label: "Неділя", shortLabel: "Нд", name: "sunday", selected: false },
 ];
 
 const windowWidth = document.documentElement.clientWidth;
@@ -75,22 +75,37 @@ const MainPage = () => {
   const [detect, setDetect] = useState([]);
   const day = setMainPath();
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  console.log();
 
   useEffect(() => {
     history.push(day);
   }, [day, history]);
 
+  // useEffect(() => {
+  //   const dayId = days.find((day) =>
+  //     day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
+  //   );
   useEffect(() => {
+    const newDays = days.map((day, indx) => ({
+      ...day,
+      dateOfWeek: `${moment().weekday(indx).format("L")}`,
+    }));
+    console.log("newDays-------", newDays);
+    days = newDays;
     const dayId = days.find((day) =>
       day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
     );
-
     selectDay(dayId.id);
   }, []);
 
   const selectDay = async (id) => {
     const currentDayForImage = days.find((day) => day.id === id);
     await services.getCurrentUser(userToken).then((data) => {
+      console.log("------ !! ----", data.data.user.points);
+      dispatch({ type: "ADD_POINT", payload: data.data.user.points });
+
       setTotalPoints(data.data.user.points);
       const points = data.data.user.tasks.reduce((acc, task) => {
         let sum =
@@ -106,7 +121,9 @@ const MainPage = () => {
         date: task.date,
         days: [
           task.days.filter(
-            (task) => task.isActive && task.name === currentDayForImage.name
+            (task) =>
+              task.isActive &&
+              task.name.toLowerCase() === currentDayForImage.name.toLowerCase()
           ),
         ],
         isDone: task.days[0].isDone,
@@ -128,24 +145,32 @@ const MainPage = () => {
       const resultforFilter = result.filter(
         (activeDay) => activeDay.days[0].length
       );
+
       setDetect(resultforFilter);
       console.log("resultforFilter", resultforFilter);
       if (resultforFilter.length === 0) {
-        console.log("00000000000");
         setPlaningPoints(0);
         return;
       } else {
         setPlaningPoints(
           resultforFilter.reduce((acc, activeDay) => acc + activeDay.points, 0)
         );
+        console.log(
+          "reduce",
+          resultforFilter.reduce((acc, activeDay) => acc + activeDay.points, 0)
+        );
+        dispatch({
+          type: "USER_TASK_POINTS",
+          payload: points,
+        });
       }
 
-      const dateOffTask = resultforFilter[0].days[0][0].date;
-
-      setFullDate(moment(dateOffTask).format("L"));
+      // const dateOffTask = resultforFilter[0].days[0][0].date;
       setPlaningPoints(points);
       setTasks(resultforFilter);
+      console.log("curentDayForImage", currentDayForImage);
     });
+    setFullDate(currentDayForImage.dateOfWeek);
 
     setDayLabel(currentDayForImage.label);
     return currentDayForImage.name;

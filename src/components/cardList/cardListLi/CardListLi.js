@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import style from "./CardListLi.module.css";
 import moment from "moment";
 import Toogle from "../toogle/Toogle";
-// import ButtonGood from "../../../common/bottonGod/ButtonGood";
+import ButtonGood from "../../../common/bottonGod/ButtonGood";
 // import ButtonBad from "../../../common/buttonBad/ButtonBad";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-
+import { services } from "../../../services/services";
 const date = moment().format("Do MMMM YYYY");
 
 const CardListLi = ({
@@ -18,7 +18,8 @@ const CardListLi = ({
   location,
   dayLabel,
 }) => {
-  const { userToken } = useSelector((state) => state.user);
+  const { userToken, userId } = useSelector((state) => state.user);
+
   // const drawing = () => {
   //   if (location.pathname === "/awards") {
   //     return (
@@ -83,10 +84,11 @@ const CardListLi = ({
                     backgroundColor:
                       moment().format("dddd") !== dayLabel.toLowerCase()
                         ? "red"
-                        : "green",
+                        : "red",
                   }}
                   className={style.Card__listBtton}
                   onClick={async () => {
+                    console.log("list", list);
                     const chooseDays = await currentTask(list.id, userToken);
                     await updateСommission(
                       list.days[0][0].title,
@@ -94,12 +96,15 @@ const CardListLi = ({
                       userToken,
                       chooseDays
                     );
+                    const allPoints = await completedtask(userToken);
+                    console.log("allpoints", allPoints);
+                    await addPoints(userId, userToken, allPoints, list.points);
                   }}
                 >
                   +
                 </button>
               ) : (
-                <button>done</button>
+                <ButtonGood />
               )}
             </>
           )}
@@ -107,6 +112,24 @@ const CardListLi = ({
       </div>
     </li>
   );
+};
+
+const addPoints = async (id, token, points, cardPoint) => {
+  const updatePoint = points + cardPoint;
+  await services.updateUserPoints(token, id, updatePoint);
+};
+
+const completedtask = async (token) => {
+  const allpoints = await axios.get(
+    "https://kidslike.goit.co.ua/api/auth/current",
+    {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return allpoints.data.user.points;
 };
 
 const currentTask = async (id, token) => {

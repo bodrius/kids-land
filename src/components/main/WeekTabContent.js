@@ -8,7 +8,9 @@ import ProgressBar from "../progressBar/ProgressBar";
 import CardListUl from "../cardList/CardListUl";
 import DefaultPage from "./../mainPage/defaultPage/DefaultPage";
 import { WeekTabs } from "./WeekTabs";
+import { useSelector } from "react-redux";
 import moment from "moment";
+
 export const WeekTabContent = ({
   tasks,
   fullDate,
@@ -21,9 +23,10 @@ export const WeekTabContent = ({
   detect,
 }) => {
   console.log("tasks", tasks);
+  const { weekPoints } = useSelector((state) => state.user);
   return (
     <div className={styles.container}>
-      {window.innerWidth < 769 && (
+      {window.innerWidth < 768 && (
         <div>
           <>
             <div className={styles.currentWeekRange}>
@@ -40,10 +43,7 @@ export const WeekTabContent = ({
               )}
             </div>
             <div>
-              <ProgressBar
-                userPoints={totalPoints}
-                weekPoints={planingPoints}
-              />
+              <ProgressBar userPoints={totalPoints} weekPoints={weekPoints} />
             </div>
           </>
         </div>
@@ -55,7 +55,7 @@ export const WeekTabContent = ({
             <WeekTabs choosenDay={choosenDay} days={days} today={today} />
           </div>
           <div>
-            <ProgressBar userPoints={totalPoints} weekPoints={planingPoints} />
+            <ProgressBar userPoints={totalPoints} weekPoints={weekPoints} />
           </div>
           <div className={styles.mainHeader}>
             <CurrentDay days={dayLabel} date={fullDate} />
@@ -79,10 +79,7 @@ export const WeekTabContent = ({
               <CurrentDay days={dayLabel} date={fullDate} />
             </div>
             <div>
-              <ProgressBar
-                userPoints={totalPoints}
-                weekPoints={planingPoints}
-              />
+              <ProgressBar userPoints={totalPoints} weekPoints={weekPoints} />
             </div>
           </div>
           <div className={styles.cardList}>
