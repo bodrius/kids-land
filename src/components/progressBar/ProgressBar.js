@@ -1,13 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import style from "./ProgressBar.module.css";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 
 const ProgressBar = ({ userPoints, weekPoints }) => {
+  console.log("weekPoints", weekPoints);
+  console.log("userPoints", userPoints);
+  // const { weekPoints } = useSelector((state) => state.user);
+
   let percent = 100;
   if (weekPoints) {
-    percent = parseFloat((userPoints / weekPoints)<1?(userPoints / weekPoints) * 100:100);
+    percent = parseFloat(
+      userPoints / weekPoints < 1 ? (userPoints / weekPoints) * 100 : 100
+    );
   }
   if (userPoints === 0) {
     percent = 0;
@@ -37,11 +43,4 @@ const ProgressBar = ({ userPoints, weekPoints }) => {
   );
 };
 
-const mapStateToProps = state => ({
-//   // userPoints: 300,
-  countPoints: 800
-});
-
-export default connect(mapStateToProps, null)(ProgressBar);
-
-// export default ProgressBar;
+export default ProgressBar;

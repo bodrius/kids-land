@@ -11,8 +11,8 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 280%;
-  position: absolute;
+  height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
 }
@@ -98,18 +98,18 @@
   border-radius: 6px;
   background-color: rgb(239, 187, 67);
   box-shadow: 0px 4px 6px 0px rgba(29, 29, 27, 0.15);
-  width: 160px;
-  height: 48px;
+  width: 100px;
+  height: 38px;
   font-family: "Montserrat", "Arial", sans-serif;
   color: #fff;
   line-height: 18px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   outline: none;
 }
 
 .modalCheckButton:disabled {
-background-color: #A9A9A9;
+  background-color: #a9a9a9;
 }
 
 .modalCheckButton:hover,
@@ -119,6 +119,12 @@ background-color: #A9A9A9;
 
 .modalCheckButton:active {
   transform: translate(1.5px, 1.5px);
+}
+
+.confettiWrapper {
+  margin: 0 auto;
+  width: 2px;
+  height: 2px;
 }
 
 @media (min-width: 768px) {
@@ -152,5 +158,11 @@ background-color: #A9A9A9;
   }
   .modalPrizesItemImageWrapper {
     margin-bottom: 9px;
+  }
+
+  .modalCheckButton {
+    width: 160px;
+    height: 48px;
+    font-size: 16px;
   }
 }

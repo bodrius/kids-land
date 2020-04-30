@@ -9,7 +9,7 @@ import axios from "axios";
 
 export const Card = ({
   data: { imgName, title, taskPoints, days, _id },
-  plusPoint,
+  plusPoint, getTasks
 }) => {
   const [state, setState] = React.useState({ visible: false });
   const [point, setPoint] = React.useState(0);
@@ -47,7 +47,7 @@ export const Card = ({
               }}
             >
               {state.visible ? (
-                "Ok"
+                <span onClick={()=>getTasks()}>Ok</span>
               ) : (
                 <span className={style.Card__plus}>+</span>
               )}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { CSSTransition } from "react-transition-group";
 import css from "./awardsPage.module.css";
 import { services } from "../../services/services";
 import AwardsModal from "./../awardsModal/AwardsModal";
@@ -7,9 +8,10 @@ import CardListUl from "./../cardList/CardListUl";
 import ProgressBar from "./../progressBar/ProgressBar";
 import { pointUser } from "../../redux/auth/operations";
 import { Footer } from "../Footer/Footer";
+import animation from "./awardsModalAnimation.module.css";
 
 const AwardsPage = () => {
-  const { userToken, userId, userPoint } = useSelector((state) => {
+  const { userToken, userId, userPoint, weekPoints } = useSelector((state) => {
     return state.user;
   });
   const [points, setPoints] = useState(userPoint);
@@ -18,7 +20,7 @@ const AwardsPage = () => {
   const [pointsTotal, setPointsTotal] = useState(null);
   const [fail, setFail] = useState(false);
   const dispatch = useDispatch();
-
+  console.log("points ------ !!!", points);
   useEffect(() => {
     if (pointsTotal > points) {
       setFail(true);
@@ -175,7 +177,7 @@ const AwardsPage = () => {
           </div>
           <div className={css.awardsHeaderBarContainer}>
             <div className={css.awardsHeaderBar}>
-              <ProgressBar userPoints={points} />
+              <ProgressBar userPoints={points} weekPoints={weekPoints} />
             </div>
           </div>
         </div>
@@ -186,17 +188,28 @@ const AwardsPage = () => {
           pointsToModal={pointsToModal}
         />
         <div className={css.awardsButtonWrapper}>
+          <CSSTransition
+            in={modal}
+            classNames={animation}
+            timeout={500}
+            unmountOnExit
+          >
+            <div className={css.backdropDiv}>
+
+                <AwardsModal
+                  prizes={toggle}
+                  openModaled={modal}
+                  useOutsideAlerter={useOutsideAlerter}
+                  pointsTotal={pointsTotal}
+                  closeModal={closeModal}
+                  collectAwards={collectAwards}
+                  fail={fail}
+                />
+
+            </div>
+          </CSSTransition>
           {modal ? (
             <>
-              <AwardsModal
-                prizes={toggle}
-                openModaled={modal}
-                useOutsideAlerter={useOutsideAlerter}
-                pointsTotal={pointsTotal}
-                closeModal={closeModal}
-                collectAwards={collectAwards}
-                fail={fail}
-              />
               <button className={css.awardsButton} onClick={openModal} disabled>
                 Підтвердити
               </button>

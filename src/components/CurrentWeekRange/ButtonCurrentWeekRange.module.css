@@ -9,7 +9,8 @@
 
   .title {
     display: block;
-    
+    padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center;
     font-family: "Montserrat", "Arial", sans-serif;
     font-size: 14px;

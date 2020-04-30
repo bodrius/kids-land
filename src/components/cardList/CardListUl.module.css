@@ -1,8 +1,13 @@
 .card__listUL {
   display: flex;  
   flex-wrap: wrap;
-  justify-content: center;
   margin: 0;
   padding: 0;
   width: 100%;  
+}
+
+@media(max-width:767px){
+  .card__listUL {
+    justify-content: center; 
+  }
 }

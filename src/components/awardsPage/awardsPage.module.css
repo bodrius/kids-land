@@ -95,6 +95,12 @@
   transform: translate(1.5px, 1.5px);
 }
 
+.backdropDiv {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+}
 @media (min-width: 768px) {
   .awardsWrapper {
     width: 586px;
