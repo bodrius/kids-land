@@ -8,11 +8,12 @@ const initialState = {
   userTasks: null,
   userPoint: null,
   userId: null,
+  weekPoints: 0,
 };
 
 const reducer = {
   [types.LOGIN_USER]: (state, { payload }) => {
-    console.log("reducer --->LOGIN", payload);
+    // console.log("reducer --->LOGIN", payload);
     return {
       userEmail: payload.user.email,
       userToken: payload.token,
@@ -22,7 +23,7 @@ const reducer = {
     };
   },
   [types.REGISTR_USER]: (state, { payload }) => {
-    console.log("payload", payload);
+    // console.log("payload", payload);
     return {
       userEmail: payload.user.email,
       userToken: payload.token,
@@ -32,16 +33,16 @@ const reducer = {
     };
   },
   [types.ADD_POINT]: (state, { payload }) => {
-    console.log("payload", payload);
+    // console.log("payload", payload);
     return {
       ...state,
-      // userEmail: state.user.email,
-      // userToken: state.token,
-      // userTasks: state.user.tasks,
-      // userId: state.user._id,
       userPoint: payload,
     };
   },
+  [types.USER_TASK_POINTS]: (state, { payload }) => ({
+    ...state,
+    weekPoints: payload,
+  }),
   [types.USER_SIGNOUT]: () => initialState,
 };
 

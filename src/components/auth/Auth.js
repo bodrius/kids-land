@@ -8,13 +8,12 @@ import { registerUser, loginUser } from "../../redux/auth/operations";
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  let mainerror = null;
+  let mainerror = true;
 
   const dispatch = useDispatch();
 
-  const validate = (value) => {
+  const validate = () => {
     const errors = {};
-    // console.log("email, password", value);
     if (!email) {
       errors.email = "Required email";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
@@ -22,14 +21,17 @@ const Auth = () => {
     }
     if (!password) {
       errors.password = "Required password";
-    } else if (password.length < 2) {
+    } else if (password.length < 6) {
       errors.password = "Must be 6 characters or more";
     }
-    if (errors.length) {
-      mainerror = errors;
+    if (Object.keys(errors).length === 0) {
+      mainerror = false;
+      // console.log("errors false", errors, "mainerror1", mainerror);
     } else {
-      mainerror = null;
+      mainerror = true;
+      // console.log("errors true", errors, "mainerror2", mainerror);
     }
+
     return errors;
   };
 
@@ -46,13 +48,12 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(e);
     const contact = {
       email: email,
       password: password,
     };
-    console.log("errors", mainerror);
-    if (mainerror === null) {
+    // console.log("ERRORS", mainerror);
+    if (mainerror === false) {
       addContact(contact, e.target.value);
     } else {
       setEmail("");
@@ -61,7 +62,6 @@ const Auth = () => {
   };
 
   const addContact = async (contact, value) => {
-    console.log(contact, value);
     if (value === "REGISTR_USER") {
       dispatch(registerUser(contact));
     } else if (value === "LOGIN_USER") {
@@ -138,27 +138,28 @@ const Auth = () => {
           <h2 className={styles.authTextInput}>Email</h2>
           <input
             className={styles.input}
-            type="text"
+            type="email"
             name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            required
             placeholder={
               formik.errors.email ? formik.errors.email : "Enter Email"
             }
             onChange={handleChange}
             value={email}
           />
-          {/* {formik.errors.email ? <div>{formik.errors.email}</div> : null} */}
           <h2 className={styles.authTextInput}>Пароль</h2>
           <input
             className={styles.input}
             type="password"
             name="password"
+            required
             placeholder={
               formik.errors.password ? formik.errors.password : "Enter password"
             }
             onChange={handleChange}
             value={password}
           />
-          {/* {formik.errors.password ? <div>{formik.errors.password}</div> : null} */}
           <div className={styles.divFlex}>
             <div className={styles.divbtn}>
               <button

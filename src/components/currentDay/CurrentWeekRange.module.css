@@ -1,18 +1,19 @@
 .week {
   display: flex;
   justify-content: center;
-  font-family: Montserrat;
+  font-family: "Montserrat";
   font-size: 15px;
   font-weight: 500;
   line-height: 21px;
-  /* margin-top: 64px; */
+  margin-bottom: 8px;
   padding-bottom: 26px;
-  /* padding-top: 60px; */
+  padding-top: 10px;
 }
 
 @media (max-width: 1199px) and (min-width: 760px) {
   .week {
     padding: 24px 45px 24px 95px;
+    margin-bottom: 10px;
   }
 }
 
@@ -20,7 +21,7 @@
   .week {
     font-size: 18px;
     justify-content: start;
-    padding: 24px 0 16px 20px;
-
+    padding: 40px 0 0 76px;
+    margin-bottom: 18px;
   }
 }

@@ -7,6 +7,12 @@
   margin: 0 auto;
 }
 
+@media (max-width:1199px){
+  .progress_container{
+    margin: auto;
+  }
+}
+
 .info {
   width: 100%;
 }
