@@ -49,10 +49,10 @@ let days = [
     id: 6,
     label: "Субота",
     shortLabel: "Сб",
-    name: "Saturday",
+    name: "saturday",
     selected: false,
   },
-  { id: 7, label: "Неділя", shortLabel: "Нд", name: "Sunday", selected: false },
+  { id: 7, label: "Неділя", shortLabel: "Нд", name: "sunday", selected: false },
 ];
 
 const windowWidth = document.documentElement.clientWidth;
@@ -76,6 +76,8 @@ const MainPage = () => {
   const day = setMainPath();
   const history = useHistory();
 
+console.log()
+
   useEffect(() => {
     history.push(day);
   }, [day, history]);
@@ -85,16 +87,17 @@ const MainPage = () => {
   //     day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
   //   );
   useEffect(() => {
-    const dayId = days.find((day) =>
-      day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
-    );
-    selectDay(dayId.id);
     const newDays = days.map((day, indx) => ({
       ...day,
       dateOfWeek: `${moment().weekday(indx).format("L")}`,
     }));
     console.log("newDays-------", newDays);
     days = newDays;
+    const dayId = days.find((day) =>
+      day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
+    );
+    selectDay(dayId.id);
+    
   }, []);
 
   const selectDay = async (id) => {
@@ -150,11 +153,11 @@ const MainPage = () => {
       }
 
       // const dateOffTask = resultforFilter[0].days[0][0].date;
-
-      setFullDate(currentDayForImage.dateOfWeek);
       setPlaningPoints(points);
       setTasks(resultforFilter);
+      console.log('curentDayForImage', currentDayForImage)
     });
+    setFullDate(currentDayForImage.dateOfWeek);
 
     setDayLabel(currentDayForImage.label);
     return currentDayForImage.name;

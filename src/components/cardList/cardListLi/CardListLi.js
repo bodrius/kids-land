@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./CardListLi.module.css";
 import moment from "moment";
 import Toogle from "../toogle/Toogle";
-// import ButtonGood from "../../../common/bottonGod/ButtonGood";
+import ButtonGood from "../../../common/bottonGod/ButtonGood";
 // import ButtonBad from "../../../common/buttonBad/ButtonBad";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -83,7 +83,7 @@ const CardListLi = ({
                     backgroundColor:
                       moment().format("dddd") !== dayLabel.toLowerCase()
                         ? "red"
-                        : "green",
+                        : "red",
                   }}
                   className={style.Card__listBtton}
                   onClick={async () => {
@@ -99,7 +99,7 @@ const CardListLi = ({
                   +
                 </button>
               ) : (
-                <button>done</button>
+                <ButtonGood/>
               )}
             </>
           )}
