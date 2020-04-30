@@ -5,7 +5,7 @@
   line-height: 21px;
   letter-spacing: 2px;
   display: flex;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 .footerLogoContainer {
   width: 72px;
@@ -68,7 +68,7 @@
   .footer {
     width: 1200px;
     margin: 0 auto;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     justify-content: flex-end;
   }
 }

@@ -18,7 +18,6 @@ const ProgressBar = ({ userPoints, weekPoints }) => {
   if (userPoints === 0) {
     percent = 0;
   }
-
   return (
     <>
       <div className={style.wrapp}>
@@ -36,7 +35,7 @@ const ProgressBar = ({ userPoints, weekPoints }) => {
           <span className={style.secondPoints}>
             {userPoints}/{weekPoints}
           </span>
-          <Progress percent={percent} />
+          <Progress percent={Math.round(percent)} />
         </div>
       </div>
     </>
