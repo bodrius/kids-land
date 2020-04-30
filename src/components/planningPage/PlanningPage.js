@@ -14,10 +14,16 @@ const PlanningPage = () => {
   const [allUserPoints, setAllUserPoints] = React.useState(0);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
   const userToken = useSelector((state) => state.user.userToken);
-  const total = tasks.reduce((prev, current) => {
+
+function getTotal() {
+  return tasks.reduce((prev, current) => {
     const days = current.days.filter((day) => day.isActive === true).length;
     return prev + current.taskPoints * days;
   }, 0);
+}
+
+let total = getTotal()
+  
   const plusPoint = (p) => {
     setAllUserPoints(allUserPoints + p);
   };
@@ -36,6 +42,7 @@ const PlanningPage = () => {
 
   const getTasks = () => {
     services.getCurrentUser(userToken).then(({ data: { user } }) => {
+      setTasks(user.tasks);
       if (user.tasks.length !== tasks.length) {
         setTasks(user.tasks);
       }
@@ -44,6 +51,10 @@ const PlanningPage = () => {
 
   React.useEffect(() => {
     getTasks();
+  });
+
+  React.useEffect(() => {
+    getTotal();
   }, [tasks]);
 
   return (
@@ -59,7 +70,7 @@ const PlanningPage = () => {
         <PlanningPoints score={total}/>
         <AddCustomTask handleOpenTaskModal={handleOpenTaskModal} />
       </div>
-      <CardList plusPoint={plusPoint} data={tasks} />
+      <CardList plusPoint={plusPoint} data={tasks}  getTasks={getTasks}/>
       <Footer />
     </div>
   );
