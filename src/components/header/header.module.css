@@ -7,7 +7,7 @@
 
 .contactLink {
     color: #c2c2cb;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .headerContainer {
@@ -67,11 +67,10 @@
     .navigUserInfoContainer {
         width: 640px;
     }
-}
 
-.navLinkDiv {
-    font-size: 12px;
-    margin-right: 20px;
-    font-family: 'Montserrat', sans-serif;
-    color: #c2c2cb;
+    .navLinkDiv {
+        margin-right: 30px;
+        font-family: 'Montserrat', sans-serif;
+        color: #c2c2cb;
+    }
 }
