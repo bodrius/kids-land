@@ -10,6 +10,7 @@ import CurrentWeekPlaning from "../currentDay/CurrentWeekPlaning";
 import { services } from "../../services/services";
 import styles from "./styles.module.css";
 const PlanningPage = () => {
+
   const [tasks, setTasks] = React.useState([]);
   const [allUserPoints, setAllUserPoints] = React.useState(0);
   const [modalIsOpen, setModalIsOpen] = React.useState(false);

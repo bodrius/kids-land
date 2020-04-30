@@ -29,7 +29,7 @@ export const Navigation = () => {
               <div className={css.pages}>
                 <NavLink
                  onClick={openModal}
-                  to="planning"
+                  to="/planning"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
                   className={css.text}
@@ -41,7 +41,7 @@ export const Navigation = () => {
                 
                 <NavLink
                  onClick={openModal}
-                  to="awards"
+                  to="/awards"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
                   className={css.text}
@@ -52,7 +52,7 @@ export const Navigation = () => {
               <div className={css.pages}>
                 <NavLink
                  onClick={openModal}
-                  to="contact-us"
+                  to="/contact-us"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
                   className={css.text}

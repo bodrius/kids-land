@@ -56,7 +56,7 @@ export const ModaLogout = () => {
               Ви дійсно бажаєте вийти?
             </strong>
             <div className={styles.answerBox}>
-              <NavLink exact to="/">
+              {/* <NavLink exact to="/"> */}
                 <button
                   type="button"
                   className={styles.btnForLogout}
@@ -64,7 +64,7 @@ export const ModaLogout = () => {
                 >
                   Так
                 </button>
-              </NavLink>
+              {/* </NavLink> */}
               <button
                 type="button"
                 className={styles.btnForLogout}
