@@ -50,7 +50,7 @@ const Auth = () => {
       password: password,
     };
     console.log("ERRORS", mainerror);
-    if (mainerror !== null) {
+    if (mainerror === null) {
       addContact(contact, e.target.value);
     } else {
       setEmail("");

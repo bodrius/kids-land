@@ -9,7 +9,7 @@ import { services } from "../../services/services";
 import { WeekTabContent } from "../main/WeekTabContent";
 import "moment/locale/uk";
 
-const days = [
+let days = [
   {
     id: 1,
     label: "Понеділок",
@@ -80,12 +80,21 @@ const MainPage = () => {
     history.push(day);
   }, [day, history]);
 
+  // useEffect(() => {
+  //   const dayId = days.find((day) =>
+  //     day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
+  //   );
   useEffect(() => {
     const dayId = days.find((day) =>
       day.label.toLowerCase() === dayLabel.toLowerCase() ? day.id : null
     );
-
     selectDay(dayId.id);
+    const newDays = days.map((day, indx) => ({
+      ...day,
+      dateOfWeek: `${moment().weekday(indx).format("L")}`,
+    }));
+    console.log("newDays-------", newDays);
+    days = newDays;
   }, []);
 
   const selectDay = async (id) => {
@@ -140,9 +149,9 @@ const MainPage = () => {
         );
       }
 
-      const dateOffTask = resultforFilter[0].days[0][0].date;
+      // const dateOffTask = resultforFilter[0].days[0][0].date;
 
-      setFullDate(moment(dateOffTask).format("L"));
+      setFullDate(currentDayForImage.dateOfWeek);
       setPlaningPoints(points);
       setTasks(resultforFilter);
     });

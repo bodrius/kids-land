@@ -4,6 +4,7 @@ import cardList from "./CardList.json";
 import CardListLi from "./cardListLi/CardListLi";
 import style from "./CardListUl.module.css";
 
+
 const CardListUl = ({
   cardList,
   chooseAwards,
@@ -19,7 +20,7 @@ const CardListUl = ({
           return (
             <CardListLi
               list={list}
-              key={list._id}
+              key={list.id|| list._id}
               value={list._id}
               chooseAwards={chooseAwards}
               location={location}
