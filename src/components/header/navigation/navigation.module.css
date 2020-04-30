@@ -36,10 +36,14 @@ ul {
 }
 
 
+.linkContainer{
+    margin-top: 10px;
+}
 .pages {
     margin-bottom: 10px;
     width: 200px;
     margin-bottom: 15px;
+
 
 }
 
@@ -49,7 +53,7 @@ ul {
 }
 
 .pages::before {
-    margin-bottom: 2px;
+    margin-bottom: 12px;
     content: '';
     height: 1px;
     width: 200px;

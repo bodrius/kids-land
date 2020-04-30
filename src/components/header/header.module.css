@@ -39,6 +39,9 @@
 }
 
 
+.navLinkDiv{
+  padding-left: 130px;
+}
 @media (min-width: 768px) {
     .headerContainer {
         width: 650px;
