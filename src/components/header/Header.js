@@ -30,7 +30,7 @@ export const Header = (props) => {
           )}
           {!isAuth && (
             <div className={css.navLinkDiv}>
-              <NavLink to="contact-us" className={css.contactLink}>
+              <NavLink to="/contact-us" className={css.contactLink}>
                 Контакти
               </NavLink>
             </div>

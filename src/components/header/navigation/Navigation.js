@@ -15,7 +15,7 @@ export const Navigation = () => {
             <div className={css.overlay_2}>
             <div className={css.overlay}>
               <div className={css.pages}>
-                <NavLink
+                <NavLink className={css.linkContainer}
                  onClick={openModal}
                   exact
                   to="/"
@@ -27,9 +27,9 @@ export const Navigation = () => {
                 </NavLink>
               </div>
               <div className={css.pages}>
-                <NavLink
+                <NavLink className={css.linkContainer}
                  onClick={openModal}
-                  to="planning"
+                  to="/planning"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
                   className={css.text}
@@ -39,9 +39,9 @@ export const Navigation = () => {
               </div>
               <div className={css.pages}>
                 
-                <NavLink
+                <NavLink className={css.linkContainer}
                  onClick={openModal}
-                  to="awards"
+                  to="/awards"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
                   className={css.text}
@@ -50,9 +50,9 @@ export const Navigation = () => {
                 </NavLink>
               </div>
               <div className={css.pages}>
-                <NavLink
+                <NavLink className={css.linkContainer}
                  onClick={openModal}
-                  to="contact-us"
+                  to="/contact-us"
                   activeStyle={{ color: "black" }}
                   style={{ color: " #e0e0e5" }}
                   className={css.text}
