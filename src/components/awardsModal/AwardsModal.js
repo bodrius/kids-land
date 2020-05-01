@@ -50,8 +50,8 @@ const AwardsModal = ({
             <img
               alt="cat"
               className={styles.modalImgCat}
-              src="https://www.dhresource.com/0x0/f2/albu/g6/M01/7F/2F/rBVaR1uNWfiAYheFAAC2OJoGeT4108.jpg"
-              width="120"
+              src={require('../../assets/image/icon/modalCat/FAVPNG_simons-cat-plush-key-ring-decal-sticker-feed-me_n4ytLmmf.png')}
+              width="200"
               height="auto"
             />
             {modalCheck ? (
