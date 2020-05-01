@@ -151,12 +151,6 @@ const CardListLi = ({
                 >
                   {!flag? "+": <div className={style.buttonLike}> &#10004;</div>}
                 </button>
-              {/* ) : (
-                // <ButtonGood />
-                <button>
-                  -
-                </button> */}
-              {/* )} */}
             </>
           )}
         </div>
