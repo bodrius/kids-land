@@ -9,7 +9,7 @@
   background-color: rgba(100, 100, 100, 0.3);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   width: 100vw;
   height: 420%;
   top: 0;
@@ -25,6 +25,7 @@
   /* 3 rows - 672px? probably */
   border-radius: 6px;
   background-color: #fff;
+  margin-bottom: 150px;
 }
 .modalImgCat {
   position: absolute;
@@ -130,11 +131,13 @@
   .modalBackdrop {
     height: 100%;
     position: fixed;
+    align-items: center;
   }
   .modalBox {
     min-height: 392px;
     max-height: 564px;
     width: 613px;
+    margin-bottom:  0px;
   }
   .modalGreetings {
     font-weight: 600;
