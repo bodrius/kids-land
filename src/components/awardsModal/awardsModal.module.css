@@ -11,8 +11,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100%;
-  position: fixed;
+  height: 420%;
   top: 0;
   left: 0;
 }
@@ -130,6 +129,7 @@
 @media (min-width: 768px) {
   .modalBackdrop {
     height: 100%;
+    position: fixed;
   }
   .modalBox {
     min-height: 392px;
