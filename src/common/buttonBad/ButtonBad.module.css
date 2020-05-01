@@ -1,8 +1,4 @@
-.button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .buttonGood {
     background-color: rgb(255, 0, 0);
     border: none;
@@ -15,5 +11,8 @@
     height: 30px;
     border-radius: 50%;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
