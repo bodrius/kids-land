@@ -21,8 +21,8 @@ export const WeekTabContent = ({
   today,
   choosenDay,
   detect,
+  setTotalPoints
 }) => {
-  console.log("tasks", tasks);
   const { weekPoints } = useSelector((state) => state.user);
   return (
     <div className={styles.container}>
@@ -37,7 +37,7 @@ export const WeekTabContent = ({
             </div>
             <div className={styles.cardList}>
               {detect.length ? (
-                <CardListUl dayLabel={dayLabel} cardList={tasks} />
+                <CardListUl setTotalPoints={setTotalPoints} dayLabel={dayLabel} cardList={tasks} />
               ) : (
                 <DefaultPage />
               )}
@@ -62,7 +62,7 @@ export const WeekTabContent = ({
           </div>
           <div className={styles.cardList}>
             {detect.length ? (
-              <CardListUl dayLabel={dayLabel} cardList={tasks} />
+              <CardListUl setTotalPoints={setTotalPoints} dayLabel={dayLabel} cardList={tasks} />
             ) : (
               <DefaultPage />
             )}
@@ -84,7 +84,7 @@ export const WeekTabContent = ({
           </div>
           <div className={styles.cardList}>
             {detect.length ? (
-              <CardListUl dayLabel={dayLabel} cardList={tasks} />
+              <CardListUl setTotalPoints={setTotalPoints} dayLabel={dayLabel} cardList={tasks} />
             ) : (
               <DefaultPage />
             )}

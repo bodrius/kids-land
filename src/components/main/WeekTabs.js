@@ -25,7 +25,6 @@ export const WeekTabs = ({ days, choosenDay }) => {
               key={day.id}
               onClick={() => {
                 choosenDay(day.id);
-                console.log("day.label", day.label);
               }}
             >
               {day.label}

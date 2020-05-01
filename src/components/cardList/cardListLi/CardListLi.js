@@ -17,6 +17,7 @@ const CardListLi = ({
   pointsToModal,
   location,
   dayLabel,
+  setTotalPoints
 }) => {
   const { userToken, userId } = useSelector((state) => state.user);
 
@@ -42,6 +43,56 @@ const CardListLi = ({
   //     }
   //   }
   // };
+
+  const addPoints = async (id, token, points, cardPoint) => {
+    const updatePoint = points + cardPoint;
+    await services.updateUserPoints(token, id, updatePoint);
+    setTotalPoints(updatePoint);
+  };
+  
+  const completedtask = async (token) => {
+    const allpoints = await axios.get(
+      "https://kidslike.goit.co.ua/api/auth/current",
+      {
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return allpoints.data.user.points;
+  };
+  
+  const currentTask = async (id, token) => {
+    const data = await axios.get("https://kidslike.goit.co.ua/api/auth/current", {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const res = data.data.user.tasks.find((t) => t._id === id);
+    console.log(res.days);
+    return res;
+  };
+  
+  const updateСommission = (day, commissionId, token, days) => {
+    const filter = days.days.map((d) =>
+      d.title === day ? { ...d, isDone: true } : d
+    );
+  
+    fetch(`https://kidslike.goit.co.ua/api/tasks/${commissionId}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ days: filter }),
+    })
+      .then((res) => res.json())
+      .then((resData) => console.log(resData));
+  };
+
+
 
   return (
     <li className={style.Card__list}>
@@ -114,51 +165,6 @@ const CardListLi = ({
   );
 };
 
-const addPoints = async (id, token, points, cardPoint) => {
-  const updatePoint = points + cardPoint;
-  await services.updateUserPoints(token, id, updatePoint);
-};
 
-const completedtask = async (token) => {
-  const allpoints = await axios.get(
-    "https://kidslike.goit.co.ua/api/auth/current",
-    {
-      headers: {
-        "content-type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
-  return allpoints.data.user.points;
-};
-
-const currentTask = async (id, token) => {
-  const data = await axios.get("https://kidslike.goit.co.ua/api/auth/current", {
-    headers: {
-      "content-type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const res = data.data.user.tasks.find((t) => t._id === id);
-  console.log(res.days);
-  return res;
-};
-
-const updateСommission = (day, commissionId, token, days) => {
-  const filter = days.days.map((d) =>
-    d.title === day ? { ...d, isDone: true } : d
-  );
-
-  fetch(`https://kidslike.goit.co.ua/api/tasks/${commissionId}`, {
-    method: "PUT",
-    headers: {
-      "content-type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ days: filter }),
-  })
-    .then((res) => res.json())
-    .then((resData) => console.log(resData));
-};
 
 export default CardListLi;

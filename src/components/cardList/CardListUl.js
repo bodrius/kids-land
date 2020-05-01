@@ -12,6 +12,7 @@ const CardListUl = ({
   pointsToModal,
   location,
   dayLabel,
+  setTotalPoints
 }) => {
   return (
     <ul className={style.card__listUL}>
@@ -19,6 +20,7 @@ const CardListUl = ({
         cardList.map((list) => {
           return (
             <CardListLi
+            setTotalPoints={setTotalPoints}
               list={list}
               key={list.id|| list._id}
               value={list._id}
