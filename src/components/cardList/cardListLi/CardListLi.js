@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./CardListLi.module.css";
 import moment from "moment";
 import Toogle from "../toogle/Toogle";
-import ButtonGood from "../../../common/bottonGod/ButtonGood";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { services } from "../../../services/services";
@@ -11,14 +10,14 @@ import { services } from "../../../services/services";
 const CardListLi = ({
   list,
   chooseAwards,
-  collectAwards,
   toggle,
   pointsToModal,
-  location,
   dayLabel,
   setTotalPoints,
 }) => {
   const { userToken, userId } = useSelector((state) => state.user);
+
+  const [flag, setFlag] = useState(false)
 
   // const drawing = () => {
   //   if (location.pathname === "/awards") {
@@ -127,7 +126,7 @@ const CardListLi = ({
             />
           ) : (
             <>
-              {!list.days[0][0].isDone ? (
+              {/* {!list.days[0][0].isDone ? ( */}
                 <button
                   disabled={moment().format("dddd") !== dayLabel.toLowerCase()}
                   style={{
@@ -146,14 +145,18 @@ const CardListLi = ({
                       chooseDays
                     );
                     const allPoints = await completedtask(userToken);
-                    await addPoints(userId, userToken, allPoints, list.points);
+                    await addPoints(userId,  userToken, allPoints, list.points);
+                    setFlag(true);
                   }}
                 >
-                  +
+                  {!flag? "+": <div className={style.buttonLike}> &#10004;</div>}
                 </button>
-              ) : (
-                <ButtonGood />
-              )}
+              {/* ) : (
+                // <ButtonGood />
+                <button>
+                  -
+                </button> */}
+              {/* )} */}
             </>
           )}
         </div>

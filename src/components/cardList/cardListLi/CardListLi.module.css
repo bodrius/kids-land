@@ -69,6 +69,23 @@
   outline: none;
 }
 
+.buttonLike{
+  background-color: rgb(142, 198, 63);
+  border: none;
+  font-size: 26px;
+  font-family: "Montserrat";
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 0.808;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 768px) and (max-width: 1199px) {
   .Card__list:nth-child(2n + 1) {
     margin-right: 22px;
