@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
 import styles from "./modalLogout.module.css";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../../redux/auth/operations";

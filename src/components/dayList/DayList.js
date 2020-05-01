@@ -22,8 +22,8 @@ export const DayList = ({flag}) => {
     keyType: "string",
   });
 
-  console.log(checkedItems); // Set(0) - handling with Set
-  console.log([...checkedItems]); // []     - handling with Array
+  // console.log(checkedItems); // Set(0) - handling with Set
+  // console.log([...checkedItems]); // []     - handling with Array
   return (
     <div className={css.dayListPosition}>
       {/* <button className={css.showModal} type="button" onClick={() => setFlag(!flag)}>

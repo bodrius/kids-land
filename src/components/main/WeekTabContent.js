@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./WeekTabContent.module.css";
-// import progressBar from "./images/pict--progress-bar-controls-vector-stencils-library.png";
-// import defaultImgTask from "./images/plan_img/1.jpg";
 import CurrentWeekRange from "../currentDay/CurrentWeekRange";
 import CurrentDay from "../currentDay/CurrentDay";
 import ProgressBar from "../progressBar/ProgressBar";
@@ -9,7 +7,6 @@ import CardListUl from "../cardList/CardListUl";
 import DefaultPage from "./../mainPage/defaultPage/DefaultPage";
 import { WeekTabs } from "./WeekTabs";
 import { useSelector } from "react-redux";
-import moment from "moment";
 
 export const WeekTabContent = ({
   tasks,
@@ -17,7 +14,6 @@ export const WeekTabContent = ({
   dayLabel,
   days,
   totalPoints,
-  planingPoints,
   today,
   choosenDay,
   detect,

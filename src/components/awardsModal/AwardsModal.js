@@ -11,7 +11,7 @@ const AwardsModal = ({
   collectAwards,
   fail,
 }) => {
-  const [modal, openModal] = useState(openModaled);
+  const [modal] = useState(openModaled);
   const [modalCheck, setModalCheck] = useState(false);
   const [confetti, setConfetti] = useState(false);
   const wrapperRef = useRef(null);

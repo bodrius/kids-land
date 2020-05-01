@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import cardList from "./CardList.json";
 import CardListLi from "./cardListLi/CardListLi";
 import style from "./CardListUl.module.css";
 

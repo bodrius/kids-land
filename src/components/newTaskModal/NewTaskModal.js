@@ -31,7 +31,6 @@ export const NewTaskModal = ({ onClose, onHandleCollectCustomTask }) => {
 
   const handlerSubmitForm = e => {
     onHandleCollectCustomTask(state)
-    // console.log("object", state);
     e.preventDefault();
     onClose();
   };

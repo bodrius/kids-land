@@ -28,7 +28,6 @@ export const services = {
       });
       return data;
     } catch (error) {
-      // throw new Error(error);
       console.log(error);
     }
   },

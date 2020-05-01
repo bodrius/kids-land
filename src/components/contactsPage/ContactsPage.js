@@ -4,7 +4,6 @@ import { Contacts } from "./ContactsInformation";
 import { Footer } from "../Footer/Footer";
 
  const ContactsPage = (props) => {
-   console.log('props', props.history)
   return (
     <>
     <div className={styles.contacts}>

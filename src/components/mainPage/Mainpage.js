@@ -55,7 +55,6 @@ let days = [
   { id: 7, label: "Неділя", shortLabel: "Нд", name: "sunday", selected: false },
 ];
 
-const windowWidth = document.documentElement.clientWidth;
 const setMainPath = () => {
   const weekDay = moment().get("day");
   days.map((day) =>
@@ -66,7 +65,7 @@ const setMainPath = () => {
 };
 
 const MainPage = () => {
-  const { userToken, userTasks } = useSelector((state) => state.user);
+  const { userToken } = useSelector((state) => state.user);
   const [tasks, setTasks] = useState([]);
   const [dayLabel, setDayLabel] = useState(moment().format("dddd"));
   const [fullDate, setFullDate] = useState(moment().format("L"));
@@ -123,18 +122,6 @@ const MainPage = () => {
         id: task._id,
       }));
 
-      // find user task 'isDone'
-
-      // console.log(
-      //   "data.data.user.tasks",
-      //   data.data.user.tasks.map((task) => {
-      //     console.log("task", task._id);
-      //     return task.days.filter((task) => {
-      //       return task.isDone;
-      //     });
-      //   })
-      // );
-
       const resultforFilter = result.filter(
         (activeDay) => activeDay.days[0].length
       );
@@ -153,10 +140,8 @@ const MainPage = () => {
         });
       }
 
-      // const dateOffTask = resultforFilter[0].days[0][0].date;
       setPlaningPoints(points);
       setTasks(resultforFilter);
-      console.log("curentDayForImage", currentDayForImage);
     });
     setFullDate(currentDayForImage.dateOfWeek);
 

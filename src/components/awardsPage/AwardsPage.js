@@ -20,7 +20,6 @@ const AwardsPage = () => {
   const [pointsTotal, setPointsTotal] = useState(null);
   const [fail, setFail] = useState(false);
   const dispatch = useDispatch();
-  console.log("points ------ !!!", points);
   useEffect(() => {
     if (pointsTotal > points) {
       setFail(true);

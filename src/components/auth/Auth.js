@@ -26,10 +26,8 @@ const Auth = () => {
     }
     if (Object.keys(errors).length === 0) {
       mainerror = false;
-      // console.log("errors false", errors, "mainerror1", mainerror);
     } else {
       mainerror = true;
-      // console.log("errors true", errors, "mainerror2", mainerror);
     }
 
     return errors;
@@ -41,9 +39,6 @@ const Auth = () => {
       password: "",
     },
     validate,
-    // onClick: (e) => {
-    //   handleSubmit(e);
-    // },
   });
 
   const handleSubmit = (e) => {
@@ -52,7 +47,6 @@ const Auth = () => {
       email: email,
       password: password,
     };
-    // console.log("ERRORS", mainerror);
     if (mainerror === false) {
       addContact(contact, e.target.value);
     } else {

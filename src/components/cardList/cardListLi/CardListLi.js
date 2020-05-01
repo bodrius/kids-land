@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./CardListLi.module.css";
 import moment from "moment";
 import Toogle from "../toogle/Toogle";
 import ButtonGood from "../../../common/bottonGod/ButtonGood";
-// import ButtonBad from "../../../common/buttonBad/ButtonBad";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import { services } from "../../../services/services";
-const date = moment().format("Do MMMM YYYY");
+// const date = moment().format("Do MMMM YYYY");
 
 const CardListLi = ({
   list,
@@ -17,7 +16,7 @@ const CardListLi = ({
   pointsToModal,
   location,
   dayLabel,
-  setTotalPoints
+  setTotalPoints,
 }) => {
   const { userToken, userId } = useSelector((state) => state.user);
 
@@ -49,7 +48,7 @@ const CardListLi = ({
     await services.updateUserPoints(token, id, updatePoint);
     setTotalPoints(updatePoint);
   };
-  
+
   const completedtask = async (token) => {
     const allpoints = await axios.get(
       "https://kidslike.goit.co.ua/api/auth/current",
@@ -62,24 +61,26 @@ const CardListLi = ({
     );
     return allpoints.data.user.points;
   };
-  
+
   const currentTask = async (id, token) => {
-    const data = await axios.get("https://kidslike.goit.co.ua/api/auth/current", {
-      headers: {
-        "content-type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const data = await axios.get(
+      "https://kidslike.goit.co.ua/api/auth/current",
+      {
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     const res = data.data.user.tasks.find((t) => t._id === id);
-    console.log(res.days);
     return res;
   };
-  
+
   const updateСommission = (day, commissionId, token, days) => {
     const filter = days.days.map((d) =>
       d.title === day ? { ...d, isDone: true } : d
     );
-  
+
     fetch(`https://kidslike.goit.co.ua/api/tasks/${commissionId}`, {
       method: "PUT",
       headers: {
@@ -91,8 +92,6 @@ const CardListLi = ({
       .then((res) => res.json())
       .then((resData) => console.log(resData));
   };
-
-
 
   return (
     <li className={style.Card__list}>
@@ -139,7 +138,6 @@ const CardListLi = ({
                   }}
                   className={style.Card__listBtton}
                   onClick={async () => {
-                    console.log("list", list);
                     const chooseDays = await currentTask(list.id, userToken);
                     await updateСommission(
                       list.days[0][0].title,
@@ -148,7 +146,6 @@ const CardListLi = ({
                       chooseDays
                     );
                     const allPoints = await completedtask(userToken);
-                    console.log("allpoints", allPoints);
                     await addPoints(userId, userToken, allPoints, list.points);
                   }}
                 >
@@ -164,7 +161,5 @@ const CardListLi = ({
     </li>
   );
 };
-
-
 
 export default CardListLi;
