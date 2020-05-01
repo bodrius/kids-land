@@ -21,7 +21,7 @@ const CurrentWeekRange = () => {
       "грудня",
     ];
     if (startOfWeek >= endOfWeek) {
-      return monthes[moment().get("M") + 1];
+      return monthes[moment().get("M")];
     } else return monthes[moment().get("M")];
   }
   const month = getThisMonth(moment().get("M"));
